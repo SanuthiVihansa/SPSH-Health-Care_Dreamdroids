@@ -2,6 +2,7 @@ package com.spsh.spshhealthcare;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,10 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
+import com.spsh.spshhealthcare.database.DBHelper;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -56,7 +61,6 @@ public class AddReport extends AppCompatActivity {
         String time = this.time.getText().toString();
 
         double cost = Double.parseDouble(this.cost.getText().toString());
-        // remove the unit Rs.
 
         double hemoglobin = Double.parseDouble(this.hemoglobin.getText().toString());
         int wbc = Integer.parseInt(this.wbc.getText().toString());
@@ -75,6 +79,21 @@ public class AddReport extends AppCompatActivity {
             gender = "female";
         }
 
+        DBHelper dbHelper = new DBHelper(this);
+
+        long added = 1;
+        //long added = dbHelper.addReport(name, age, gender, nic, date, time, cost, hemoglobin, wbc, neutrophils, lymphocytes, eosinophils, rbc, pcb, platelet);
+
+        if(added > 0){
+            Toast.makeText(this, "Report Successfully Added !", Toast.LENGTH_LONG).show();
+
+            Intent intent = new Intent(this, LabHome.class);
+            startActivity(intent);
+
+        }
+        else{
+
+        }
 
     }
 }
