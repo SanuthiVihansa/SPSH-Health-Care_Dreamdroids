@@ -81,8 +81,7 @@ public class AddReport extends AppCompatActivity {
 
         DBHelper dbHelper = new DBHelper(this);
 
-        long added = 1;
-        //long added = dbHelper.addReport(name, age, gender, nic, date, time, cost, hemoglobin, wbc, neutrophils, lymphocytes, eosinophils, rbc, pcb, platelet);
+        long added = dbHelper.addReport(name, age, gender, nic, date, time, cost, hemoglobin, wbc, neutrophils, lymphocytes, eosinophils, rbc, pcb, platelet);
 
         if(added > 0){
             Toast.makeText(this, "Report Successfully Added !", Toast.LENGTH_LONG).show();
@@ -92,7 +91,7 @@ public class AddReport extends AppCompatActivity {
 
         }
         else{
-
+            Toast.makeText(this, "Something went wrong!", Toast.LENGTH_LONG).show();
         }
 
     }

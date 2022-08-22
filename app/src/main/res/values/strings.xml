@@ -29,7 +29,8 @@
     <string name="radioBtn_femaleAddReport">Female</string>
     <string name="tv_labelForNicAddReport">NIC belongs to the Account</string>
     <string name="et_labelForNicAddReport">NIC number</string>
-    <string name="tv_costAddReport">Rs. 400.00</string>
+    <string name="tv_unitForCost">Rs.</string>
+    <string name="tv_costAddReport">400.00</string>
     <string name="tv_labelForTimeAddReport">Time</string>
     <string name="tv_labelForHimoglobinAddReport">Hemoglobin</string>
     <string name="tv_unitForHemoglobinAddReport">g</string>
