@@ -24,10 +24,31 @@
         android:id="@+id/nic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/age"
-        android:layout_alignBottom="@+id/age"
-        android:layout_alignParentRight="true"
+        android:layout_below="@id/age"
+        android:layout_marginTop="7dp"
         android:textColor="#343434"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/tv_idViewAllReports"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:layout_alignBaseline="@+id/nic"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="7dp"
+        android:textColor="#343434"
+        android:textSize="14dp"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/btn_viewViewAllReports"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/age"
+        android:layout_alignParentRight="true"
+        android:backgroundTint="@color/yellow"
+        android:text="@string/btn_viewViewAllReports"
         android:textSize="14dp" />
 
 </RelativeLayout>
