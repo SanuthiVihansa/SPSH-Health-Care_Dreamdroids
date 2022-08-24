@@ -1,3 +1,56 @@
 <resources>
     <string name="app_name">SPSH Health Care</string>
+
+    <!--Patient Home-->
+    <string name="tv_patientProfile_sathira">Patient Profile</string>
+    <string name="btn_viewAppoint_sathira">View Appointments</string>
+    <string name="btn_viewLabRep_sathira">View Lab Reports</string>
+    <string name="btn_makeAppoint_sathira">Make Appointments</string>
+    <string name="btn_pharmacy_sathira">Pharmacy</string>
+
+    <!--Patient Add-->
+    <string name="tv_makeAppoint_sathira">Make New Appointment</string>
+
+    <string name="tv_addName_sathira">Name :</string>
+    <string name="tv_addAge_sathira">Age :</string>
+    <string name="tv_addGender_sathira">Gender :</string>
+    <string name="tv_addNum_sathira">Contact No :</string>
+    <string name="tv_addNic_sathira">NIC :</string>
+    <string name="tv_addSpecial_sathira">Specialization :</string>
+    <string name="tv_addDrName_sathira">Doctors Name :</string>
+    <string name="tv_addDate_sathira">Date :</string>
+    <string name="tv_addTime_sathira">Time :</string>
+
+    <string name="btn_addBook_sathira">Book</string>
+
+    <string name="toast_addPatient_emptyFields_sathira">Please fill all fields</string>
+    <string name="toast_addPatient_success_sathira">Appointment Successfully Booked!</string>
+    <string name="toast_addPatient_unsuccess_sathira">Something went wrong</string>
+
+    <!--Patient View single-->
+    <string name="tv_single_appointment_sathira">Appointment 1</string>
+    <string name="tv_single_id_sathira">Appointment ID :</string>
+    <string name="tv_single_name_sathira">Name :</string>
+    <string name="tv_single_age_sathira">Age :</string>
+    <string name="tv_single_gender_sathira">Gender :</string>
+    <string name="tv_single_number_sathira">Contact No :</string>
+    <string name="tv_single_nic_sathira">NIC :</string>
+    <string name="tv_single_drName_sathira">Dr Name :</string>
+    <string name="tv_single_date_sathira">Date :</string>
+    <string name="tv_single_time_sathira">Time :</string>
+    <string name="tv_single_cost_sathira">Cost :</string>
+
+    <string name="btn_single_updateBtn_sathira">Update Appointment</string>
+    <string name="btn_single_deleteBtn_sathira">Delete Appointment</string>
+
+    <!--Patient Update-->
+    <string name="tv_update_appointment_sathira">Appointment 1</string>
+    <string name="tv_update_Ente">Enter New Details</string>
+    <string name="tv_update_name_sathira">Name :</string>
+    <string name="et_update_age_sathira">Age :</string>
+    <string name="et_update_gender_sathira">Gender :</string>
+    <string name="tv_update_contactNum_sathira">Contact No :</string>
+    <string name="tv_update_NIC_sathira">NIC :</string>
+
+    <string name="btn_Patientupdate_updateBtn_sathira">Update</string>
 </resources>
