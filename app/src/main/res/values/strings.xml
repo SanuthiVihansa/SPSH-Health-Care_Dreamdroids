@@ -98,4 +98,5 @@
     <string name="tv_titleViewAllReports">All Blood Reports</string>
     <string name="et_hintForSearchViewAllReports">Type here to search</string>
     <string name="btn_searchViewAllReports">Search</string>
+    <string name="btn_viewViewAllReports">View</string>
 </resources>
