@@ -1,3 +1,46 @@
 <resources>
     <string name="app_name">SPSH Health Care</string>
+    <string name="available_doc">AVAILABLE DOCTORS</string>
+    <string name="tv1_AddDocPage">ADD DOCTOR</string>
+    <string name="et1_doc_name_AddDocForm">Doctor Name</string>
+    <string name="et2_Speciality_AddDocForm">Speciality</string>
+    <string name="et3_WorkingPlace_AddDocForm">Working Place</string>
+    <string name="et4_Experience_AddDocForm">Experience in Proficiency</string>
+    <string name="et5_Fee_AddDocForm">Fee</string>
+    <string name="et6_MaxPatients_AddDocForm">Maximum Patients</string>
+    <string name="et2_UPDATEDOC_Name">Dr. Jayantha</string>
+    <string name="et3_UPDATEDOC_Speciality">(Eye Specialist)</string>
+    <string name="et4_UPDATEDOC_WorkingPlace">Government</string>
+    <string name="et5_UPDATEDOC_Experience">8 years</string>
+    <string name="et6_UPDATEDOC_Fee">Rs.3000</string>
+    <string name="numtxt_UPDATEDOC_MaxPatients">30</string>
+    <string name="TV2_UPDATEDOC_Name">Doctor Name</string>
+    <string name="TV3_UPDATEDOC_Speciality">Speciality</string>
+    <string name="TV4_WorkingPlace">Working Place</string>
+    <string name="TV5_UPDATEDOC_Experience">Experience</string>
+    <string name="TV6_UPDATEDOC_Fee">Fee</string>
+    <string name="TV7_UPDATEDOC_MaximumPat">Maximum Patients</string>
+    <string name="TV1_UPDATEDOC_Name">UPDATE DOCTOR PROFILE</string>
+    <string name="tv2_ADD_DOc_Name">Doctor Name</string>
+    <string name="tv2_ADD_DOC_Speciality">Speciality</string>
+    <string name="tv_3_ADD_DOC_Workingplace">Working Place</string>
+    <string name="tv4_ADD_DOC_Experience">Experience</string>
+    <string name="tv5_ADD_DOC_Fee">Fee</string>
+    <string name="tv6_ADD_DOC_MaxPatients">Maximum Patients</string>
+    <string name="bt1_ADD_DOC_Submit">SUBMIT</string>
+    <string name="BTN_UPDATEDOC_CONFIRM">CONFIRM UPDATE</string>
+    <string name="tv1_SearchDoc">CHECK OUR AVAILABLE DOCTORS</string>
+    <string name="et1_SearchDoc_Search">Dr.Vihansa</string>
+    <string name="tv1_Doc_Profile">DOCTOR PROFILE</string>
+    <string name="tv2_Doc_Profile_Name">Doctor Name(Dr. Z)</string>
+    <string name="TV3_DOC_PROFILE_Speciality">Speciality(Eye Specialist)</string>
+    <string name="tv4_Doc_Profile_WorkingPlace">Working Place(Government)</string>
+    <string name="tv5_Doc_Profile_Experience">Experience in Proficiency(8 years)</string>
+    <string name="tv6_Doc_Profile_Fee">Fee(3000)</string>
+    <string name="tv7_DocProfile_MaxPatients">Maximum Patients(30)</string>
+    <string name="BTN2_DOC_PROFILE_DELETE">DELETE</string>
+    <string name="BTN1_DOC_PROFILE_UPDATE">UPDATE</string>
+    <string name="numEdt_ADD_DOC_MaxPat">30</string>
+    <string name="btn2_ADD_DOC_Back">GO BACK</string>
+
 </resources>
