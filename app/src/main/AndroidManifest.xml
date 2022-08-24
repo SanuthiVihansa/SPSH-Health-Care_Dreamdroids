@@ -14,19 +14,19 @@
         android:theme="@style/Theme.SPSHHealthCare"
         tools:targetApi="31">
         <activity
-            android:name=".PharmasistViewPage"
+            android:name=".Patient_Update"
             android:exported="false" />
         <activity
-            android:name=".PharmisisitSearch"
+            android:name=".Patient_View_Single"
             android:exported="false" />
         <activity
-            android:name=".PharmacisitUpdate"
+            android:name=".Patient_Add"
             android:exported="false" />
         <activity
-            android:name=".PharmacyAddItem"
+            android:name=".Patient_All_Appointments"
             android:exported="false" />
         <activity
-            android:name=".PharmisistHome"
+            android:name=".Patient_Home"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
