@@ -88,6 +88,10 @@
     <string name="btn_pvUpdate">Update</string>
     <string name="btn_pvDelete">Delete</string>
 
+    //View related
+    <string name="btn_pharmaView">View</string>
+
+
 
 
 </resources>

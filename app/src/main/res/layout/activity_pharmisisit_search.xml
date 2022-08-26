@@ -50,6 +50,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv_pSearchView"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/search" />
+        app:srcCompat="@drawable/search"
+        android:contentDescription="TODO" />
+
+    <ListView
+        android:id="@+id/lv_PlistView"
+        android:layout_width="400dp"
+        android:layout_height="454dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rb_PproductName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
