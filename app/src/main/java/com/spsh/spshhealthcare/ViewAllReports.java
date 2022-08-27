@@ -2,6 +2,7 @@ package com.spsh.spshhealthcare;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -38,12 +39,14 @@ public class ViewAllReports extends AppCompatActivity {
                 View v = super.getView(position, convertView, parent);
                 Button btn_view = (Button)v.findViewById(R.id.btn_viewViewAllReports);
                 TextView tv_idViewAllReports = (TextView)v.findViewById(R.id.tv_idViewAllReports);
-                int reportId = Integer.parseInt(tv_idViewAllReports.getText().toString());
+                String reportId = tv_idViewAllReports.getText().toString();
 
                 btn_view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(ViewAllReports.this, "Clicked" + reportId, Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(ViewAllReports.this, ViewReport.class);
+                        intent.putExtra("reportId", reportId);
+                        startActivity(intent);
                     }
                 });
                 return v;
