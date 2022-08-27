@@ -7,25 +7,25 @@
     tools:context=".ViewReport">
 
     <TextView
-        android:id="@+id/textView23"
+        android:id="@+id/tv_lymphocytesViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="121dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv_lymphocytesViewBloodReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_labelForLymphocytesViewBloodReport"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_lymphocytesViewBloodReport" />
+        app:layout_constraintStart_toEndOf="@+id/tv_labelForLymphocytesViewBloodReport" />
 
     <TextView
-        android:id="@+id/tv_dateViewBloodReport"
+        android:id="@+id/tv_labelForDateViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="@string/tv_dateViewBloodReport"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nicViewBloodReport" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForNicViewBloodReport" />
 
     <TextView
         android:id="@+id/tv_titleViewBloodReport"
@@ -52,7 +52,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_titleViewBloodReport" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tv_nameViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="109dp"
@@ -63,7 +63,7 @@
         app:layout_constraintStart_toEndOf="@+id/tv_patientNameViewBloodReport" />
 
     <TextView
-        android:id="@+id/tv_ageViewBloodReport"
+        android:id="@+id/tv_labelForAgeViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -73,110 +73,110 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_patientNameViewBloodReport" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tv_ageViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="178dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv_ageViewBloodReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_labelForAgeViewBloodReport"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_ageViewBloodReport" />
+        app:layout_constraintStart_toEndOf="@+id/tv_labelForAgeViewBloodReport" />
 
     <TextView
-        android:id="@+id/tv_genderViewBloodReport"
+        android:id="@+id/tv_labelForGenderViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="@string/tv_genderViewBloodReport"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_ageViewBloodReport" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForAgeViewBloodReport" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/tv_genderViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="158dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv_genderViewBloodReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_labelForGenderViewBloodReport"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_genderViewBloodReport" />
+        app:layout_constraintStart_toEndOf="@+id/tv_labelForGenderViewBloodReport" />
 
     <TextView
-        android:id="@+id/tv_nicViewBloodReport"
+        android:id="@+id/tv_labelForNicViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="@string/tv_nicViewBloodReport"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_genderViewBloodReport" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForGenderViewBloodReport" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/tv_nicViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv_nicViewBloodReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_labelForNicViewBloodReport"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_nicViewBloodReport" />
+        app:layout_constraintStart_toEndOf="@+id/tv_labelForNicViewBloodReport" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/tv_dateViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="174dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv_dateViewBloodReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_labelForDateViewBloodReport"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_dateViewBloodReport" />
+        app:layout_constraintStart_toEndOf="@+id/tv_labelForDateViewBloodReport" />
 
     <TextView
-        android:id="@+id/tv_timeViewBloodReport"
+        android:id="@+id/tv_labelForTimeViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="@string/tv_timeViewBloodReport"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_dateViewBloodReport" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForDateViewBloodReport" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/tv_timeViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="172dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv_timeViewBloodReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_labelForTimeViewBloodReport"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_timeViewBloodReport" />
+        app:layout_constraintStart_toEndOf="@+id/tv_labelForTimeViewBloodReport" />
 
     <TextView
-        android:id="@+id/tv_hemoglobinViewBloodReport"
+        android:id="@+id/tv_labelForHemoglobinViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="@string/tv_hemoglobinViewBloodReport"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_timeViewBloodReport" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForTimeViewBloodReport" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/tv_hemoglobinViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="127dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv_hemoglobinViewBloodReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_labelForHemoglobinViewBloodReport"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_hemoglobinViewBloodReport" />
+        app:layout_constraintStart_toEndOf="@+id/tv_labelForHemoglobinViewBloodReport" />
 
     <Button
         android:id="@+id/btn_editViewBloodReport"
@@ -185,6 +185,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/yellow"
+        android:onClick="onClickBtnEdit"
         android:text="@string/btn_editViewBloodReport"
         app:layout_constraintEnd_toStartOf="@+id/btn_removeViewBloodReport"
         app:layout_constraintHorizontal_bias="0.5"
@@ -211,6 +212,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
+        android:onClick="onClickBtnBack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
@@ -226,141 +228,141 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_plateletCountViewBloodReport" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForPlateletCountViewBloodReport" />
 
     <TextView
-        android:id="@+id/tv_totalWbcViewBloodReport"
+        android:id="@+id/tv_labelForTotalWbcViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="@string/tv_totalWbcViewBloodReport"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_hemoglobinViewBloodReport" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForHemoglobinViewBloodReport" />
 
     <TextView
-        android:id="@+id/tv_plateletCountViewBloodReport"
+        android:id="@+id/tv_labelForPlateletCountViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="@string/tv_plateletCountViewBloodReport"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_pcbViewBloodReport" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForPcbViewBloodReport" />
 
     <TextView
-        android:id="@+id/tv_pcbViewBloodReport"
+        android:id="@+id/tv_labelForPcbViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="@string/tv_pcbViewBloodReport"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_rbcCountViewBloodReport" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForRbcCountViewBloodReport" />
 
     <TextView
-        android:id="@+id/tv_rbcCountViewBloodReport"
+        android:id="@+id/tv_labelForRbcCountViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="@string/tv_rbcCountViewBloodReport"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_eosinophilsViewBloodReport" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForEosinophilsViewBloodReport" />
 
     <TextView
-        android:id="@+id/tv_neutrophilsViewBloodReport"
+        android:id="@+id/tv_labelForNeutrophilsViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="@string/tv_neutrophilsViewBloodReport"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_totalWbcViewBloodReport" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForTotalWbcViewBloodReport" />
 
     <TextView
-        android:id="@+id/tv_lymphocytesViewBloodReport"
+        android:id="@+id/tv_labelForLymphocytesViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="@string/tv_lymphocytesViewBloodReport"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_neutrophilsViewBloodReport" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForNeutrophilsViewBloodReport" />
 
     <TextView
-        android:id="@+id/tv_eosinophilsViewBloodReport"
+        android:id="@+id/tv_labelForEosinophilsViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="@string/tv_eosinophilsViewBloodReport"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_lymphocytesViewBloodReport" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForLymphocytesViewBloodReport" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/tv_totalWbcViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="97dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv_totalWbcViewBloodReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_labelForTotalWbcViewBloodReport"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_totalWbcViewBloodReport" />
+        app:layout_constraintStart_toEndOf="@+id/tv_labelForTotalWbcViewBloodReport" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/tv_pcbViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="176dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv_pcbViewBloodReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_labelForPcbViewBloodReport"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_pcbViewBloodReport" />
+        app:layout_constraintStart_toEndOf="@+id/tv_labelForPcbViewBloodReport" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/tv_rbcCountViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="136dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv_rbcCountViewBloodReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_labelForRbcCountViewBloodReport"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_rbcCountViewBloodReport" />
+        app:layout_constraintStart_toEndOf="@+id/tv_labelForRbcCountViewBloodReport" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/tv_neutrophilsViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="131dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv_neutrophilsViewBloodReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_labelForNeutrophilsViewBloodReport"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_neutrophilsViewBloodReport" />
+        app:layout_constraintStart_toEndOf="@+id/tv_labelForNeutrophilsViewBloodReport" />
 
     <TextView
-        android:id="@+id/textView24"
+        android:id="@+id/tv_eosinophilsViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="131dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv_eosinophilsViewBloodReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_labelForEosinophilsViewBloodReport"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_eosinophilsViewBloodReport" />
+        app:layout_constraintStart_toEndOf="@+id/tv_labelForEosinophilsViewBloodReport" />
 
     <TextView
-        android:id="@+id/textView25"
+        android:id="@+id/tv_plateletCountViewBloodReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="115dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv_plateletCountViewBloodReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_labelForPlateletCountViewBloodReport"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_plateletCountViewBloodReport" />
+        app:layout_constraintStart_toEndOf="@+id/tv_labelForPlateletCountViewBloodReport" />
 </androidx.constraintlayout.widget.ConstraintLayout>
