@@ -145,4 +145,65 @@ public class DBHelper extends SQLiteOpenHelper {
 
         return reportList;
     }
+
+    @SuppressLint("Range")
+    public ArrayList getReport(int reportId){
+        SQLiteDatabase db = getReadableDatabase();
+        ArrayList reportDetails = new ArrayList();
+        String query = "SELECT " + ReportsMaster.Reports.COLUMN_NAME_NAME + ", " + ReportsMaster.Reports.COLUMN_NAME_AGE + ", " + ReportsMaster.Reports.COLUMN_NAME_GENDER + ", " + ReportsMaster.Reports.COLUMN_NAME_NIC + ", " + ReportsMaster.Reports.COLUMN_NAME_DATE + ", " + ReportsMaster.Reports.COLUMN_NAME_TIME + ", " + ReportsMaster.Reports.COLUMN_NAME_HEMOGLOBIN + ", " + ReportsMaster.Reports.COLUMN_NAME_WBC + ", " + ReportsMaster.Reports.COLUMN_NAME_NEUTROPHILS + ", " + ReportsMaster.Reports.COLUMN_NAME_LYMPHOCYTES + ", " + ReportsMaster.Reports.COLUMN_NAME_EOSINOPHILS + ", " + ReportsMaster.Reports.COLUMN_NAME_RBC + ", " + ReportsMaster.Reports.COLUMN_NAME_PCB + ", " + ReportsMaster.Reports.COLUMN_NAME_PLATELET + ", " + ReportsMaster.Reports.COLUMN_NAME_COST + " FROM " + ReportsMaster.Reports.TABLE_NAME + " WHERE " + ReportsMaster.Reports._ID + "=" + reportId;
+        Cursor cursor = db.rawQuery(query, null);
+
+        while(cursor.moveToNext()){
+            reportDetails.add(cursor.getString(cursor.getColumnIndex(ReportsMaster.Reports.COLUMN_NAME_NAME)));
+            reportDetails.add(cursor.getString(cursor.getColumnIndex(ReportsMaster.Reports.COLUMN_NAME_AGE)));
+            reportDetails.add(cursor.getString(cursor.getColumnIndex(ReportsMaster.Reports.COLUMN_NAME_GENDER)));
+            reportDetails.add(cursor.getString(cursor.getColumnIndex(ReportsMaster.Reports.COLUMN_NAME_NIC)));
+            reportDetails.add(cursor.getString(cursor.getColumnIndex(ReportsMaster.Reports.COLUMN_NAME_DATE)));
+            reportDetails.add(cursor.getString(cursor.getColumnIndex(ReportsMaster.Reports.COLUMN_NAME_TIME)));
+            reportDetails.add(cursor.getString(cursor.getColumnIndex(ReportsMaster.Reports.COLUMN_NAME_HEMOGLOBIN)));
+            reportDetails.add(cursor.getString(cursor.getColumnIndex(ReportsMaster.Reports.COLUMN_NAME_WBC)));
+            reportDetails.add(cursor.getString(cursor.getColumnIndex(ReportsMaster.Reports.COLUMN_NAME_NEUTROPHILS)));
+            reportDetails.add(cursor.getString(cursor.getColumnIndex(ReportsMaster.Reports.COLUMN_NAME_LYMPHOCYTES)));
+            reportDetails.add(cursor.getString(cursor.getColumnIndex(ReportsMaster.Reports.COLUMN_NAME_EOSINOPHILS)));
+            reportDetails.add(cursor.getString(cursor.getColumnIndex(ReportsMaster.Reports.COLUMN_NAME_RBC)));
+            reportDetails.add(cursor.getString(cursor.getColumnIndex(ReportsMaster.Reports.COLUMN_NAME_PCB)));
+            reportDetails.add(cursor.getString(cursor.getColumnIndex(ReportsMaster.Reports.COLUMN_NAME_PLATELET)));
+            reportDetails.add(cursor.getString(cursor.getColumnIndex(ReportsMaster.Reports.COLUMN_NAME_COST)));
+        }
+
+        return reportDetails;
+    }
+
+    public int updateReport(int reportId, String name, int age, String gender, String nic, String date, String time, double cost, double hemoglobin, int wbc, double neutrophils, double lymphocytes, double eosinophils, double rbc, double pcb, int platelet) {
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(ReportsMaster.Reports.COLUMN_NAME_NAME, name);
+        values.put(ReportsMaster.Reports.COLUMN_NAME_AGE, age);
+        values.put(ReportsMaster.Reports.COLUMN_NAME_GENDER, gender);
+        values.put(ReportsMaster.Reports.COLUMN_NAME_NIC, nic);
+        values.put(ReportsMaster.Reports.COLUMN_NAME_DATE, date);
+        values.put(ReportsMaster.Reports.COLUMN_NAME_TIME, time);
+        values.put(ReportsMaster.Reports.COLUMN_NAME_COST, cost);
+        values.put(ReportsMaster.Reports.COLUMN_NAME_HEMOGLOBIN, hemoglobin);
+        values.put(ReportsMaster.Reports.COLUMN_NAME_WBC, wbc);
+        values.put(ReportsMaster.Reports.COLUMN_NAME_NEUTROPHILS, neutrophils);
+        values.put(ReportsMaster.Reports.COLUMN_NAME_LYMPHOCYTES, lymphocytes);
+        values.put(ReportsMaster.Reports.COLUMN_NAME_EOSINOPHILS, eosinophils);
+        values.put(ReportsMaster.Reports.COLUMN_NAME_RBC, rbc);
+        values.put(ReportsMaster.Reports.COLUMN_NAME_PCB, pcb);
+        values.put(ReportsMaster.Reports.COLUMN_NAME_PLATELET, platelet);
+
+        String selection = ReportsMaster.Reports._ID + " = ?";
+        String[] selectionArgs = {String.valueOf(reportId)};
+
+        int response = db.update(
+                ReportsMaster.Reports.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs
+        );
+
+        return response;
+    }
 }
