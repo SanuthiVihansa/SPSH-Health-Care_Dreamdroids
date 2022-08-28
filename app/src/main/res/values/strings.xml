@@ -57,7 +57,7 @@
     <string name="radioBtn_femaleUpdateReport">Female</string>
     <string name="tv_labelForNicUpdateReport">NIC belongs to the Account</string>
     <string name="et_labelForNicUpdateReport">NIC number</string>
-    <string name="tv_costUpdateReport">Rs. 0.00</string>
+    <string name="tv_costUpdateReport">400.00</string>
     <string name="tv_labelForTimeUpdateReport">Time</string>
     <string name="tv_labelForHimoglobinUpdateReport">Hemoglobin</string>
     <string name="tv_unitForHemoglobinUpdateReport">g</string>
