@@ -261,18 +261,17 @@
         android:inputType="time"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_costUpdateReport"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.886"
+        app:layout_constraintHorizontal_bias="0.871"
         app:layout_constraintStart_toEndOf="@+id/tv_costUpdateReport" />
 
     <TextView
         android:id="@+id/tv_costUpdateReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/tv_costUpdateReport"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_dateUpdateReport" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_unitForCostUpdateReport"
+        app:layout_constraintStart_toEndOf="@+id/tv_unitForCostUpdateReport" />
 
     <EditText
         android:id="@+id/et_labelForHimoglobinUpdateReport"
@@ -314,7 +313,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/tv_labelForHimoglobinUpdateReport"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_costUpdateReport" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_unitForCostUpdateReport" />
 
     <TextView
         android:id="@+id/tv_unitForHemoglobinUpdateReport"
@@ -399,6 +398,7 @@
         android:layout_marginStart="92dp"
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/yellow"
+        android:onClick="onClickBtnUpdate"
         android:text="@string/btn_submitUpdateReport"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_labelForPcbUpdateReport" />
@@ -421,7 +421,17 @@
         android:text="@string/tv_labelForTimeUpdateReport"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_dateUpdateReport"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.568"
-        app:layout_constraintStart_toEndOf="@+id/tv_dateUpdateReport" />
+        app:layout_constraintHorizontal_bias="0.586"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_unitForCostUpdateReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_unitForCost"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dateUpdateReport" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
