@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
@@ -51,6 +53,23 @@ public class AddReport extends AppCompatActivity {
 
         this.date.setText(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
 
+        this.time.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                calculateCost();
+            }
+        });
+
     }
 
     public void onClickBtnSubmit(View view){
@@ -73,10 +92,10 @@ public class AddReport extends AppCompatActivity {
         String gender;
 
         if(male.isChecked()){
-            gender = "male";
+            gender = "Male";
         }
         else{
-            gender = "female";
+            gender = "Female";
         }
 
         DBHelper dbHelper = new DBHelper(this);
@@ -94,5 +113,12 @@ public class AddReport extends AppCompatActivity {
             Toast.makeText(this, "Something went wrong!", Toast.LENGTH_LONG).show();
         }
 
+    }
+
+    public void calculateCost(){
+        int time = 0;
+        if(this.time.getText().toString().length() > 1) {
+            time = Integer.parseInt(this.time.getText().toString().substring(0, 2));
+        }
     }
 }
