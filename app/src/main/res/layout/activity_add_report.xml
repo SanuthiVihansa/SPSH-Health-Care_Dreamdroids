@@ -142,7 +142,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/tv_unitForCost"
+        android:id="@+id/tv_unitForCostAddReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -157,8 +157,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="@string/tv_costAddReport"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv_unitForCost"
-        app:layout_constraintStart_toEndOf="@+id/tv_unitForCost" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_unitForCostAddReport"
+        app:layout_constraintStart_toEndOf="@+id/tv_unitForCostAddReport" />
 
     <EditText
         android:id="@+id/et_timeAddReport"
@@ -181,7 +181,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/tv_labelForHimoglobinAddReport"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_unitForCost" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_unitForCostAddReport" />
 
     <TextView
         android:id="@+id/tv_labelForWbcAddReport"
