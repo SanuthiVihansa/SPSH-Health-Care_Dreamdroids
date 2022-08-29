@@ -53,4 +53,9 @@
     <string name="tv_update_NIC_sathira">NIC :</string>
 
     <string name="btn_Patientupdate_updateBtn_sathira">Update</string>
+
+    <!--Patient View All-->
+    <string name="btn_row_view_sathira">View</string>
+    <string name="tv_allAppointments_heading_sathria">All Appointments</string>
+    <string name="et_allAppointments_SearchHint_sathria">Search…</string>
 </resources>
