@@ -22,18 +22,26 @@ import java.util.Date;
 
 public class AddReport extends AppCompatActivity {
 
+    // Variables declaration
     EditText patientName, age, nic, time, hemoglobin, wbc, neutrophils, lymphocytes, eosinophils, rbc, pcb, platelet;
     TextView date, cost;
     RadioButton male, female;
+    double initialCost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Set full screen
         getSupportActionBar().hide();
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         setContentView(R.layout.activity_add_report);
 
+        this.initialCost = 400.00;
+
+        // Initialize variables
         this.patientName = findViewById(R.id.et_labelForPatientNameAddReport);
         this.age = findViewById(R.id.et_labelForPatientAgeAddReport);
         this.male = findViewById(R.id.radioBtn_maleAddReport);
@@ -51,6 +59,7 @@ public class AddReport extends AppCompatActivity {
         this.pcb = findViewById(R.id.et_labelForPcbAddReport);
         this.platelet = findViewById(R.id.et_labelForPlateletAddReport);
 
+        // Get system date and set
         this.date.setText(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
 
         this.time.addTextChangedListener(new TextWatcher() {
@@ -115,10 +124,22 @@ public class AddReport extends AppCompatActivity {
 
     }
 
+    public void onClickBtnBack(View view){
+        Intent intent = new Intent(this, LabHome.class);
+        startActivity(intent);
+    }
+
     public void calculateCost(){
         int time = 0;
+        double cost = initialCost;
         if(this.time.getText().toString().length() > 1) {
             time = Integer.parseInt(this.time.getText().toString().substring(0, 2));
+
+            if (time > 11){
+                cost = cost * 2;
+            }
+
+            this.cost.setText(String.valueOf(cost));
         }
     }
 }
