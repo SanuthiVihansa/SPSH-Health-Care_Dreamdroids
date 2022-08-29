@@ -28,4 +28,9 @@ public class LabHome extends AppCompatActivity {
         Intent intent = new Intent(this, AddReport.class);
         startActivity(intent);
     }
+
+    public void onClickBtnBack(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }
