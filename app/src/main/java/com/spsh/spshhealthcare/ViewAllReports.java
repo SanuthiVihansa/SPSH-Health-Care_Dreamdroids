@@ -57,4 +57,9 @@ public class ViewAllReports extends AppCompatActivity {
 
     }
 
+    public void onClickBtnBack(View view){
+        Intent intent = new Intent(this, LabHome.class);
+        startActivity(intent);
+    }
+
 }
