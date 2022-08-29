@@ -18,15 +18,30 @@
         android:layout_below = "@+id/tv_pharmaItemCode"
         android:textSize = "18sp"
         android:layout_marginTop = "7dp"/> <!--This is to set the item code above the item name-->
-
-    <Button
-        android:i = "@+id/btn_pharmaView"
+    <TextView
+        android:id="@+id/tv_pharmUsage"
         android:layout_width = "wrap_content"
         android:layout_height = "wrap_content"
-        android:layout_alignBaseline = "@id/tv_pharmaItemCode"
+        android:layout_below = "@+id/tv_pharmItemName"
+        android:textSize = "18sp"
+        android:layout_marginTop = "7dp"/>
+    <Button
+        android:id = "@+id/btn_pharmaView"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:layout_alignBaseline = "@id/tv_pharmItemName"
         android:layout_alignParentEnd = "true"
         android:contentDescription = "@string/btn_pharmaView"
         android:text="@string/btn_pharmaView" />
+
+    <TextView
+        android:id="@+id/tv_pharmIdTextView"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:textSize = "18sp"
+        android:layout_marginTop = "7dp"
+        android:visibility="invisible"/>
+
 
 
 
