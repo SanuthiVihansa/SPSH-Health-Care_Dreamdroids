@@ -10,7 +10,9 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.spsh.spshhealthcare.database.DBHelper;
 
 import java.util.ArrayList;
@@ -69,7 +71,7 @@ public class UpdateReport extends AppCompatActivity {
         this.rbc.setText((String)reportDetails.get(11));
         this.pcb.setText((String)reportDetails.get(12));
         this.platelet.setText((String)reportDetails.get(13));
-        this.cost.setText((String)reportDetails.get(14));
+        this.cost.setText((String)reportDetails.get(14) + ".00");
 
         if(this.gender.equals("Male")){
             this.male.setChecked(true);
@@ -88,7 +90,7 @@ public class UpdateReport extends AppCompatActivity {
         String date = this.date.getText().toString();
         String time = this.time.getText().toString();
         double cost = Double.parseDouble(this.cost.getText().toString());
-        double hemoglopbin = Double.parseDouble(this.hemoglobin.getText().toString());
+        double hemoglobin = Double.parseDouble(this.hemoglobin.getText().toString());
         int wbc = Integer.parseInt(this.wbc.getText().toString());
         double neutrophils = Double.parseDouble(this.neutrophils.getText().toString());
         double lymphocytes = Double.parseDouble(this.lymphocytes.getText().toString());
@@ -104,5 +106,24 @@ public class UpdateReport extends AppCompatActivity {
             this.gender = "Female";
         }
 
+        int response = this.dbHelper.updateReport(this.reportId, name, age, this.gender, nic, date, time, cost, hemoglobin, wbc, neutrophils, lymphocytes, eosinophils, rbc, pcb, platelet);
+
+        if(response > 0){
+            Toast.makeText(this, "Successful", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, ViewAllReports.class);
+            startActivity(intent);
+        }
+        else{
+            Snackbar snackbar = Snackbar.make(view, "Update Failed !", Snackbar.LENGTH_LONG);
+            snackbar.setAnimationMode(Snackbar.ANIMATION_MODE_SLIDE);
+            snackbar.show();
+        }
+
+    }
+
+    public void onClickBtnBack(View view){
+        Intent intent = new Intent(this, ViewReport.class);
+        intent.putExtra("reportId", String.valueOf(this.reportId));
+        startActivity(intent);
     }
 }
