@@ -12,8 +12,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Give the page that you want to emulate
-        Intent intent = new Intent(this, Patient_Add.class);
+        Intent intent = new Intent(this, Patient_Home.class);
         startActivity(intent);
-        //
     }
 }
