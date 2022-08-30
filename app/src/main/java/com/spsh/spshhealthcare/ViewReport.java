@@ -1,14 +1,18 @@
 package com.spsh.spshhealthcare;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.spsh.spshhealthcare.database.DBHelper;
 
 import java.util.ArrayList;
@@ -17,6 +21,7 @@ public class ViewReport extends AppCompatActivity {
 
     TextView tv_name, tv_age, tv_gender, tv_nic, tv_date, tv_time, tv_hemoglobin, tv_wbc, tv_neutrophils, tv_lymphocytes, tv_eosinophils, tv_rbc, tv_pcb, tv_platelet, tv_cost;
     int reportId;
+    DBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +50,7 @@ public class ViewReport extends AppCompatActivity {
         this.tv_platelet = findViewById(R.id.tv_plateletCountViewBloodReport);
         this.tv_cost = findViewById(R.id.tv_costViewBloodReport);
 
-        DBHelper dbHelper = new DBHelper(this);
+        this.dbHelper = new DBHelper(this);
         ArrayList reportDetails = dbHelper.getReport(reportId);
 
         this.tv_name.setText(": " + (String)reportDetails.get(0));
@@ -75,5 +80,35 @@ public class ViewReport extends AppCompatActivity {
         Intent intent = new Intent(this, UpdateReport.class);
         intent.putExtra("reportId", String.valueOf(this.reportId));
         startActivity(intent);
+    }
+
+    public void onClickBtnRemove(View view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Remove this report?");
+        builder.setMessage("Are you sure you want to remove this report?\n\nNOTE : This cannot be undone.");
+        builder.setPositiveButton("Remove", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                int response = ViewReport.this.dbHelper.removeReport(ViewReport.this.reportId);
+                if(response > 0) {
+                    Toast.makeText(ViewReport.this, "Report Successfully Removed !", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(ViewReport.this, ViewAllReports.class);
+                    startActivity(intent);
+                }
+                else {
+                    Snackbar snackbar = Snackbar.make(view, "Something went wrong !", Snackbar.LENGTH_LONG);
+                    snackbar.setAnimationMode(Snackbar.ANIMATION_MODE_SLIDE);
+                    snackbar.show();
+                }
+            }
+        });
+        builder.setNegativeButton("Back", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.create();
+        builder.show();
     }
 }
