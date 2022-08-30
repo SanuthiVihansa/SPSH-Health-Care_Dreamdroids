@@ -206,4 +206,13 @@ public class DBHelper extends SQLiteOpenHelper {
 
         return response;
     }
+
+    public int removeReport(int reportId) {
+        SQLiteDatabase db = getReadableDatabase();
+
+        String selection = ReportsMaster.Reports._ID + " LIKE ?";
+        String[] stringArgs = {String.valueOf(reportId)};
+
+        return db.delete(ReportsMaster.Reports.TABLE_NAME, selection, stringArgs);
+    }
 }
