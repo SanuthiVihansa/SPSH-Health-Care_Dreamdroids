@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class dbHelper extends SQLiteOpenHelper {
+public class DBHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "SPSH.db";
 
-    public dbHelper(Context context) {
+    public DBHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
 
@@ -22,18 +22,19 @@ public class dbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String SQL_CREATE_ENTRIES =
-                "CREATE TABLE " + PharmacyMaster.Pharmacy.TABLE_NAME + " (" +
-                        PharmacyMaster.Pharmacy._ID + " INTEGER PRIMARY KEY, " +
-                        PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMCODE + "TEXT," +
-                        PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMNAME + "TEXT," +
-                        PharmacyMaster.Pharmacy.COLOUMN_NAME_PRODUCERNAME + "TEXT," +
-                        PharmacyMaster.Pharmacy.COLOUMN_NAME_USAGE + "TEXT," +
-                        PharmacyMaster.Pharmacy.COLOUMN_NAME_STRENGTH + "INTEGER," +
-                        PharmacyMaster.Pharmacy.COLOUMN_NAME_EXPIRATIONDATE + "TEXT," +
-                        PharmacyMaster.Pharmacy.COLOUMN_NAME_MANUFACTURINGDATE + "TEXT," +
-                        PharmacyMaster.Pharmacy.COLOUMN_NAME_UNITPRICE + "REAL," +
-                        PharmacyMaster.Pharmacy.COLOUMN_NAME_DESCRIPTION + "TEXT)";
+                "CREATE TABLE "+PharmacyMaster.Pharmacy.TABLE_NAME+" ("+
+                        PharmacyMaster.Pharmacy._ID+ " INTEGER PRIMARY KEY, " +
+                        PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMCODE + " TEXT, "+
+                        PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMNAME + " TEXT, "+
+                        PharmacyMaster.Pharmacy.COLOUMN_NAME_PRODUCERNAME + " TEXT, "+
+                        PharmacyMaster.Pharmacy.COLOUMN_NAME_USAGE + " TEXT, "+
+                        PharmacyMaster.Pharmacy.COLOUMN_NAME_STRENGTH + " INTEGER, "+
+                        PharmacyMaster.Pharmacy.COLOUMN_NAME_EXPIRATIONDATE + " TEXT, "+
+                        PharmacyMaster.Pharmacy.COLOUMN_NAME_MANUFACTURINGDATE + " TEXT, "+
+                        PharmacyMaster.Pharmacy.COLOUMN_NAME_UNITPRICE+ " REAL, "+
+                        PharmacyMaster.Pharmacy.COLOUMN_NAME_DESCRIPTION+ " TEXT)";
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
+
 
     }
 
@@ -122,14 +123,14 @@ public class dbHelper extends SQLiteOpenHelper {
 
     //Read all data
     @SuppressLint("Range")
-    public ArrayList<HashMap<String,String>>readAllInfo() {
-        SQLiteDatabase db = getReadableDatabase();
+    public ArrayList<HashMap<String,String>> readAllInfo() {
+        SQLiteDatabase sqldb = getReadableDatabase();
         ArrayList<HashMap<String, String>> allPharmacyEquipments = new ArrayList<>();
 
         //Sql query
         String query = "SELECT " + PharmacyMaster.Pharmacy._ID + ", " + PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMCODE + ", " + PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMNAME + ", " + PharmacyMaster.Pharmacy.COLOUMN_NAME_USAGE + " FROM " + PharmacyMaster.Pharmacy.TABLE_NAME;
 
-        Cursor cursor = db.rawQuery(query,null);
+        Cursor cursor = sqldb.rawQuery(query,null);
 
         while (cursor.moveToNext()) {
             //To get one leave request

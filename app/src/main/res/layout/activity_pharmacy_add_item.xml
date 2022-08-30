@@ -270,9 +270,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
+        android:backgroundTint="#F39204"
+        android:onClick="AddItem"
         android:text="@string/btn_pSubmit"
         app:layout_constraintEnd_toEndOf="parent"
-        android:backgroundTint="#F39204"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_pdescription" />
 

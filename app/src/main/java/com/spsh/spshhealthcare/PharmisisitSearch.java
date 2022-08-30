@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import database.PharmacyMaster;
-import database.dbHelper;
+import database.DBHelper;
 
 public class PharmisisitSearch extends AppCompatActivity {
 
@@ -34,7 +34,7 @@ public class PharmisisitSearch extends AppCompatActivity {
         //Initialising the listview
         listView = findViewById(R.id.lv_PlistView);
 
-        dbHelper helper = new dbHelper(this);
+        DBHelper helper = new DBHelper(this);
 
         ArrayList<HashMap<String, String>> allPharmacyEquip = helper.readAllInfo();
 

@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import database.DBHelper;
 
 public class PharmacyAddItem extends AppCompatActivity {
 
@@ -47,6 +50,16 @@ public class PharmacyAddItem extends AppCompatActivity {
         String ManuDate = et_manuDate.getText().toString();
         String ExpDate = et_expDate.getText().toString();
         Double Price = Double.parseDouble(et_pprice.getText().toString());
+        String description = et_pdescription.getText().toString();
+        DBHelper dbHelper = new DBHelper(this);
+
+        long inserted = dbHelper.addInfo(Itemcode, Itemname,ProducerName ,Usage,Strength,ManuDate,ExpDate,Price,description);
+
+        if (inserted > 0) {
+            Toast.makeText(this, "Data successfully added", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "inserted value " + inserted, Toast.LENGTH_SHORT).show();
+        }
 
 
 

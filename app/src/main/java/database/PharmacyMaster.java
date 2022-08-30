@@ -6,16 +6,16 @@ public final class PharmacyMaster{
     private PharmacyMaster (){} //Constructor
 
     public static class Pharmacy implements BaseColumns{
-        public static final String TABLE_NAME="Pharmacy"; //Table name
-        public static final String COLOUMN_NAME_ITEMCODE = "Item Code";
-        public static final String COLOUMN_NAME_ITEMNAME = "Item Name";
-        public static final String COLOUMN_NAME_PRODUCERNAME = "Producer Name";
-        public static final String COLOUMN_NAME_USAGE = "Usage";
-        public static final String COLOUMN_NAME_STRENGTH = "Strength";
-        public static final String COLOUMN_NAME_EXPIRATIONDATE = "Expiration date";
-        public static final String COLOUMN_NAME_MANUFACTURINGDATE = "Manufacturing date";
-        public static final String COLOUMN_NAME_UNITPRICE = "Unit price";
-        public static final String COLOUMN_NAME_DESCRIPTION = "Description";
+        public static final String TABLE_NAME="pharmacy"; //Table name
+        public static final String COLOUMN_NAME_ITEMCODE = "itemcode";
+        public static final String COLOUMN_NAME_ITEMNAME = "item_name";
+        public static final String COLOUMN_NAME_PRODUCERNAME = "producer_name";
+        public static final String COLOUMN_NAME_USAGE = "usage";
+        public static final String COLOUMN_NAME_STRENGTH = "strength";
+        public static final String COLOUMN_NAME_EXPIRATIONDATE = "expiration_date";
+        public static final String COLOUMN_NAME_MANUFACTURINGDATE = "manufacturing_date";
+        public static final String COLOUMN_NAME_UNITPRICE = "unit_price";
+        public static final String COLOUMN_NAME_DESCRIPTION = "description";
 
 
     }
