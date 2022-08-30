@@ -199,6 +199,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/red"
+        android:onClick="onClickBtnRemove"
         android:text="@string/btn_removeViewBloodReport"
         app:layout_constraintBaseline_toBaselineOf="@+id/btn_editViewBloodReport"
         app:layout_constraintEnd_toEndOf="parent"
