@@ -109,7 +109,7 @@ public class UpdateReport extends AppCompatActivity {
         int response = this.dbHelper.updateReport(this.reportId, name, age, this.gender, nic, date, time, cost, hemoglobin, wbc, neutrophils, lymphocytes, eosinophils, rbc, pcb, platelet);
 
         if(response > 0){
-            Toast.makeText(this, "Successful", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Report Details Updated !", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, ViewAllReports.class);
             startActivity(intent);
         }
