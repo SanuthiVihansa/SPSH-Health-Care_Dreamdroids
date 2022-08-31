@@ -92,7 +92,8 @@ public class DBHelper extends SQLiteOpenHelper {
             String strength = cursor.getString(cursor.getColumnIndexOrThrow(PharmacyMaster.Pharmacy.COLOUMN_NAME_STRENGTH));
             String expirationDate = cursor.getString(cursor.getColumnIndexOrThrow(PharmacyMaster.Pharmacy.COLOUMN_NAME_EXPIRATIONDATE));
             String manufactureDate = cursor.getString(cursor.getColumnIndexOrThrow(PharmacyMaster.Pharmacy.COLOUMN_NAME_MANUFACTURINGDATE));
-            String description = cursor.getString(cursor.getColumnIndexOrThrow(PharmacyMaster.Pharmacy.COLOUMN_NAME_USAGE));
+            String unitPrice = cursor.getString(cursor.getColumnIndexOrThrow(PharmacyMaster.Pharmacy.COLOUMN_NAME_UNITPRICE));
+            String description = cursor.getString(cursor.getColumnIndexOrThrow(PharmacyMaster.Pharmacy.COLOUMN_NAME_DESCRIPTION));
         }
         cursor.close();
         return info;
@@ -121,7 +122,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    //Read all data
+    //Search and display all data
     @SuppressLint("Range")
     public ArrayList<HashMap<String,String>> readAllInfo() {
         SQLiteDatabase sqldb = getReadableDatabase();
@@ -145,6 +146,35 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         return allPharmacyEquipments;
     }
+
+    //PharmasistViewpage one specific item
+    @SuppressLint("Range")
+    public ArrayList oneSpecificInfo(int pharmacyEquipID) {
+        SQLiteDatabase sqldb = getReadableDatabase();
+        ArrayList pharmacyEquipments = new ArrayList<>();
+
+        //Sql query
+        String query = "SELECT " + PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMCODE + ", " + PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMNAME + ", " + PharmacyMaster.Pharmacy.COLOUMN_NAME_PRODUCERNAME + ", " + PharmacyMaster.Pharmacy.COLOUMN_NAME_USAGE+ " , " +PharmacyMaster.Pharmacy.COLOUMN_NAME_STRENGTH +", "+PharmacyMaster.Pharmacy.COLOUMN_NAME_EXPIRATIONDATE + ", "+PharmacyMaster.Pharmacy.COLOUMN_NAME_MANUFACTURINGDATE+ ", "+PharmacyMaster.Pharmacy.COLOUMN_NAME_UNITPRICE+", "+PharmacyMaster.Pharmacy.COLOUMN_NAME_DESCRIPTION+" FROM " + PharmacyMaster.Pharmacy.TABLE_NAME +" WHERE "+ PharmacyMaster.Pharmacy._ID +"="+String.valueOf(pharmacyEquipID);
+
+        Cursor cursor = sqldb.rawQuery(query,null);
+
+        while (cursor.moveToNext()) {
+            //To get one leave request
+
+            pharmacyEquipments.add(cursor.getString(cursor.getColumnIndex(PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMCODE)));
+            pharmacyEquipments.add(cursor.getString(cursor.getColumnIndex(PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMNAME)));
+            pharmacyEquipments.add(cursor.getString(cursor.getColumnIndex(PharmacyMaster.Pharmacy.COLOUMN_NAME_PRODUCERNAME)));
+            pharmacyEquipments.add(cursor.getString(cursor.getColumnIndex(PharmacyMaster.Pharmacy.COLOUMN_NAME_USAGE)));
+            pharmacyEquipments.add(cursor.getString(cursor.getColumnIndex(PharmacyMaster.Pharmacy.COLOUMN_NAME_STRENGTH)));
+            pharmacyEquipments.add(cursor.getString(cursor.getColumnIndex(PharmacyMaster.Pharmacy.COLOUMN_NAME_EXPIRATIONDATE)));
+            pharmacyEquipments.add(cursor.getString(cursor.getColumnIndex(PharmacyMaster.Pharmacy.COLOUMN_NAME_MANUFACTURINGDATE)));
+            pharmacyEquipments.add(cursor.getString(cursor.getColumnIndex(PharmacyMaster.Pharmacy.COLOUMN_NAME_UNITPRICE)));
+            pharmacyEquipments.add(cursor.getString(cursor.getColumnIndex(PharmacyMaster.Pharmacy.COLOUMN_NAME_DESCRIPTION)));
+
+        }
+        return pharmacyEquipments;
+    }
+
 
 
 }
