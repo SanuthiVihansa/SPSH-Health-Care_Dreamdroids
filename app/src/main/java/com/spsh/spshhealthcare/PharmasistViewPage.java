@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,6 +22,8 @@ import database.PharmacyMaster;
 
 public class PharmasistViewPage extends AppCompatActivity {
      TextView tv_pvItemCodeD,tv_pvItemNameD,tv_pvProducerNameD,tv_pvUsageD,tv_pvStrengthD,tv_manuDateD,tv_pvexpirationdateD,tv_pvpriceD,tv_pvDescriptionD;
+    private String pharmaEqID;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +34,7 @@ public class PharmasistViewPage extends AppCompatActivity {
         setContentView(R.layout.activity_pharmasist_view_page);
 
         Intent intent = getIntent();
-        String pharmaEqID = intent.getStringExtra("PharamcyEquipID");
+        this.pharmaEqID = intent.getStringExtra("PharamcyEquipID");
 
 
         DBHelper helper = new DBHelper(this);
@@ -58,7 +61,16 @@ public class PharmasistViewPage extends AppCompatActivity {
         tv_pvexpirationdateD.setText((String)pharmacyEquipments.get(5));
         tv_pvpriceD.setText((String)pharmacyEquipments.get(7));
         tv_pvDescriptionD.setText((String)pharmacyEquipments.get(8));
-
-
     }
+    public void deleteUser(View view) {
+        DBHelper dbHelper = new DBHelper(this);
+        dbHelper.deleteInfo(Integer.parseInt(this.pharmaEqID));
+
+        Toast.makeText(this,  "Pharmacy equipment is deleted", Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(PharmasistViewPage.this, PharmisisitSearch.class);
+        startActivity(intent);
+
+        }
+
 }

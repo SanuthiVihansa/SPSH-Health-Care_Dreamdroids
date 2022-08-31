@@ -104,23 +104,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    //Delete
-    public void deleteInfo(String itemCode, String itemName, String producerName, String usage, Integer strength, String expirationDate, String manufactureDate, Double unitPrice, String description) {
-        //Use Readable to check if data is available --> "getReadableDATABASE"
-        SQLiteDatabase db = getReadableDatabase();
-
-        //Where we check if the value is there.
-        //Check if the username is equal or similar to the one that we are passing.
-        String selection = PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMCODE + "LIKE ?";
-
-
-        //Pass the columns as an array.
-        String[] stringArgs = {itemCode};
-
-        //delete the  query
-        db.delete((PharmacyMaster.Pharmacy.TABLE_NAME), selection, stringArgs);
-
-    }
 
     //Search and display all data
     @SuppressLint("Range")
@@ -173,6 +156,23 @@ public class DBHelper extends SQLiteOpenHelper {
 
         }
         return pharmacyEquipments;
+    }
+
+    //DELETE CRUD
+
+
+    public void deleteInfo(int pharmacyEquipID){
+
+        SQLiteDatabase db = getReadableDatabase();
+
+        String selection = PharmacyMaster.Pharmacy._ID + " LIKE ?";
+
+        //Pass the columns as an array.
+        String[] stringArgs = {String.valueOf(pharmacyEquipID)};
+
+        //delete the  query
+        db.delete((PharmacyMaster.Pharmacy.TABLE_NAME),selection,stringArgs);
+
     }
 
 
