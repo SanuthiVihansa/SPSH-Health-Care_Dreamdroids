@@ -103,6 +103,23 @@ public class DBHelper extends SQLiteOpenHelper {
         return patients;
     }
 
+    @SuppressLint("Range")
+    public boolean validateUser(String nic, String password) {
+        SQLiteDatabase db = getReadableDatabase();
+        String query = "SELECT " + PatientsMaster.Patients.COLUMN_NAME_PASSWORD + " FROM " + PatientsMaster.Patients.TABLE_NAME + " WHERE " + PatientsMaster.Patients.COLUMN_NAME_NIC + "='" + nic + "'";
+        Cursor cursor = db.rawQuery(query, null);
+        String correctPW = null;
+
+        while (cursor.moveToNext()) {
+            correctPW = cursor.getString(cursor.getColumnIndex(PatientsMaster.Patients.COLUMN_NAME_PASSWORD));
+        }
+
+        if(password.equals(correctPW))
+            return true;
+        else
+            return false;
+    }
+
     public long addReport(String name, int age, String gender, String nic, String date, String time, double cost, double hemoglobin, int wbc, double neutrophils, double lymphocytes, double eosinophils, double rbc, double pcb, int platelet){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
