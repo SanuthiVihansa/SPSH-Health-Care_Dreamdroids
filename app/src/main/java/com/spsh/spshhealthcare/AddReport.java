@@ -83,16 +83,16 @@ public class AddReport extends AppCompatActivity {
 
     public void onClickBtnSubmit(View view){
         String name = this.patientName.getText().toString();
-        int age = Integer.parseInt(this.age.getText().toString());
+        String age = this.age.getText().toString();
         String nic = this.nic.getText().toString();
         String date = this.date.getText().toString();
         String time = this.time.getText().toString();
 
-        double cost = Double.parseDouble(this.cost.getText().toString());
+        String cost = this.cost.getText().toString();
 
-        double hemoglobin = Double.parseDouble(this.hemoglobin.getText().toString());
-        int wbc = Integer.parseInt(this.wbc.getText().toString());
-        double neutrophils = Double.parseDouble(this.neutrophils.getText().toString());
+        String hemoglobin = this.hemoglobin.getText().toString();
+        String wbc = this.wbc.getText().toString();
+        String neutrophils = this.neutrophils.getText().toString();
         double lymphocytes = Double.parseDouble(this.lymphocytes.getText().toString());
         double eosinophils = Double.parseDouble(this.eosinophils.getText().toString());
         double rbc = Double.parseDouble(this.rbc.getText().toString());
@@ -107,9 +107,16 @@ public class AddReport extends AppCompatActivity {
             gender = "Female";
         }
 
+        if(name.isEmpty()) {
+            this.patientName.setError("Name is required!");
+        }
+        else{
+
+        }
+
         DBHelper dbHelper = new DBHelper(this);
 
-        long added = dbHelper.addReport(name, age, gender, nic, date, time, cost, hemoglobin, wbc, neutrophils, lymphocytes, eosinophils, rbc, pcb, platelet);
+        long added = dbHelper.addReport(name, Integer.parseInt(age), gender, nic, date, time, Double.parseDouble(cost), Double.parseDouble(hemoglobin), Integer.parseInt(wbc), Double.parseDouble(neutrophils), lymphocytes, eosinophils, rbc, pcb, platelet);
 
         if(added > 0){
             Toast.makeText(this, "Report Successfully Added !", Toast.LENGTH_LONG).show();
