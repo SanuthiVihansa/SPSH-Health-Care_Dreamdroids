@@ -8,8 +8,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.spsh.spshhealthcare.database.DBHelper;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    DBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
 
-
+        this.dbHelper = new DBHelper(this);
     }
 
     public void onClickLoginBtn(View view){
@@ -35,24 +42,32 @@ public class MainActivity extends AppCompatActivity {
         else if(password.length()==0){
             et_passwordLogin.setError("This field is required!");
         }
+        //Lab login process
+        else if(username.equals("lab@spsh.lk") && password.equals("spshadmin")){
+            Intent intent = new Intent(this, LabHome.class);
+            startActivity(intent);
+        }
+        //Hospital login process
+        else if (username.equals("hospital@spsh.lk") && password.equals("spshadmin")){
+
+        }
+        //Pharmacy login process
+        else if(username.equals("pharmacy@spsh.lk") && password.equals("spshadmin")){
+
+        }
         else{
-            //Lab login process
-            if(username.equals("lab@spsh.lk") && password.equals("spshadmin")){
+            //patient login process
+            boolean isValidated = this.dbHelper.validateUser(username, password);
+
+            if(isValidated == true) {
                 Intent intent = new Intent(this, LabHome.class);
+                intent.putExtra("nic", username);
                 startActivity(intent);
             }
-            //Hospital login process
-            else if (username.equals("hospital@spsh.lk") && password.equals("spshadmin")){
-
-            }
-            //Pharmacy login process
-            else if(username.equals("pharmacy@spsh.lk") && password.equals("spshadmin")){
-
-            }
-            else{
-                //patient login process
-            }
+            else
+                Toast.makeText(this, "Invalid Credentials !", Toast.LENGTH_SHORT).show();
         }
+
     }
 
     public void onClickSignupBtn(View view){
