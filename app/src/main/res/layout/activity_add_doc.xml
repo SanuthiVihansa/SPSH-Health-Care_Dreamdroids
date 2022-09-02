@@ -16,7 +16,7 @@
         android:layout_marginEnd="32dp"
         android:text="ADD DOCTOR"
         android:textColor="#0B0909"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,7 +30,7 @@
         android:layout_marginEnd="24dp"
         android:text="Doctor Name :"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/et1_ADD_DOC_Name"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +45,7 @@
         android:hint="@string/et1_doc_name_AddDocForm"
         android:inputType="textPersonName"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv2_ADD_DOc_Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -61,7 +61,7 @@
         android:layout_marginEnd="24dp"
         android:text="Speciality :"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/et2_ADD_DOC_Speciality"
         app:layout_constraintHorizontal_bias="0.882"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,7 +75,7 @@
         android:ems="10"
         android:hint="@string/et2_Speciality_AddDocForm"
         android:inputType="textPersonName"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv2_ADD_DOC_Speciality"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -91,7 +91,7 @@
         android:layout_marginEnd="24dp"
         android:text="Working Place :"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/et3_ADD_DOC_workingplace"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -105,7 +105,7 @@
         android:ems="10"
         android:hint="@string/et3_WorkingPlace_AddDocForm"
         android:inputType="textPersonName"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_3_ADD_DOC_Workingplace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -121,7 +121,7 @@
         android:layout_marginEnd="24dp"
         android:text="Experience :"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/et4_ADD_DOC_Experience"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_3_ADD_DOC_Workingplace" />
@@ -134,7 +134,7 @@
         android:ems="10"
         android:hint="@string/et4_Experience_AddDocForm"
         android:inputType="textPersonName"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv4_ADD_DOC_Experience"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -147,31 +147,15 @@
         android:layout_height="30dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="32dp"
         android:text="Fee :"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/tv6_ADD_DOC_MaxPatients"
-        app:layout_constraintEnd_toStartOf="@+id/et5_ADD_DOC_Fee"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@+id/et_Fee_ADD_DOC"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv4_ADD_DOC_Experience"
         app:layout_constraintVertical_bias="0.309" />
-
-    <EditText
-        android:id="@+id/et5_ADD_DOC_Fee"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:ems="10"
-        android:hint="@string/et5_Fee_AddDocForm"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv5_ADD_DOC_Fee"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tv5_ADD_DOC_Fee"
-        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/tv6_ADD_DOC_MaxPatients"
@@ -181,7 +165,7 @@
         android:layout_marginTop="32dp"
         android:text="Maximum Patients :"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv5_ADD_DOC_Fee" />
 
@@ -194,8 +178,10 @@
         android:ems="10"
         android:hint="@string/numEdt_ADD_DOC_MaxPat"
         android:inputType="number"
+        android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv6_ADD_DOC_MaxPatients"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/tv6_ADD_DOC_MaxPatients"
         tools:ignore="TouchTargetSizeCheck" />
 
@@ -208,23 +194,36 @@
         android:layout_marginEnd="32dp"
         android:onClick="saveDoctor"
         android:text="@string/bt1_ADD_DOC_Submit"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv6_ADD_DOC_MaxPatients" />
 
     <Button
         android:id="@+id/btn2_ADD_DOC_Back"
-        android:layout_width="104dp"
-        android:layout_height="47dp"
+        android:layout_width="138dp"
+        android:layout_height="72dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/teal_200"
         android:onClick="back"
         android:text="@string/btn2_ADD_DOC_Back"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt1_ADD_DOC_Submit"
         tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/et_Fee_ADD_DOC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:hint="@string/et_Fee_ADD_DOC"
+        android:inputType="numberDecimal"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv5_ADD_DOC_Fee"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

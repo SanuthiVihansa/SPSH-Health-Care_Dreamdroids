@@ -15,7 +15,7 @@
         android:layout_marginEnd="32dp"
         android:text="@string/tv1_Doc_Profile"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,8 +28,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:text="@string/tv2_Doc_Profile_Name"
         android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv1_Doc_Profile" />
@@ -41,9 +41,10 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:text="@string/TV3_DOC_PROFILE_Speciality"
         android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv2_Doc_Profile_Name" />
 
@@ -54,8 +55,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:text="@string/tv4_Doc_Profile_WorkingPlace"
         android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TV3_DOC_PROFILE_Speciality" />
@@ -67,9 +68,10 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:text="@string/tv5_Doc_Profile_Experience"
         android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv4_Doc_Profile_WorkingPlace" />
 
@@ -80,9 +82,10 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:text="@string/tv6_Doc_Profile_Fee"
         android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv5_Doc_Profile_Experience" />
 
@@ -90,12 +93,12 @@
         android:id="@+id/BTN1_DOC_PROFILE_UPDATE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="44dp"
         android:layout_marginTop="32dp"
-        android:onClick="updatePage"
+        android:onClick="update"
         android:text="@string/BTN1_DOC_PROFILE_UPDATE"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv6_Doc_Profile_Fee" />
+        app:layout_constraintTop_toBottomOf="@+id/tv7_DOC_PROFILE_MaxPat" />
 
     <Button
         android:id="@string/BTN2_DOC_PROFILE_DELETE"
@@ -103,8 +106,23 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="32dp"
+        android:onClick="deleteDoc"
         android:text="@string/BTN2_DOC_PROFILE_DELETE"
         app:layout_constraintBaseline_toBaselineOf="@+id/BTN1_DOC_PROFILE_UPDATE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/BTN1_DOC_PROFILE_UPDATE" />
+
+    <TextView
+        android:id="@+id/tv7_DOC_PROFILE_MaxPat"
+        android:layout_width="206dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv6_Doc_Profile_Fee" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

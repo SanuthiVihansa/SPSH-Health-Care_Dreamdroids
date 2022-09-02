@@ -114,39 +114,28 @@
         android:id="@+id/et5_UPDATEDOC_Experience"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
         android:hint="@string/et5_UPDATEDOC_Experience"
         android:inputType="textPersonName"
-        app:layout_constraintBaseline_toBaselineOf="@+id/TV5_UPDATEDOC_Experience"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et4_UPDATEDOC_WorkingPlace"
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/TV6_UPDATEDOC_Fee"
-        android:layout_width="39dp"
-        android:layout_height="17dp"
+        android:layout_width="72dp"
+        android:layout_height="22dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:text="Fee :"
         android:textColor="@color/black"
         android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/et6_UPDATEDOC_Fee"
+        app:layout_constraintEnd_toStartOf="@+id/et6_UPDATEDDOC_fee"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TV5_UPDATEDOC_Experience" />
-
-    <EditText
-        android:id="@+id/et6_UPDATEDOC_Fee"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:ems="10"
-        android:hint="@string/et6_UPDATEDOC_Fee"
-        android:inputType="textPersonName"
-        app:layout_constraintBaseline_toBaselineOf="@+id/TV6_UPDATEDOC_Fee"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/TV7_UPDATEDOC_MaximumPat"
@@ -179,9 +168,21 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="48dp"
+        android:onClick="updateDoc"
         android:text="CONFIRM UPDATE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/numtxt_UPDATEDOC_MaxPatients" />
+
+    <EditText
+        android:id="@+id/et6_UPDATEDDOC_fee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:hint="@string/et6_UPDATEDDOC_fee"
+        android:inputType="numberDecimal"
+        app:layout_constraintBaseline_toBaselineOf="@+id/TV6_UPDATEDOC_Fee"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="5dip">
+
+    <TextView
+        android:id="@+id/tv1_searchDoc_row_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/tv2_searchDoc_row_Speciality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv1_searchDoc_row_Name"
+        android:textColor="@color/black"
+    />
+    <!-- android:layout_alignRight="@id/tv1_searchDoc_row_Name"-->
+    <!--layout_below shows that this second row should appear below the first row of tv1_row_Name-->
+
+    <TextView
+        android:id="@+id/tv3_searchDoc_row_MaxPat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv2_searchDoc_row_Speciality"
+        android:textColor="@color/black"
+        />
+    <Button
+        android:id="@+id/btn_row_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv2_searchDoc_row_Speciality"
+        android:layout_alignParentRight="true"
+        android:text="@string/btn_row_view"/>
+    <!--to prevent the overlapping of the 2 baselined components, use alignParentRight-->
+
+    <TextView
+        android:id="@+id/tv_doc_rowId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"/>
+    <!--not visible to the user-->
+
+</RelativeLayout>

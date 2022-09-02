@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         //Setting the designed activity to the screen.
         setContentView(R.layout.activity_main);
 
-        Intent intent = new Intent(this,ADD_DOC.class);
+        Intent intent = new Intent(this,Search_Doc.class);
         startActivity(intent);
     }
 

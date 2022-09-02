@@ -20,7 +20,7 @@ public class Doc_Home extends AppCompatActivity {
     }
 
     public void availableDoc(View view){
-        Intent intent = new Intent(this,Doc_Profile.class);
+        Intent intent = new Intent(this,Search_Doc.class);
         startActivity(intent);
     }
 }
