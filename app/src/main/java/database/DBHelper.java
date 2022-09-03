@@ -6,7 +6,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.view.View;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -161,13 +160,47 @@ public class DBHelper extends SQLiteOpenHelper {
         return pharmacyEquipments;
     }
 
+    //Update CRUD
+    @SuppressLint("Range")
+    public void pharmacistUpdate(String itemCode,String itemName,String producerName,String usage,int strength, String expirationDate,String manufactureDate,double unitPrice, String description) {
+
+        SQLiteDatabase db = getWritableDatabase(); //Because we are going to change the inserted values
+//        ArrayList pharmacyEquipments = new ArrayList<>(); //Data available in the database are brought through an arrayList
+        ContentValues values = new ContentValues(); //used to store a set of values that the ContentResolver can process.
+
+
+        //set the values that need to be updated using the 'values' object created in the Content values method
+
+        values.put(PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMNAME, itemName);
+        values.put(PharmacyMaster.Pharmacy.COLOUMN_NAME_PRODUCERNAME, producerName);
+        values.put(PharmacyMaster.Pharmacy.COLOUMN_NAME_USAGE, usage);
+        values.put(PharmacyMaster.Pharmacy.COLOUMN_NAME_STRENGTH, strength);
+        values.put(PharmacyMaster.Pharmacy.COLOUMN_NAME_EXPIRATIONDATE, expirationDate);
+        values.put(PharmacyMaster.Pharmacy.COLOUMN_NAME_MANUFACTURINGDATE, manufactureDate);
+        values.put(PharmacyMaster.Pharmacy.COLOUMN_NAME_UNITPRICE, unitPrice);
+        values.put(PharmacyMaster.Pharmacy.COLOUMN_NAME_DESCRIPTION, description);
+
+
+        String selection = PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMCODE + " LIKE ?";
+        String[] selectionArgs = {itemCode};
+
+        //count shows the affected number of rows.
+        //updating and counting what is updated
+        int count = db.update(
+                PharmacyMaster.Pharmacy.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs
+        );
+
+
+//        return pharmacyEquipments;
+    }
+
     //DELETE CRUD
-
-
     public void deleteInfo(int pharmacyEquipID){
 
         SQLiteDatabase db = getReadableDatabase();
-
         String selection = PharmacyMaster.Pharmacy._ID + " LIKE ?";
 
         //Pass the columns as an array.
@@ -177,7 +210,6 @@ public class DBHelper extends SQLiteOpenHelper {
         db.delete((PharmacyMaster.Pharmacy.TABLE_NAME),selection,stringArgs);
 
     }
-
 
 
 }

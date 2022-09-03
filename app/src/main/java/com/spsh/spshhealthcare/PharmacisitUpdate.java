@@ -29,19 +29,57 @@ public class PharmacisitUpdate extends AppCompatActivity {
         Intent intent = getIntent();
         this.pharmaEqID = intent.getStringExtra("PharamcyEquipID");
 
+        DBHelper helper = new DBHelper(this);
+
+        ArrayList pharmacyEquipments = helper.oneSpecificInfo(Integer.parseInt(pharmaEqID));
 
         //Initialization of variables
 
-        et_ItemCode=findViewById(R.id.et_ItemCode);
-        et_pItemName=findViewById(R.id.et_pItemName);
-        et_pProducerName=findViewById(R.id.et_pProducerName);
-        et_Usage=findViewById(R.id.et_Usage);
-        et_strength=findViewById(R.id.et_strength);
-        et_manuDate=findViewById(R.id.et_manuDate);
-        et_expDate = findViewById(R.id.et_expDate);
-        et_pprice = findViewById(R.id.et_pprice);
-        et_pdescription = findViewById(R.id.et_pdescription);
+        et_ItemCode=findViewById(R.id.et_puitemcode);
+        et_pItemName=findViewById(R.id.et_puitemName);
+        et_pProducerName=findViewById(R.id.et_puproducerName);
+        et_Usage=findViewById(R.id.et_pusage);
+        et_strength=findViewById(R.id.et_puStrenegth);
+        et_manuDate=findViewById(R.id.et_pumanufactureDate);
+        et_expDate = findViewById(R.id.et_uexpirationDate);
+        et_pprice = findViewById(R.id.et_puUnintPrice);
+        et_pdescription = findViewById(R.id.et_puDescription);
 
+        // Get the data from the data base and arrange in order
+        et_ItemCode.setText((String)pharmacyEquipments.get(0));
+        et_pItemName.setText((String)pharmacyEquipments.get(1));
+        et_pProducerName.setText((String)pharmacyEquipments.get(2));
+        et_Usage.setText((String)pharmacyEquipments.get(3));
+        et_strength.setText((String)pharmacyEquipments.get(4));
+        et_manuDate.setText((String)pharmacyEquipments.get(6));
+        et_expDate.setText((String)pharmacyEquipments.get(5));
+        et_pprice.setText((String)pharmacyEquipments.get(7));
+        et_pdescription.setText((String)pharmacyEquipments.get(8));
+
+    }
+
+    public void updataPharmacy(View view){
+
+        DBHelper dbHelper = new DBHelper(this);
+
+        String Itemcode = et_ItemCode.getText().toString();
+        String Itemname = et_pItemName.getText().toString();
+        String ProducerName = et_pProducerName.getText().toString();
+        String Usage = et_Usage.getText().toString();
+        int Strength = Integer.parseInt(et_strength.getText().toString());
+        String ManuDate = et_manuDate.getText().toString();
+        String ExpDate = et_expDate.getText().toString();
+        Double Price = Double.parseDouble(et_pprice.getText().toString());
+        String description = et_pdescription.getText().toString();
+
+        if(Itemname.isEmpty()||ProducerName.isEmpty()||Usage.isEmpty()||ManuDate.isEmpty()||ExpDate.isEmpty()||Price.isNaN()||description.isEmpty()){
+            Toast.makeText(this, "Select or type user", Toast.LENGTH_SHORT).show();
+        }else{
+            dbHelper.pharmacistUpdate(Itemcode,Itemname,ProducerName,Usage,Strength,ManuDate,ExpDate,Price,description);
+            //clears all the values after inserting.
+            Intent intent = new Intent(this,PharmisisitSearch.class);
+            startActivity(intent);
+        }
 
     }
 

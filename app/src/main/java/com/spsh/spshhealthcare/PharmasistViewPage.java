@@ -73,6 +73,13 @@ public class PharmasistViewPage extends AppCompatActivity {
 
         }
 
+        public void updatePharmacyEquip(View view) {
+
+        Intent intent = new Intent(this, PharmacisitUpdate.class);
+        intent.putExtra("PharamcyEquipID",pharmaEqID);
+        startActivity(intent);
+        }
+
 
 
 
