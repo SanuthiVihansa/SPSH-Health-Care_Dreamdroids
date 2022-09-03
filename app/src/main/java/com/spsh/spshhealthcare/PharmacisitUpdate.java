@@ -73,10 +73,11 @@ public class PharmacisitUpdate extends AppCompatActivity {
         String description = et_pdescription.getText().toString();
 
         if(Itemname.isEmpty()||ProducerName.isEmpty()||Usage.isEmpty()||ManuDate.isEmpty()||ExpDate.isEmpty()||Price.isNaN()||description.isEmpty()){
-            Toast.makeText(this, "Select or type user", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show();
         }else{
             dbHelper.pharmacistUpdate(Itemcode,Itemname,ProducerName,Usage,Strength,ManuDate,ExpDate,Price,description);
-            //clears all the values after inserting.
+
+            Toast.makeText(this,"Successfully updated",Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this,PharmisisitSearch.class);
             startActivity(intent);
         }
