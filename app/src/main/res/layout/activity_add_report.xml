@@ -76,6 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:checkedButton="@+id/radioBtn_maleAddReport"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/et_labelForPatientAgeAddReport"
         app:layout_constraintTop_toBottomOf="@+id/et_labelForPatientNameAddReport">
@@ -223,7 +224,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
         android:ems="10"
-        android:inputType="numberDecimal"
+        android:inputType="number"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_unitForPcbAddReport"
         app:layout_constraintStart_toEndOf="@+id/tv_unitForPcbAddReport"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
@@ -267,7 +268,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
         android:ems="10"
-        android:inputType="numberDecimal"
+        android:inputType="number"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_unitForEosinophilsAddReport"
         app:layout_constraintStart_toEndOf="@+id/tv_unitForEosinophilsAddReport"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
@@ -344,7 +345,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
         android:ems="10"
-        android:inputType="numberDecimal"
+        android:inputType="number"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_unitForHemoglobinAddReport"
         app:layout_constraintStart_toEndOf="@+id/tv_unitForHemoglobinAddReport"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
