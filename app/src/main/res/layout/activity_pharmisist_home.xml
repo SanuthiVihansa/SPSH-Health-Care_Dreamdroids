@@ -30,6 +30,7 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="24dp"
         android:backgroundTint="#F39204"
+        android:onClick="AddItem"
         android:text="@string/btn_Pone"
         android:textAllCaps="false"
         android:textColor="#455A64"
@@ -48,6 +49,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
         android:backgroundTint="#F39204"
+        android:onClick="viewAll"
         android:text="@string/btn_Ptwo"
         android:textAllCaps="false"
         android:textColor="#455A64"
@@ -57,20 +59,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_one" />
 
-    <Button
-        android:id="@+id/btn_three"
-        android:layout_width="256dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
-        android:backgroundTint="#F39204"
-        android:text="@string/btn_Pthree"
-        android:textAllCaps="false"
-        android:textColor="#455A64"
-        android:textSize="16sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_two" />
 </androidx.constraintlayout.widget.ConstraintLayout>

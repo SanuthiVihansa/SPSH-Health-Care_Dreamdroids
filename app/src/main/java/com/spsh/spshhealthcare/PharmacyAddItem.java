@@ -51,6 +51,7 @@ public class PharmacyAddItem extends AppCompatActivity {
         String ExpDate = et_expDate.getText().toString();
         Double Price = Double.parseDouble(et_pprice.getText().toString());
         String description = et_pdescription.getText().toString();
+
         DBHelper dbHelper = new DBHelper(this);
 
         long inserted = dbHelper.addInfo(Itemcode, Itemname,ProducerName ,Usage,Strength,ManuDate,ExpDate,Price,description);

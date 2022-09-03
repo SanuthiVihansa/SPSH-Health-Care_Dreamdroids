@@ -22,7 +22,7 @@ import database.PharmacyMaster;
 
 public class PharmasistViewPage extends AppCompatActivity {
      TextView tv_pvItemCodeD,tv_pvItemNameD,tv_pvProducerNameD,tv_pvUsageD,tv_pvStrengthD,tv_manuDateD,tv_pvexpirationdateD,tv_pvpriceD,tv_pvDescriptionD;
-    private String pharmaEqID;
+     private String pharmaEqID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,5 +72,9 @@ public class PharmasistViewPage extends AppCompatActivity {
         startActivity(intent);
 
         }
+
+
+
+
 
 }

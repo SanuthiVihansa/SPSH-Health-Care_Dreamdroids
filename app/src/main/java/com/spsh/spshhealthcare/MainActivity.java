@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         setContentView(R.layout.activity_main);
-          Intent intent = new Intent(this,PharmisisitSearch.class);
+          Intent intent = new Intent(this,PharmisistHome.class);
           startActivity(intent);
 
 
