@@ -40,8 +40,8 @@ public class PharmacisitUpdate extends AppCompatActivity {
         et_pProducerName=findViewById(R.id.et_puproducerName);
         et_Usage=findViewById(R.id.et_pusage);
         et_strength=findViewById(R.id.et_puStrenegth);
-        et_manuDate=findViewById(R.id.et_pumanufactureDate);
-        et_expDate = findViewById(R.id.et_uexpirationDate);
+        et_manuDate=findViewById(R.id.et_uexpirationDate);
+        et_expDate = findViewById(R.id.et_pumanufactureDate);
         et_pprice = findViewById(R.id.et_puUnintPrice);
         et_puQuantity = findViewById(R.id.et_puQuantity);
         et_pdescription = findViewById(R.id.et_puDescription);
