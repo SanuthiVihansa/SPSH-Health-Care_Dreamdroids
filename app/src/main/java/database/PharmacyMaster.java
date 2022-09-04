@@ -15,6 +15,7 @@ public final class PharmacyMaster{
         public static final String COLOUMN_NAME_EXPIRATIONDATE = "expiration_date";
         public static final String COLOUMN_NAME_MANUFACTURINGDATE = "manufacturing_date";
         public static final String COLOUMN_NAME_UNITPRICE = "unit_price";
+        public static final String COLOUMN_NAME_QUANTITY = "Quantity";
         public static final String COLOUMN_NAME_DESCRIPTION = "description";
 
 

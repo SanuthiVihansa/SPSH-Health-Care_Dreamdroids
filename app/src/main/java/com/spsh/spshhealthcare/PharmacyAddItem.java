@@ -14,7 +14,7 @@ import database.DBHelper;
 public class PharmacyAddItem extends AppCompatActivity {
 
     //Declaring attributes
-    EditText et_ItemCode,et_pItemName,et_pProducerName,et_Usage,et_strength,et_manuDate,et_expDate,et_pprice,et_pdescription;
+    EditText et_ItemCode,et_pItemName,et_pProducerName,et_Usage,et_strength,et_manuDate,et_expDate,et_pprice,et_pQuantity,et_pdescription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,7 @@ public class PharmacyAddItem extends AppCompatActivity {
         et_manuDate=findViewById(R.id.et_manuDate);
         et_expDate = findViewById(R.id.et_expDate);
         et_pprice = findViewById(R.id.et_pprice);
+        et_pQuantity = findViewById(R.id.et_ppQuantity);
         et_pdescription = findViewById(R.id.et_pdescription);
     }
 
@@ -46,15 +47,16 @@ public class PharmacyAddItem extends AppCompatActivity {
         String Itemname = et_pItemName.getText().toString();
         String ProducerName = et_pProducerName.getText().toString();
         String Usage = et_Usage.getText().toString();
-        Integer Strength = Integer.parseInt(et_strength.getText().toString());
+        int Strength = Integer.parseInt(et_strength.getText().toString());
         String ManuDate = et_manuDate.getText().toString();
         String ExpDate = et_expDate.getText().toString();
         Double Price = Double.parseDouble(et_pprice.getText().toString());
+        int Quantity =Integer.parseInt(et_pQuantity.getText().toString());
         String description = et_pdescription.getText().toString();
 
         DBHelper dbHelper = new DBHelper(this);
 
-        long inserted = dbHelper.addInfo(Itemcode, Itemname,ProducerName ,Usage,Strength,ManuDate,ExpDate,Price,description);
+        long inserted = dbHelper.addInfo(Itemcode, Itemname,ProducerName ,Usage,Strength,ManuDate,ExpDate,Price,Quantity,description);
 
         if (inserted > 0) {
             Toast.makeText(this, "Data successfully added", Toast.LENGTH_SHORT).show();

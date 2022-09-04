@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import database.DBHelper;
 
 public class PharmacisitUpdate extends AppCompatActivity {
-    EditText et_ItemCode,et_pItemName,et_pProducerName,et_Usage,et_strength,et_manuDate,et_expDate,et_pprice,et_pdescription;
+    EditText et_ItemCode,et_pItemName,et_pProducerName,et_Usage,et_strength,et_manuDate,et_expDate,et_pprice,et_puQuantity,et_pdescription;
     private String pharmaEqID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +43,7 @@ public class PharmacisitUpdate extends AppCompatActivity {
         et_manuDate=findViewById(R.id.et_pumanufactureDate);
         et_expDate = findViewById(R.id.et_uexpirationDate);
         et_pprice = findViewById(R.id.et_puUnintPrice);
+        et_puQuantity = findViewById(R.id.et_puQuantity);
         et_pdescription = findViewById(R.id.et_puDescription);
 
         // Get the data from the data base and arrange in order
@@ -54,7 +55,8 @@ public class PharmacisitUpdate extends AppCompatActivity {
         et_manuDate.setText((String)pharmacyEquipments.get(6));
         et_expDate.setText((String)pharmacyEquipments.get(5));
         et_pprice.setText((String)pharmacyEquipments.get(7));
-        et_pdescription.setText((String)pharmacyEquipments.get(8));
+        et_puQuantity.setText((String)pharmacyEquipments.get(8));
+        et_pdescription.setText((String)pharmacyEquipments.get(9));
 
     }
 
@@ -70,12 +72,13 @@ public class PharmacisitUpdate extends AppCompatActivity {
         String ManuDate = et_manuDate.getText().toString();
         String ExpDate = et_expDate.getText().toString();
         Double Price = Double.parseDouble(et_pprice.getText().toString());
+        int quantity = Integer.parseInt(et_puQuantity.getText().toString());
         String description = et_pdescription.getText().toString();
 
         if(Itemname.isEmpty()||ProducerName.isEmpty()||Usage.isEmpty()||ManuDate.isEmpty()||ExpDate.isEmpty()||Price.isNaN()||description.isEmpty()){
             Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show();
         }else{
-            dbHelper.pharmacistUpdate(Itemcode,Itemname,ProducerName,Usage,Strength,ManuDate,ExpDate,Price,description);
+            dbHelper.pharmacistUpdate(Itemcode,Itemname,ProducerName,Usage,Strength,ManuDate,ExpDate,Price,quantity,description);
 
             Toast.makeText(this,"Successfully updated",Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this,PharmisisitSearch.class);

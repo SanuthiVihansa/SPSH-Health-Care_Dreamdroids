@@ -21,7 +21,7 @@ import database.DBHelper;
 import database.PharmacyMaster;
 
 public class PharmasistViewPage extends AppCompatActivity {
-     TextView tv_pvItemCodeD,tv_pvItemNameD,tv_pvProducerNameD,tv_pvUsageD,tv_pvStrengthD,tv_manuDateD,tv_pvexpirationdateD,tv_pvpriceD,tv_pvDescriptionD;
+     TextView tv_pvItemCodeD,tv_pvItemNameD,tv_pvProducerNameD,tv_pvUsageD,tv_pvStrengthD,tv_manuDateD,tv_pvexpirationdateD,tv_pvpriceD,tv_pvQuantityD,tv_pvDescriptionD;
      private String pharmaEqID;
 
     @Override
@@ -49,6 +49,7 @@ public class PharmasistViewPage extends AppCompatActivity {
         tv_manuDateD = findViewById(R.id.tv_manuDateD);
         tv_pvexpirationdateD = findViewById(R.id.tv_pvexpirationdateD);
         tv_pvpriceD = findViewById(R.id.tv_pvpriceD);
+        tv_pvQuantityD = findViewById(R.id.tv_pvQuantityD);
         tv_pvDescriptionD = findViewById(R.id.tv_pvDescriptionD);
 
 
@@ -60,7 +61,8 @@ public class PharmasistViewPage extends AppCompatActivity {
         tv_manuDateD.setText((String)pharmacyEquipments.get(6));
         tv_pvexpirationdateD.setText((String)pharmacyEquipments.get(5));
         tv_pvpriceD.setText((String)pharmacyEquipments.get(7));
-        tv_pvDescriptionD.setText((String)pharmacyEquipments.get(8));
+        tv_pvQuantityD.setText((String)pharmacyEquipments.get(8));
+        tv_pvDescriptionD.setText((String)pharmacyEquipments.get(9));
     }
     public void deleteUser(View view) {
         DBHelper dbHelper = new DBHelper(this);

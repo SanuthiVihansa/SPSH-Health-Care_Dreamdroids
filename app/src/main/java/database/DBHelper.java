@@ -34,13 +34,14 @@ public class DBHelper extends SQLiteOpenHelper {
                         PharmacyMaster.Pharmacy.COLOUMN_NAME_EXPIRATIONDATE + " TEXT, "+
                         PharmacyMaster.Pharmacy.COLOUMN_NAME_MANUFACTURINGDATE + " TEXT, "+
                         PharmacyMaster.Pharmacy.COLOUMN_NAME_UNITPRICE+ " REAL, "+
+                        PharmacyMaster.Pharmacy.COLOUMN_NAME_QUANTITY+ " INTEGER, "+
                         PharmacyMaster.Pharmacy.COLOUMN_NAME_DESCRIPTION+ " TEXT)";
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
 
 
     }
 
-    public long addInfo(String itemCode, String itemName, String producerName, String usage, Integer strength, String expirationDate, String manufactureDate, Double unitPrice, String description) {
+    public long addInfo(String itemCode, String itemName, String producerName, String usage, Integer strength, String expirationDate, String manufactureDate, Double unitPrice,  Integer Quantity, String description) {
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
 
         //create a new map of values, where column names the key
@@ -53,6 +54,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(PharmacyMaster.Pharmacy.COLOUMN_NAME_EXPIRATIONDATE, expirationDate);
         values.put(PharmacyMaster.Pharmacy.COLOUMN_NAME_MANUFACTURINGDATE, manufactureDate);
         values.put(PharmacyMaster.Pharmacy.COLOUMN_NAME_UNITPRICE, unitPrice);
+        values.put(PharmacyMaster.Pharmacy.COLOUMN_NAME_QUANTITY, Quantity);
         values.put(PharmacyMaster.Pharmacy.COLOUMN_NAME_DESCRIPTION, description);
 
         return sqLiteDatabase.insert(PharmacyMaster.Pharmacy.TABLE_NAME, null, values);
@@ -71,6 +73,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 PharmacyMaster.Pharmacy.COLOUMN_NAME_EXPIRATIONDATE,
                 PharmacyMaster.Pharmacy.COLOUMN_NAME_MANUFACTURINGDATE,
                 PharmacyMaster.Pharmacy.COLOUMN_NAME_UNITPRICE,
+                PharmacyMaster.Pharmacy.COLOUMN_NAME_QUANTITY,
                 PharmacyMaster.Pharmacy.COLOUMN_NAME_DESCRIPTION
         };
 
@@ -95,6 +98,7 @@ public class DBHelper extends SQLiteOpenHelper {
             String expirationDate = cursor.getString(cursor.getColumnIndexOrThrow(PharmacyMaster.Pharmacy.COLOUMN_NAME_EXPIRATIONDATE));
             String manufactureDate = cursor.getString(cursor.getColumnIndexOrThrow(PharmacyMaster.Pharmacy.COLOUMN_NAME_MANUFACTURINGDATE));
             String unitPrice = cursor.getString(cursor.getColumnIndexOrThrow(PharmacyMaster.Pharmacy.COLOUMN_NAME_UNITPRICE));
+            String quantity = cursor.getString(cursor.getColumnIndexOrThrow(PharmacyMaster.Pharmacy.COLOUMN_NAME_QUANTITY));
             String description = cursor.getString(cursor.getColumnIndexOrThrow(PharmacyMaster.Pharmacy.COLOUMN_NAME_DESCRIPTION));
         }
         cursor.close();
@@ -139,7 +143,7 @@ public class DBHelper extends SQLiteOpenHelper {
         ArrayList pharmacyEquipments = new ArrayList<>();
 
         //Sql query
-        String query = "SELECT " + PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMCODE + ", " + PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMNAME + ", " + PharmacyMaster.Pharmacy.COLOUMN_NAME_PRODUCERNAME + ", " + PharmacyMaster.Pharmacy.COLOUMN_NAME_USAGE+ " , " +PharmacyMaster.Pharmacy.COLOUMN_NAME_STRENGTH +", "+PharmacyMaster.Pharmacy.COLOUMN_NAME_EXPIRATIONDATE + ", "+PharmacyMaster.Pharmacy.COLOUMN_NAME_MANUFACTURINGDATE+ ", "+PharmacyMaster.Pharmacy.COLOUMN_NAME_UNITPRICE+", "+PharmacyMaster.Pharmacy.COLOUMN_NAME_DESCRIPTION+" FROM " + PharmacyMaster.Pharmacy.TABLE_NAME +" WHERE "+ PharmacyMaster.Pharmacy._ID +"="+String.valueOf(pharmacyEquipID);
+        String query = "SELECT " + PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMCODE + ", " + PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMNAME + ", " + PharmacyMaster.Pharmacy.COLOUMN_NAME_PRODUCERNAME + ", " + PharmacyMaster.Pharmacy.COLOUMN_NAME_USAGE+ " , " +PharmacyMaster.Pharmacy.COLOUMN_NAME_STRENGTH +", "+PharmacyMaster.Pharmacy.COLOUMN_NAME_EXPIRATIONDATE + ", "+PharmacyMaster.Pharmacy.COLOUMN_NAME_MANUFACTURINGDATE+ ", "+PharmacyMaster.Pharmacy.COLOUMN_NAME_UNITPRICE+", "+PharmacyMaster.Pharmacy.COLOUMN_NAME_QUANTITY+", "+PharmacyMaster.Pharmacy.COLOUMN_NAME_DESCRIPTION+" FROM " + PharmacyMaster.Pharmacy.TABLE_NAME +" WHERE "+ PharmacyMaster.Pharmacy._ID +"="+String.valueOf(pharmacyEquipID);
 
         Cursor cursor = sqldb.rawQuery(query,null);
 
@@ -154,6 +158,7 @@ public class DBHelper extends SQLiteOpenHelper {
             pharmacyEquipments.add(cursor.getString(cursor.getColumnIndex(PharmacyMaster.Pharmacy.COLOUMN_NAME_EXPIRATIONDATE)));
             pharmacyEquipments.add(cursor.getString(cursor.getColumnIndex(PharmacyMaster.Pharmacy.COLOUMN_NAME_MANUFACTURINGDATE)));
             pharmacyEquipments.add(cursor.getString(cursor.getColumnIndex(PharmacyMaster.Pharmacy.COLOUMN_NAME_UNITPRICE)));
+            pharmacyEquipments.add(cursor.getString(cursor.getColumnIndex(PharmacyMaster.Pharmacy.COLOUMN_NAME_QUANTITY)));
             pharmacyEquipments.add(cursor.getString(cursor.getColumnIndex(PharmacyMaster.Pharmacy.COLOUMN_NAME_DESCRIPTION)));
 
         }
@@ -162,7 +167,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     //Update CRUD
     @SuppressLint("Range")
-    public void pharmacistUpdate(String itemCode,String itemName,String producerName,String usage,int strength, String expirationDate,String manufactureDate,double unitPrice, String description) {
+    public void pharmacistUpdate(String itemCode,String itemName,String producerName,String usage,int strength, String expirationDate,String manufactureDate,Double unitPrice,int quantity, String description) {
 
         SQLiteDatabase db = getWritableDatabase(); //Because we are going to change the inserted values
 //        ArrayList pharmacyEquipments = new ArrayList<>(); //Data available in the database are brought through an arrayList
@@ -178,6 +183,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(PharmacyMaster.Pharmacy.COLOUMN_NAME_EXPIRATIONDATE, expirationDate);
         values.put(PharmacyMaster.Pharmacy.COLOUMN_NAME_MANUFACTURINGDATE, manufactureDate);
         values.put(PharmacyMaster.Pharmacy.COLOUMN_NAME_UNITPRICE, unitPrice);
+        values.put(PharmacyMaster.Pharmacy.COLOUMN_NAME_QUANTITY, quantity);
         values.put(PharmacyMaster.Pharmacy.COLOUMN_NAME_DESCRIPTION, description);
 
 
