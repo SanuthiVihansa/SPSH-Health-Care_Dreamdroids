@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.google.android.material.snackbar.Snackbar;
 import com.spsh.spshhealthcare.database.DBHelper;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -194,16 +195,34 @@ public class AddReport extends AppCompatActivity {
     }
 
     public void calculateCost(){
+        DecimalFormat df = new DecimalFormat("0.00");
         int time = 0;
         double cost = initialCost;
+
         if(this.time.getText().toString().length() > 1 && !this.time.getText().toString().contains(":")) {
             time = Integer.parseInt(this.time.getText().toString().substring(0, 2));
 
             if (time > 19){
                 cost = cost * 2;
             }
+            else{
+                cost = initialCost;
+            }
 
-            this.cost.setText(String.valueOf(cost));
+            this.cost.setText(String.valueOf(df.format(cost)));
+        }
+
+        else if(this.time.getText().toString().length() > 0 && !this.time.getText().toString().contains(":")){
+            time = Integer.parseInt(this.time.getText().toString().substring(0, 1));
+
+            if(time < 6){
+                cost = cost * 2;
+            }
+            else{
+                cost = initialCost;
+            }
+
+            this.cost.setText(String.valueOf(df.format(cost)));
         }
     }
     
