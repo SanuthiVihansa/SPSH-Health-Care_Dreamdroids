@@ -14,6 +14,9 @@
         android:theme="@style/Theme.SPSHHealthCare"
         tools:targetApi="31">
         <activity
+            android:name=".ViewAllPharamacyItems"
+            android:exported="false" />
+        <activity
             android:name=".PharmasistViewPage"
             android:exported="false" />
         <activity
