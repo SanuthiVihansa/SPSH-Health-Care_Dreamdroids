@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
@@ -15,6 +17,7 @@ import android.widget.Toast;
 import com.google.android.material.snackbar.Snackbar;
 import com.spsh.spshhealthcare.database.DBHelper;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class UpdateReport extends AppCompatActivity {
@@ -25,6 +28,7 @@ public class UpdateReport extends AppCompatActivity {
     int reportId;
     String gender;
     DBHelper dbHelper;
+    double initialCost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,8 @@ public class UpdateReport extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_update_report);
+
+        this.initialCost = 400.00;
 
         Intent intent = getIntent();
         this.reportId = Integer.parseInt(intent.getStringExtra("reportId"));
@@ -80,24 +86,41 @@ public class UpdateReport extends AppCompatActivity {
             this.female.setChecked(true);
         }
 
+        this.time.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                calculateCost();
+            }
+        });
+
 
     }
 
     public void onClickBtnUpdate(View view){
         String name = this.name.getText().toString();
-        int age = Integer.parseInt(this.age.getText().toString());
+        String age = this.age.getText().toString();
         String nic = this.nic.getText().toString();
         String date = this.date.getText().toString();
         String time = this.time.getText().toString();
-        double cost = Double.parseDouble(this.cost.getText().toString());
-        double hemoglobin = Double.parseDouble(this.hemoglobin.getText().toString());
-        int wbc = Integer.parseInt(this.wbc.getText().toString());
-        double neutrophils = Double.parseDouble(this.neutrophils.getText().toString());
-        double lymphocytes = Double.parseDouble(this.lymphocytes.getText().toString());
-        double eosinophils = Double.parseDouble(this.eosinophils.getText().toString());
-        double rbc = Double.parseDouble(this.rbc.getText().toString());
-        double pcb = Double.parseDouble(this.rbc.getText().toString());
-        int platelet = Integer.parseInt(this.platelet.getText().toString());
+        String cost = this.cost.getText().toString();
+        String hemoglobin = this.hemoglobin.getText().toString();
+        String wbc = this.wbc.getText().toString();
+        String neutrophils = this.neutrophils.getText().toString();
+        String lymphocytes = this.lymphocytes.getText().toString();
+        String eosinophils = this.eosinophils.getText().toString();
+        String rbc = this.rbc.getText().toString();
+        String pcb = this.rbc.getText().toString();
+        String platelet = this.platelet.getText().toString();
 
         if(this.male.isChecked()){
             this.gender = "Male";
@@ -106,7 +129,7 @@ public class UpdateReport extends AppCompatActivity {
             this.gender = "Female";
         }
 
-        int response = this.dbHelper.updateReport(this.reportId, name, age, this.gender, nic, date, time, cost, hemoglobin, wbc, neutrophils, lymphocytes, eosinophils, rbc, pcb, platelet);
+        int response = this.dbHelper.updateReport(this.reportId, name, Integer.parseInt(age), this.gender, nic, date, time, Double.parseDouble(cost), Double.parseDouble(hemoglobin), Integer.parseInt(wbc), Double.parseDouble(neutrophils), Double.parseDouble(lymphocytes), Double.parseDouble(eosinophils), Double.parseDouble(rbc), Double.parseDouble(pcb), Integer.parseInt(platelet));
 
         if(response > 0){
             Toast.makeText(this, "Report Details Updated !", Toast.LENGTH_SHORT).show();
@@ -125,5 +148,61 @@ public class UpdateReport extends AppCompatActivity {
         Intent intent = new Intent(this, ViewReport.class);
         intent.putExtra("reportId", String.valueOf(this.reportId));
         startActivity(intent);
+    }
+
+    public void calculateCost(){
+        DecimalFormat df = new DecimalFormat("0.00");
+        int time = 0;
+        double cost = initialCost;
+
+        if(this.time.getText().toString().length() > 1 && !this.time.getText().toString().contains(":")) {
+            time = Integer.parseInt(this.time.getText().toString().substring(0, 2));
+
+            if (time > 19){
+                cost = cost * 2;
+            }
+            else{
+                cost = initialCost;
+            }
+
+            this.cost.setText(String.valueOf(df.format(cost)));
+        }
+
+        else if(this.time.getText().toString().length() > 0 && !this.time.getText().toString().contains(":")){
+            time = Integer.parseInt(this.time.getText().toString().substring(0, 1));
+
+            if(time < 6){
+                cost = cost * 2;
+            }
+            else{
+                cost = initialCost;
+            }
+
+            this.cost.setText(String.valueOf(df.format(cost)));
+        }
+    }
+
+    public boolean timeIsCorrect(String time){
+        if(time.length() == 4){
+            if(time.charAt(1) == ':' && Integer.parseInt((Character.toString(time.charAt(0)))) > -1 && Integer.parseInt(time.substring(2)) > -1 && Integer.parseInt(time.substring(2)) < 60)
+                return true;
+            else
+                return false;
+        }
+        else if(time.length() == 5){
+            if(time.charAt(2) == ':' && Integer.parseInt(time.substring(0, 2)) > -1 && Integer.parseInt(time.substring(0, 2)) < 24 && Integer.parseInt(time.substring(3)) > -1 && Integer.parseInt(time.substring(3)) < 60)
+                return true;
+            else
+                return false;
+        }
+        else
+            return false;
+    }
+
+    public boolean nameIsCorrect(String name) {
+        if(name.contains("0") || name.contains("1") || name.contains("2") || name.contains("3") || name.contains("4") || name.contains("5") || name.contains("6") || name.contains("7") || name.contains("8") || name.contains("9") || name.contains("`") || name.contains("~") || name.contains("!") || name.contains("@") || name.contains("#") || name.contains("$") || name.contains("%") || name.contains("^") || name.contains("&") || name.contains("*") || name.contains("(") || name.contains(")") || name.contains("-") || name.contains("_") || name.contains("=") || name.contains("+") || name.contains("{") || name.contains("[") || name.contains("]") || name.contains("}") || name.contains("\\") || name.contains("|") || name.contains(":") || name.contains(";") || name.contains("\"") || name.contains("'") || name.contains(",") || name.contains("<") || name.contains(">") || name.contains("/") || name.contains("?") || name.contains("™") || name.contains("℉") || name.contains("⟬") || name.contains("²") || name.contains("№") || name.contains("⟧") || name.contains("‱") || name.contains("é") || name.contains("℃") || name.contains("⟦") || name.contains("‰") || name.contains("©") || name.contains("€") || name.contains("¥"))
+            return false;
+        else
+            return true;
     }
 }
