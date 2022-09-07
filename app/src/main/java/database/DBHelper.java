@@ -113,12 +113,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
     //Search and display all data
     @SuppressLint("Range")
-    public ArrayList<HashMap<String,String>> readAllInfo() {
+    public ArrayList<HashMap<String,String>> readAllInfo(String PharmID) {
         SQLiteDatabase sqldb = getReadableDatabase();
         ArrayList<HashMap<String, String>> allPharmacyEquipments = new ArrayList<>();
 
         //Sql query
-        String query = "SELECT " + PharmacyMaster.Pharmacy._ID + ", " + PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMCODE + ", " + PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMNAME + ", " + PharmacyMaster.Pharmacy.COLOUMN_NAME_USAGE + " FROM " + PharmacyMaster.Pharmacy.TABLE_NAME;
+        String query = "SELECT " + PharmacyMaster.Pharmacy._ID + ", " + PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMCODE + ", " + PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMNAME + ", " + PharmacyMaster.Pharmacy.COLOUMN_NAME_USAGE + " FROM " + PharmacyMaster.Pharmacy.TABLE_NAME +" WHERE "+PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMCODE+ " like '" +PharmID+"____'";
 
         Cursor cursor = sqldb.rawQuery(query,null);
 

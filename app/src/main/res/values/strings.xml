@@ -85,4 +85,12 @@
     <!--    View all equipments page -->
     <string name="tv_PharmacyViewAllHeader"> Welcome !</string>
 
+<!--    navigate button-->
+    <string name= "btn_navigate"> BACK </string>
+
+<!--    view all page -->
+    <string name="tv_heading1">Pharmacy Equipments </string>
+    <string name="tv_heading2">prescription medicine </string>
+    <string name="tv_heading3">Supplements </string>
+    <string name="tv_heading4">Over the counter medicine </string>
 </resources>
