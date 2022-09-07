@@ -129,19 +129,82 @@ public class UpdateReport extends AppCompatActivity {
             this.gender = "Female";
         }
 
-        int response = this.dbHelper.updateReport(this.reportId, name, Integer.parseInt(age), this.gender, nic, date, time, Double.parseDouble(cost), Double.parseDouble(hemoglobin), Integer.parseInt(wbc), Double.parseDouble(neutrophils), Double.parseDouble(lymphocytes), Double.parseDouble(eosinophils), Double.parseDouble(rbc), Double.parseDouble(pcb), Integer.parseInt(platelet));
-
-        if(response > 0){
-            Toast.makeText(this, "Report Details Updated !", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, ViewAllReports.class);
-            startActivity(intent);
+        if(name.isEmpty()) {
+            this.name.setError("Name is required!");
         }
-        else{
-            Snackbar snackbar = Snackbar.make(view, "Update Failed !", Snackbar.LENGTH_LONG);
-            snackbar.setAnimationMode(Snackbar.ANIMATION_MODE_SLIDE);
-            snackbar.show();
+        else if(this.nameIsCorrect(name) == false){
+            this.name.setError("You cannot enter numeric characters or symbols!");
         }
+        else if(age.isEmpty()){
+            this.age.setError("Age is required!");
+        }
+        else if(Integer.parseInt(age) > 124){
+            this.age.setError("Age should be less than 125!");
+        }
+        else if(Integer.parseInt(age) == 0) {
+            this.age.setError("Invalid Value!");
+        }
+        else if(nic.isEmpty()){
+            this.nic.setError("NIC is required!");
+        }
+        else if(!((nic.length()==10&&nic.endsWith("V")) || nic.length()==12)){
+            this.nic.setError("Invalid NIC format!");
+        }
+        else if(time.isEmpty()){
+            this.time.setError("Time is required!");
+        }
+        else if(this.timeIsCorrect(time) == false){
+            this.time.setError("Invalid Time!");
+        }
+        else if(hemoglobin.isEmpty()){
+            this.hemoglobin.setError("This field is required!");
+        }
+        else if(wbc.isEmpty()){
+            this.wbc.setError("This field is required!");
+        }
+        else if(neutrophils.isEmpty()){
+            this.neutrophils.setError("This field is required!");
+        }
+        else if(Double.parseDouble(neutrophils) > 100){
+            this.neutrophils.setError("Invalid Value!");
+        }
+        else if(lymphocytes.isEmpty()){
+            this.lymphocytes.setError("This field is required!");
+        }
+        else if(Double.parseDouble(lymphocytes) > 100){
+            this.lymphocytes.setError("Invalid Value!");
+        }
+        else if(eosinophils.isEmpty()){
+            this.eosinophils.setError("This field is required!");
+        }
+        else if(Double.parseDouble(eosinophils) > 100){
+            this.eosinophils.setError("Invalid Value!");
+        }
+        else if(rbc.isEmpty()){
+            this.rbc.setError("This field is required!");
+        }
+        else if(pcb.isEmpty()){
+            this.pcb.setError("This field is required!");
+        }
+        else if(Double.parseDouble(pcb) > 100){
+            this.pcb.setError("Invalid Value!");
+        }
+        else if(platelet.isEmpty()){
+            this.platelet.setError("This field is required!");
+        }
+        else {
+            int response = this.dbHelper.updateReport(this.reportId, name, Integer.parseInt(age), this.gender, nic, date, time, Double.parseDouble(cost), Double.parseDouble(hemoglobin), Integer.parseInt(wbc), Double.parseDouble(neutrophils), Double.parseDouble(lymphocytes), Double.parseDouble(eosinophils), Double.parseDouble(rbc), Double.parseDouble(pcb), Integer.parseInt(platelet));
 
+            if (response > 0) {
+                Toast.makeText(this, "Report Details Updated !", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, ViewAllReports.class);
+                startActivity(intent);
+            } else {
+                Snackbar snackbar = Snackbar.make(view, "Update Failed !", Snackbar.LENGTH_LONG);
+                snackbar.setAnimationMode(Snackbar.ANIMATION_MODE_SLIDE);
+                snackbar.show();
+            }
+        }
     }
 
     public void onClickBtnBack(View view){
