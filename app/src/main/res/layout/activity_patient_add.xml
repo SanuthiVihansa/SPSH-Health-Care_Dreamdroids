@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#A3F4FB"
     tools:context=".Patient_Add">
 
     <TextView
@@ -11,11 +12,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
+        android:fontFamily="serif-monospace"
         android:text="@string/tv_makeAppoint_sathira"
-        android:textColor="#000000"
-        android:textSize="34sp"
+        android:textColor="#1565C0"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,15 +26,17 @@
     <EditText
         android:id="@+id/et_addName_sathira"
         android:layout_width="188dp"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:background="#9BE8EF"
         android:ems="10"
+        android:fontFamily="sans-serif-light"
         android:inputType="textPersonName"
         android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_addName_sathira"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.693"
+        app:layout_constraintHorizontal_bias="0.686"
         app:layout_constraintStart_toEndOf="@+id/tv_addName_sathira" />
 
     <EditText
@@ -39,7 +44,9 @@
         android:layout_width="188dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
+        android:background="#9BE8EF"
         android:ems="10"
+        android:fontFamily="sans-serif-light"
         android:inputType="date"
         android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_addDate_sathira"
@@ -52,12 +59,14 @@
         android:layout_width="188dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
+        android:background="#9BE8EF"
         android:ems="10"
+        android:fontFamily="sans-serif-light"
         android:inputType="phone"
         android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_addNum_sathira"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.597"
+        app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toEndOf="@+id/tv_addNum_sathira" />
 
     <EditText
@@ -65,12 +74,14 @@
         android:layout_width="188dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
+        android:background="#9BE8EF"
         android:ems="10"
+        android:fontFamily="sans-serif-light"
         android:inputType="number"
         android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_addAge_sathira"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.773"
+        app:layout_constraintHorizontal_bias="0.775"
         app:layout_constraintStart_toEndOf="@+id/tv_addAge_sathira" />
 
     <TextView
@@ -79,24 +90,27 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-light"
         android:text="@string/tv_addDate_sathira"
-        android:textColor="#000000"
-        android:textSize="16sp"
+        android:textColor="#1565C0"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_addDrName_sathira" />
 
-    <EditText
+    <TextView
         android:id="@+id/et_addNic_sathira"
         android:layout_width="188dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
+        android:background="#9BE8EF"
         android:ems="10"
+        android:fontFamily="sans-serif-light"
         android:inputType="textPersonName"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_addNic_sathira"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.74"
+        app:layout_constraintHorizontal_bias="0.779"
         app:layout_constraintStart_toEndOf="@+id/tv_addNic_sathira" />
 
     <TextView
@@ -105,9 +119,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-light"
         android:text="@string/tv_addSpecial_sathira"
-        android:textColor="#000000"
-        android:textSize="16sp"
+        android:textColor="#1565C0"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_addNic_sathira" />
 
@@ -117,9 +132,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-light"
         android:text="@string/tv_addTime_sathira"
-        android:textColor="#000000"
-        android:textSize="16sp"
+        android:textColor="#1565C0"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_addDate_sathira" />
 
@@ -129,9 +145,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-light"
         android:text="@string/tv_addGender_sathira"
-        android:textColor="#000000"
-        android:textSize="16sp"
+        android:textColor="#1565C0"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_addAge_sathira" />
 
@@ -141,9 +158,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-light"
         android:text="@string/tv_addNum_sathira"
-        android:textColor="#000000"
-        android:textSize="16sp"
+        android:textColor="#1565C0"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_addGender_sathira" />
 
@@ -153,9 +171,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-light"
         android:text="@string/tv_addNic_sathira"
-        android:textColor="#000000"
-        android:textSize="16sp"
+        android:textColor="#1565C0"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_addNum_sathira" />
 
@@ -165,9 +184,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-light"
         android:text="@string/tv_addName_sathira"
-        android:textColor="#000000"
-        android:textSize="16sp"
+        android:textColor="#1565C0"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_makeAppoint_sathira" />
 
@@ -177,9 +197,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-light"
         android:text="@string/tv_addAge_sathira"
-        android:textColor="#000000"
-        android:textSize="16sp"
+        android:textColor="#1565C0"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_addName_sathira" />
 
@@ -189,9 +210,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-light"
         android:text="@string/tv_addDrName_sathira"
-        android:textColor="#000000"
-        android:textSize="16sp"
+        android:textColor="#1565C0"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_addSpecial_sathira" />
 
@@ -200,12 +222,14 @@
         android:layout_width="188dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
+        android:background="#9BE8EF"
         android:ems="10"
+        android:fontFamily="sans-serif-light"
         android:inputType="textPersonName"
         android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_addDrName_sathira"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.386"
+        app:layout_constraintHorizontal_bias="0.212"
         app:layout_constraintStart_toEndOf="@+id/tv_addDrName_sathira" />
 
     <EditText
@@ -213,12 +237,14 @@
         android:layout_width="188dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
+        android:background="#9BE8EF"
         android:ems="10"
+        android:fontFamily="sans-serif-light"
         android:inputType="textPersonName"
         android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_addSpecial_sathira"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintHorizontal_bias="0.315"
         app:layout_constraintStart_toEndOf="@+id/tv_addSpecial_sathira" />
 
     <EditText
@@ -226,12 +252,14 @@
         android:layout_width="188dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
+        android:background="#9BE8EF"
         android:ems="10"
+        android:fontFamily="sans-serif-light"
         android:inputType="textPersonName"
         android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_addGender_sathira"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.718"
+        app:layout_constraintHorizontal_bias="0.711"
         app:layout_constraintStart_toEndOf="@+id/tv_addGender_sathira" />
 
     <Button
@@ -241,6 +269,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="42dp"
         android:layout_marginEnd="16dp"
+        android:backgroundTint="#F4A814"
         android:onClick="saveAppointment"
         android:text="@string/btn_addBook_sathira"
         app:layout_constraintEnd_toEndOf="parent"
@@ -254,7 +283,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="16dp"
+        android:background="#9BE8EF"
         android:ems="10"
+        android:fontFamily="sans-serif-light"
         android:inputType="time"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_addTime_sathira"
         app:layout_constraintEnd_toEndOf="parent"
@@ -266,9 +297,11 @@
         android:layout_width="83dp"
         android:layout_height="51dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="85dp"
         android:onClick="onClickBackBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
