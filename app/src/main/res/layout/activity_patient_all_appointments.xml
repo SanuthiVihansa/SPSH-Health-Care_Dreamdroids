@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#A3F4FB"
     tools:context=".Patient_All_Appointments">
 
     <TextView
@@ -13,8 +14,11 @@
         android:layout_marginStart="75dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="75dp"
+        android:fontFamily="serif-monospace"
         android:text="@string/tv_allAppointments_heading_sathria"
+        android:textColor="#1565C0"
         android:textSize="34sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,6 +30,7 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="36dp"
         android:ems="10"
+        android:fontFamily="sans-serif-light"
         android:hint="@string/et_allAppointments_SearchHint_sathria"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toStartOf="@+id/iv_allAppointments_search_icon_sathira"
@@ -39,6 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="61dp"
+        android:onClick="searchAppointment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/et_allAppointments_SearchHint_sathria"
@@ -47,9 +53,11 @@
 
     <ListView
         android:id="@+id/lv_allAppointments_sathira"
-        android:layout_width="411dp"
-        android:layout_height="350dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="395dp"
+        android:layout_height="400dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +70,7 @@
         android:layout_width="83dp"
         android:layout_height="51dp"
         android:layout_marginStart="164dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="164dp"
         android:layout_marginBottom="85dp"
         android:onClick="onClickBackbtn"
@@ -71,6 +79,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lv_allAppointments_sathira"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/btn_back" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
