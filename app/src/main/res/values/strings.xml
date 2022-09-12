@@ -99,4 +99,8 @@
     <string name="et_hintForSearchViewAllReports">Type here to search</string>
     <string name="btn_searchViewAllReports">Search</string>
     <string name="btn_viewViewAllReports">View</string>
+
+    <string name="speakable_text_for_back_btn">Back btn image</string>
+    <string name="speakable_text_for_lab_home_img">Lab home image</string>
+    <string name="speakable_text_for_logo_img">Logo image</string>
 </resources>
