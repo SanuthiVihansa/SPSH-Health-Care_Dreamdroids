@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    android:backgroundTint="#091971"
+    android:backgroundTintMode="add"
     tools:context=".MainActivity">
 
     <ImageView
@@ -11,6 +14,7 @@
         android:layout_width="192dp"
         android:layout_height="171dp"
         android:layout_marginTop="48dp"
+        android:contentDescription="@string/speakable_text_for_logo_img"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,8 +26,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:fontFamily="serif"
+        android:fontFamily="sans-serif-light"
         android:text="@string/tv_titleLogin"
+        android:textColor="#000000"
         android:textSize="34sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,9 +40,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+        android:autofillHints="username"
         android:ems="10"
         android:hint="@string/et_usernameLogin"
         android:inputType="textPersonName"
+        android:textColorHint="@color/txt_hint_loginform"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_titleLogin"
@@ -48,9 +55,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:autofillHints="password"
         android:ems="10"
         android:hint="@string/et_passwordLogin"
         android:inputType="textPassword"
+        android:textColorHint="@color/txt_hint_loginform"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_usernameLogin"
@@ -66,7 +75,8 @@
         android:text="@string/btn_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_passwordLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/et_passwordLogin"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/btn_signupLogin"
@@ -78,5 +88,6 @@
         android:text="@string/btn_signup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_login"
+        tools:ignore="TextContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
