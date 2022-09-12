@@ -10,4 +10,7 @@
     <color name="yellow">#E67709</color>
     <color name="red">#FF0D00</color>
     <color name="green">#FF0D8F04</color>
+
+    <color name="bg_tint_for_add_report">#596E8E</color>
+    <color name="txt_hint_loginform">#333957</color>
 </resources>
