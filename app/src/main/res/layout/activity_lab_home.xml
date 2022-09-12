@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/lab_home_background"
     tools:context=".LabHome">
 
     <TextView
@@ -12,7 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
         android:text="@string/tv_titleLabHome"
+        android:textColor="@color/black"
         android:textSize="34sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,12 +24,13 @@
         android:id="@+id/btn_viewAllReportsLab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="16dp"
         android:onClick="onClickViewAllLabReportBtn"
         android:text="@string/btn_viewAllReportsLab"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_titleLabHome" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
         android:id="@+id/btn_makeReport"
@@ -44,10 +48,24 @@
         android:id="@+id/img_btnBack"
         android:layout_width="93dp"
         android:layout_height="54dp"
-        android:layout_marginTop="228dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/speakable_text_for_back_btn"
         android:onClick="onClickBtnBack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_makeReport"
         app:srcCompat="@drawable/btn_back" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="227dp"
+        android:layout_height="246dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/speakable_text_for_lab_home_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_titleLabHome"
+        app:srcCompat="@drawable/lab_home_pic1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
