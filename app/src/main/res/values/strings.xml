@@ -52,4 +52,11 @@
     <string name="et_Fee_ADD_DOC">30000.00</string>
     <string name="tv7_DOC_PROFILE_MaxPat">50</string>
     <string name="et6_UPDATEDDOC_fee">3000.00</string>
+    <string name="et_SearchDoc">Dr.Sunil</string>
+    <string name="btn1_Doc_Home_ADD_DOC">ADD DOC</string>
+    <string name="BTN2_DOC_HOME_AvaiDoc">AVAILABLE DOCTORS</string>
+    <string name="btn_Doc_Profile_Back">BACK</string>
+    <string name="btn_update_back">BACK</string>
+    <string name="btn_search_back">BACK</string>
+    <string name="button_SEARCH">SEARCH</string>
 </resources>

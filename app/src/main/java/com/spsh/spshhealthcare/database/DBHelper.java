@@ -131,7 +131,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.delete((DoctorsMasters.Doctors.TABLE_NAME),selection,stringArgs);
     }
 
-    public void updateDocInfo(View view, String doctorName, String Docspeciality, String workplace, String experience, double fee, int maxPat){
+    public int updateDocInfo(String docId,String doctorName, String Docspeciality, String workplace, String experience, double fee, int maxPat){
         SQLiteDatabase db = getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -148,7 +148,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         //qUESTION MARK REPLACED BY ARGUMENTS.
         String selection = DoctorsMasters.Doctors._ID + " LIKE ?";
-        String[] selectionArgs = {String.valueOf(docId)};
+        String[] selectionArgs = {docId};
 
         //count shows the affected number of rows.
         //Same username --> all will be updated with the same password--> can count how many such rows were updated.
@@ -158,14 +158,46 @@ public class DBHelper extends SQLiteOpenHelper {
                 selection,
                 selectionArgs
         );
-
+        return count;
         //Display to the user as to how many such records were updated.
-        Snackbar snackbar = Snackbar.make(view, count+" rows were affected!",Snackbar.LENGTH_LONG);
-        snackbar.setAnimationMode(Snackbar.ANIMATION_MODE_SLIDE);
-        snackbar.show();
+//        Snackbar snackbar = Snackbar.make(view, count+" rows were affected!",Snackbar.LENGTH_LONG);
+//        snackbar.setAnimationMode(Snackbar.ANIMATION_MODE_SLIDE);
+//       snackbar.show();
+        //Toast.makeText(this, "Rows updated successfully", Toast.LENGTH_SHORT).show();
+
     }
+
+    @SuppressLint("Range")
+    public ArrayList<HashMap<String,String>> searchDocInfo(String docName){
+        SQLiteDatabase db = getReadableDatabase();
+        ArrayList<HashMap<String,String>> docSearchList = new ArrayList<>();
+        //String query = "SELECT "+DoctorsMasters.Doctors._ID+", "+DoctorsMasters.Doctors.COLUMN_NAME_DOCTORNAME+", "+DoctorsMasters.Doctors.COLUMN_NAME_SPECIALITY+", "+DoctorsMasters.Doctors.COLUMN_NAME_MAXIMUMPATIENTS+" FROM "+DoctorsMasters.Doctors.TABLE_NAME;
+
+        String query = "SELECT "+DoctorsMasters.Doctors._ID +","+DoctorsMasters.Doctors.COLUMN_NAME_DOCTORNAME+", "+DoctorsMasters.Doctors.COLUMN_NAME_SPECIALITY+","+DoctorsMasters.Doctors.COLUMN_NAME_WORKINGPLACE+","+DoctorsMasters.Doctors.COLUMN_NAME_EXPERIENCE+","+DoctorsMasters.Doctors.COLUMN_NAME_FEE+", "+DoctorsMasters.Doctors.COLUMN_NAME_MAXIMUMPATIENTS+" FROM "+DoctorsMasters.Doctors.TABLE_NAME+" WHERE "+DoctorsMasters.Doctors.COLUMN_NAME_DOCTORNAME+"='"+ docName + "'";
+        Cursor cursor = db.rawQuery(query,null);
+
+        while(cursor.moveToNext()){
+
+            //Gives details of one entry.(1 DOC)
+            //First param in the Generics --> holds a reference.
+            //second param in the Generics --> holds the values associated.
+            HashMap<String, String> hmap = new HashMap<>();
+            //we created a hashmap to save one record or row.
+            hmap.put(DoctorsMasters.Doctors._ID,cursor.getString(cursor.getColumnIndex(DoctorsMasters.Doctors._ID)));
+            hmap.put(DoctorsMasters.Doctors.COLUMN_NAME_DOCTORNAME,cursor.getString(cursor.getColumnIndex(DoctorsMasters.Doctors.COLUMN_NAME_DOCTORNAME)));
+            hmap.put(DoctorsMasters.Doctors.COLUMN_NAME_SPECIALITY,cursor.getString(cursor.getColumnIndex(DoctorsMasters.Doctors.COLUMN_NAME_SPECIALITY)));
+           // hmap.put(DoctorsMasters.Doctors.COLUMN_NAME_WORKINGPLACE,cursor.getString(cursor.getColumnIndex(DoctorsMasters.Doctors.COLUMN_NAME_WORKINGPLACE)));
+           // hmap.put(DoctorsMasters.Doctors.COLUMN_NAME_EXPERIENCE,cursor.getString(cursor.getColumnIndex(DoctorsMasters.Doctors.COLUMN_NAME_EXPERIENCE)));
+           // hmap.put(DoctorsMasters.Doctors.COLUMN_NAME_FEE,cursor.getString(cursor.getColumnIndex(DoctorsMasters.Doctors.COLUMN_NAME_FEE)));
+            hmap.put(DoctorsMasters.Doctors.COLUMN_NAME_MAXIMUMPATIENTS,cursor.getString(cursor.getColumnIndex(DoctorsMasters.Doctors.COLUMN_NAME_MAXIMUMPATIENTS)));
+
+            docSearchList.add(hmap);
+        }
+        return docSearchList;
+    }
+
 
 }
 
-
+//
 

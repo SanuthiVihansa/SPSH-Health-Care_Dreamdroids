@@ -9,19 +9,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.spsh.spshhealthcare.database.DBHelper;
-import com.spsh.spshhealthcare.database.DoctorsMasters;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Search_Doc extends AppCompatActivity {
     ListView docListView;
+    String docName;
+
+    EditText et_SearchDoc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +38,7 @@ public class Search_Doc extends AppCompatActivity {
 
         setContentView(R.layout.activity_search_doc);
 
+        et_SearchDoc = findViewById(R.id.et_SearchDoc);
         docListView = findViewById(R.id.listView_SearchDoc);
         //String docName = "Dr.Hilarina";
         //String docId = "D001";
@@ -69,5 +73,44 @@ public class Search_Doc extends AppCompatActivity {
             }
         };
         docListView.setAdapter(listAdapter);
+    }
+
+    public void Search(View view){
+        docListView = findViewById(R.id.listView_SearchDoc);
+        DBHelper dbhelper = new DBHelper(this);
+        //initialization of the Search Edit Text.
+
+        String searchDoc = et_SearchDoc.getText().toString();
+
+        ArrayList<HashMap<String,String>> docSearched = dbhelper.searchDocInfo(searchDoc);
+
+        ListAdapter searchlist = new SimpleAdapter(Search_Doc.this,docSearched,R.layout.doctor_row,new String[]{"_id","Doctor_Name","Speciality","Maximum_Patients"},new int[]{R.id.tv_doc_rowId,R.id.tv1_searchDoc_row_Name,R.id.tv2_searchDoc_row_Speciality,R.id.tv3_searchDoc_row_MaxPat}) {
+
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+
+                Button btn = (Button)view.findViewById(R.id.btn_row_view);
+
+                TextView invId = (TextView) view.findViewById(R.id.tv_doc_rowId);
+                String docId = invId.getText().toString();
+
+                btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(Search_Doc.this, Doc_Profile.class);
+                        intent.putExtra("docName", searchDoc);
+                        startActivity(intent);
+                    }
+                });
+                return view;
+            }
+
+        };
+        docListView.setAdapter(searchlist);
+    }
+
+    public void back(View view){
+        Intent intent = new Intent(this,Doc_Home.class);
+        startActivity(intent);
     }
 }

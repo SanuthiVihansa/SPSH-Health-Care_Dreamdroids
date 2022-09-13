@@ -21,10 +21,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Doc_Profile extends AppCompatActivity {
-   TextView tv2_Doc_Profile_Name,TV3_DOC_PROFILE_Speciality,tv4_Doc_Profile_WorkingPlace,tv5_Doc_Profile_Experience,tv6_Doc_Profile_Fee,tv7_DOC_PROFILE_MaxPat;
-   //ListView  singledocListView;
+    TextView tv2_Doc_Profile_Name, TV3_DOC_PROFILE_Speciality, tv4_Doc_Profile_WorkingPlace, tv5_Doc_Profile_Experience, tv6_Doc_Profile_Fee, tv7_DOC_PROFILE_MaxPat;
+    //ListView  singledocListView;
     private String docId;
-   @SuppressLint("WrongViewCast")
+
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,36 +46,40 @@ public class Doc_Profile extends AppCompatActivity {
 
         ArrayList singleDocInfo = dbHelper.viewSingleDocInfo(Integer.parseInt(docId));
 
-       tv2_Doc_Profile_Name = findViewById(R.id.tv2_Doc_Profile_Name);
-       TV3_DOC_PROFILE_Speciality = findViewById(R.id.TV3_DOC_PROFILE_Speciality);
-       tv4_Doc_Profile_WorkingPlace = findViewById(R.id.tv4_Doc_Profile_WorkingPlace);
-       tv5_Doc_Profile_Experience = findViewById(R.id.tv5_Doc_Profile_Experience);
-       tv6_Doc_Profile_Fee = findViewById(R.id.tv6_Doc_Profile_Fee);
-       tv7_DOC_PROFILE_MaxPat = findViewById(R.id.tv7_DOC_PROFILE_MaxPat);
+        tv2_Doc_Profile_Name = findViewById(R.id.tv2_Doc_Profile_Name);
+        TV3_DOC_PROFILE_Speciality = findViewById(R.id.TV3_DOC_PROFILE_Speciality);
+        tv4_Doc_Profile_WorkingPlace = findViewById(R.id.tv4_Doc_Profile_WorkingPlace);
+        tv5_Doc_Profile_Experience = findViewById(R.id.tv5_Doc_Profile_Experience);
+        tv6_Doc_Profile_Fee = findViewById(R.id.tv6_Doc_Profile_Fee);
+        tv7_DOC_PROFILE_MaxPat = findViewById(R.id.tv7_DOC_PROFILE_MaxPat);
 
-       //Since its an arraylist --> pass the index within normal brackets.
-       tv2_Doc_Profile_Name.setText("Doctor Name : " +(String)singleDocInfo.get(0));
-       TV3_DOC_PROFILE_Speciality.setText("Doctor Speciality : " +(String)singleDocInfo.get(1));
-       tv4_Doc_Profile_WorkingPlace.setText("Working Place : "+(String)singleDocInfo.get(2));
-       tv5_Doc_Profile_Experience.setText("Experience : "+(String)singleDocInfo.get(3));
-       tv6_Doc_Profile_Fee.setText("Fee : "+(String)singleDocInfo.get(4));
-       tv7_DOC_PROFILE_MaxPat.setText("Maximum Patients : "+(String)singleDocInfo.get(5));
+        //Since its an arraylist --> pass the index within normal brackets.
+        tv2_Doc_Profile_Name.setText("Doctor Name : " + (String) singleDocInfo.get(0));
+        TV3_DOC_PROFILE_Speciality.setText("Doctor Speciality : " + (String) singleDocInfo.get(1));
+        tv4_Doc_Profile_WorkingPlace.setText("Working Place : " + (String) singleDocInfo.get(2));
+        tv5_Doc_Profile_Experience.setText("Experience : " + (String) singleDocInfo.get(3));
+        tv6_Doc_Profile_Fee.setText("Fee : " + (String) singleDocInfo.get(4));
+        tv7_DOC_PROFILE_MaxPat.setText("Maximum Patients : " + (String) singleDocInfo.get(5));
 
     }
 
-    public void update(View view){
-       Intent intent = new Intent(this,Available_DOC.class);
-       startActivity(intent);
+    public void update(View view) {
+        Intent intent = new Intent(Doc_Profile.this, Available_DOC.class);
+        intent.putExtra("docId",docId);
+        startActivity(intent);
     }
 
-    public void deleteDoc(View view){
-       DBHelper dbHelper = new DBHelper(this);
-       dbHelper.deleteDoc(Integer.parseInt(this.docId));
+    public void deleteDoc(View view) {
+        DBHelper dbHelper = new DBHelper(this);
+        dbHelper.deleteDoc(Integer.parseInt(this.docId));
 
-       Toast.makeText(this,"Doctor deleted successfully.", Toast.LENGTH_SHORT).show();
-       Intent intent = new Intent(this,Search_Doc.class);
-       startActivity(intent);
+        Toast.makeText(this, "Doctor deleted successfully.", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, Search_Doc.class);
+        startActivity(intent);
     }
 
-
+    public void back(View view) {
+        Intent intent = new Intent(this,Available_DOC.class);
+        startActivity(intent);
+    }
 }
