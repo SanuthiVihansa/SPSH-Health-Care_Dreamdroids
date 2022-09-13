@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#16A9BC"
     tools:context=".PharmisisitSearch">
 
     <RadioButton
@@ -47,11 +48,12 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:background="#FFFFFF"
+        android:contentDescription="TODO"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv_pSearchView"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/search"
-        android:contentDescription="TODO" />
+        app:srcCompat="@drawable/search" />
 
     <ListView
         android:id="@+id/lv_PlistView"

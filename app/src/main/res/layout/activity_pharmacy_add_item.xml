@@ -5,7 +5,8 @@
     android:id="@+id/constraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/white"
+    android:background="#F4F8FB"
+    android:backgroundTint="#EAEEF1"
     tools:context=".PharmacyAddItem"
     tools:layout_editor_absoluteX="-6dp"
     tools:layout_editor_absoluteY="11dp">
@@ -31,13 +32,13 @@
         android:layout_width="119dp"
         android:layout_height="29dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="@string/tv_pItemCode"
         android:textStyle="normal|bold"
         app:layout_constraintEnd_toStartOf="@+id/et_ItemCode"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_pAddItem" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
     <EditText
         android:id="@+id/et_pItemName"
@@ -60,7 +61,7 @@
         android:layout_width="119dp"
         android:layout_height="29dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="@string/tv_pItemName"
         android:textStyle="normal|bold"
         app:layout_constraintEnd_toStartOf="@+id/et_pItemName"
@@ -73,7 +74,7 @@
         android:layout_width="119dp"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="@string/tv_pProducerName"
         android:textStyle="normal|bold"
         app:layout_constraintEnd_toStartOf="@+id/et_pProducerName"
@@ -101,7 +102,7 @@
         android:layout_width="119dp"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/white"
         android:text="@string/tv_Usage"
         android:textStyle="normal|bold"
@@ -130,7 +131,7 @@
         android:layout_width="119dp"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/white"
         android:text="@string/tv_Strength"
         android:textStyle="normal|bold"
@@ -159,7 +160,7 @@
         android:layout_width="120dp"
         android:layout_height="37dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/white"
         android:text="@string/tv_manuDate"
         android:textStyle="normal|bold"
@@ -173,7 +174,7 @@
         android:layout_width="119dp"
         android:layout_height="32dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/white"
         android:scrollbars="horizontal|vertical"
         android:text="@string/tv_expDate"
@@ -220,7 +221,7 @@
         android:layout_width="119dp"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/white"
         android:text="@string/tv_pdescription"
         android:textStyle="normal|bold"
@@ -250,7 +251,7 @@
         android:layout_width="119dp"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="@string/tv_pprice"
         android:textStyle="normal|bold"
         app:layout_constraintEnd_toStartOf="@+id/et_pprice"
@@ -275,37 +276,24 @@
 
     <Button
         android:id="@+id/btn_pSubmit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="#F39204"
+        android:layout_width="108dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#38A9B6"
         android:onClick="AddItem"
         android:text="@string/btn_pSubmit"
-        android:textColor="#4E342E"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_Add_navigate"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_pdescription" />
-
-    <TextView
-        android:id="@+id/tv_pAddItem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/tv_pAddItem"
-        android:textSize="24sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.748"
+        app:layout_constraintStart_toEndOf="@+id/btn_Add_navigate" />
 
     <TextView
         android:id="@+id/tv_ppQuantity"
         android:layout_width="119dp"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="@string/tv_ppQuantity"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/et_ppQuantity"
@@ -328,6 +316,46 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tv_ppQuantity"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/btn_Add_navigate"
+        android:layout_width="108dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#CA577E"
+        android:text="@string/btn_Add_navigate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pdescription"
+        app:layout_constraintVertical_bias="0.619" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="433dp"
+        android:layout_height="173dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/additemheader" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="402dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#53BCCA"
+        android:text="@string/tv_pAddItem"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

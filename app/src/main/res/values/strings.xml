@@ -19,7 +19,7 @@
     <string name="et_pProducerName"></string>
     <string name="tv_Usage">Usage : </string>
     <string name="et_Usage"></string>
-    <string name="tv_Strength">Strength : </string>
+    <string name="tv_Strength">Strength (mg): </string>
     <string name="et_Strength"></string>
     <string name="tv_manuDate">Manufacturing date : </string>
     <string name="et_manuDate"></string>
@@ -27,7 +27,7 @@
     <string name="et_expDate"></string>
     <string name="tv_pdescription">Description : </string>
     <string name="et_pdescription"></string>
-    <string name="tv_pprice">Unit price : </string>
+    <string name="tv_pprice">Unit price (Rs): </string>
     <string name="et_pprice"></string>
     <string name="tv_ppQuantity">Quantity : </string>
     <string name="et_ppQuantity"></string>
@@ -44,14 +44,14 @@
     <string name="et_puproducerName"></string>
     <string name="tv_puusage">Usage : </string>
     <string name="et_puusage"></string>
-    <string name="tv_puStrength">Strength : </string>
+    <string name="tv_puStrength">Strength (mg) : </string>
     <string name="et_puStrenegth"></string>
     <string name="tv_uexpirationDate">Expiration date : </string>
     <string name="et_uexpirationDate"></string>
     <string name="tv_pumanufactureDate">Manufacture Date : </string>
     <string name="et_pumanufactureDate"></string>
-    <string name="tv_puUnintPrice">Unit price : </string>
-    <string name="et_puUnintPrice"></string>
+    <string name="tv_puUnintPrice">Unit price (Rs.): </string>
+    <string name="et_puUnintPrice"> </string>
     <string name="tv_puDescription">Description : </string>
     <string name="et_puDescription"></string>
     <string name="tv_puQuantity">Quantity : </string>
@@ -60,7 +60,6 @@
     <string name="tv_pUpdate">Update Item</string>
 
     <!--    SEARCH AND DISPLAY ALL PHARMACY EQUIPMENTS -->
-
     <string name="tv_pSearchView">Search</string>
     <string name="rb_PproductName">Item Name</string>
     <string name="rb_pProduct">Trade Name</string>
@@ -69,26 +68,25 @@
     <string name="tv_pvItemName">Item name</string>
     <string name="tv_pvProducerName">Producer name</string>
     <string name="tv_pvUsage">Usage</string>
-    <string name="tv_pvStrength">Strength</string>
+    <string name="tv_pvStrength">Strength (mg)</string>
     <string name="tv_pvmanuDate">Manufacture date</string>
     <string name="tv_pvexpirationdate">Expiration date</string>
-    <string name="tv_pvprice">Price</string>
+    <string name="tv_pvprice">Unit price (Rs.)</string>
     <string name="tv_pvDescription">Description</string>
     <string name="tv_pvQuantity">Quantity</string>
     <string name="btn_pvUpdate">Update</string>
     <string name="btn_pvDelete">Delete</string>
-
     <!--    VIEW BUTTON IN THE VIEW ALL EQUIPMENTS -->
-
     <string name="btn_pharmaView">View</string>
-
     <!--    View all equipments page -->
     <string name="tv_PharmacyViewAllHeader"> Welcome !</string>
-
-<!--    navigate button-->
+    <!--    navigate button-->
     <string name= "btn_navigate"> BACK </string>
-
+    <string name= "btn_update_navigate"> BACK </string>
+    <string name= "btn_Add_navigate"> BACK </string>
+    <string name= "btn_view_navigate"> BACK </string>
 <!--    view all page -->
+    <string name="tv_heading"> Welcome !</string>
     <string name="tv_heading1">Pharmacy Equipments </string>
     <string name="tv_heading2">prescription medicine </string>
     <string name="tv_heading3">Supplements </string>

@@ -35,7 +35,7 @@ public class PharmisistHome extends AppCompatActivity {
 
     public void viewAll(View view) {
 
-        Intent intent = new Intent(this,PharmisisitSearch.class);
+        Intent intent = new Intent(this,ViewAllPharamacyItems.class);
         startActivity(intent);
 
     }

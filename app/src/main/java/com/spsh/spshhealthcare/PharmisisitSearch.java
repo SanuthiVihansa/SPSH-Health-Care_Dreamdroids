@@ -23,6 +23,7 @@ import database.DBHelper;
 public class PharmisisitSearch extends AppCompatActivity {
 
     ListView listView;
+    String PharmID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +32,14 @@ public class PharmisisitSearch extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_pharmisisit_search);
+
+        PharmID = getIntent().getStringExtra("pharmacyID");
         //Initialising the listview
         listView = findViewById(R.id.lv_PlistView);
 
         DBHelper helper = new DBHelper(this);
 
-        ArrayList<HashMap<String, String>> allPharmacyEquip = helper.readAllInfo();
+        ArrayList<HashMap<String, String>> allPharmacyEquip = helper.readAllInfo(PharmID);
 
         ListAdapter listAdapter = new SimpleAdapter(PharmisisitSearch.this, allPharmacyEquip, R.layout.pharmacy_item_row, new String[]{PharmacyMaster.Pharmacy._ID, PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMCODE, PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMNAME, PharmacyMaster.Pharmacy.COLOUMN_NAME_USAGE}, new int[]{R.id.tv_pharmIdTextView, R.id.tv_pharmaItemCode, R.id.tv_pharmItemName, R.id.tv_pharmUsage}) {
             //returns a view

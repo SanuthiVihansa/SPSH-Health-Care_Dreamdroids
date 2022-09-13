@@ -7,32 +7,40 @@
     android:padding = "16dip">
 
     <TextView
-        android:id = "@+id/tv_pharmaItemCode"
-        android:layout_width = "wrap_content"
-        android:layout_height = "wrap_content"
-        android:textSize = "18sp" />
+        android:id="@+id/tv_pharmaItemCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="P0001"
+        android:textSize="18sp" />
+
     <TextView
         android:id="@+id/tv_pharmItemName"
-        android:layout_width = "wrap_content"
-        android:layout_height = "wrap_content"
-        android:layout_below = "@+id/tv_pharmaItemCode"
-        android:textSize = "18sp"
-        android:layout_marginTop = "7dp"/> <!--This is to set the item code above the item name-->
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_pharmaItemCode"
+        android:layout_marginTop="7dp"
+        android:text="Paracetamol"
+        android:textSize="18sp" /> <!--This is to set the item code above the item name-->
     <TextView
         android:id="@+id/tv_pharmUsage"
-        android:layout_width = "wrap_content"
-        android:layout_height = "wrap_content"
-        android:layout_below = "@+id/tv_pharmItemName"
-        android:textSize = "18sp"
-        android:layout_marginTop = "7dp"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_pharmItemName"
+        android:layout_marginTop="7dp"
+        android:text="Pain killers"
+        android:textSize="18sp" />
+
     <Button
-        android:id = "@+id/btn_pharmaView"
-        android:layout_width = "wrap_content"
-        android:layout_height = "wrap_content"
-        android:layout_alignBaseline = "@id/tv_pharmItemName"
-        android:layout_alignParentEnd = "true"
-        android:contentDescription = "@string/btn_pharmaView"
-        android:text="@string/btn_pharmaView" />
+        android:id="@+id/btn_pharmaView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/tv_pharmItemName"
+        android:layout_alignParentEnd="true"
+        android:background="#F1C541"
+        android:contentDescription="@string/btn_pharmaView"
+        android:text="@string/btn_pharmaView"
+        android:textColor="#FFFFFF"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/tv_pharmIdTextView"
