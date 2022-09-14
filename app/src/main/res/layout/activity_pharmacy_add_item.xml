@@ -285,7 +285,7 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBaseline_toBaselineOf="@+id/btn_Add_navigate"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.748"
+        app:layout_constraintHorizontal_bias="0.74"
         app:layout_constraintStart_toEndOf="@+id/btn_Add_navigate" />
 
     <TextView
@@ -321,14 +321,15 @@
         android:id="@+id/btn_Add_navigate"
         android:layout_width="108dp"
         android:layout_height="48dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="52dp"
         android:layout_marginTop="8dp"
         android:backgroundTint="#CA577E"
+        android:onClick="backwardNavigation"
         android:text="@string/btn_Add_navigate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_pdescription"
-        app:layout_constraintVertical_bias="0.619" />
+        app:layout_constraintVertical_bias="0.285" />
 
     <ImageView
         android:id="@+id/imageView7"

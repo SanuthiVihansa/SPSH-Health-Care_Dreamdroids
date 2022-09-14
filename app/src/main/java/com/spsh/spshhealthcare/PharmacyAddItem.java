@@ -2,6 +2,7 @@ package com.spsh.spshhealthcare;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -64,9 +65,10 @@ public class PharmacyAddItem extends AppCompatActivity {
             Toast.makeText(this, "inserted value " + inserted, Toast.LENGTH_SHORT).show();
         }
 
+    }
 
-
-
-
+    public void backwardNavigation(View view){
+        Intent intent = new Intent(this,Pharmacist_home_page.class);
+        startActivity(intent);
     }
 }
