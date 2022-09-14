@@ -4,26 +4,31 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:padding="5dip">
+
     <TextView
         android:id="@+id/tv_row_name_sathira"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="18dp"/>
+        android:fontFamily="sans-serif-light"
+        android:textColor="#1565C0"
+        android:textSize="18dp" />
+
     <TextView
         android:id="@+id/tv_row_date_sathira"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
-        android:textColor="@color/black"
-        android:layout_below="@id/tv_row_name_sathira"/>
+        android:layout_below="@id/tv_row_name_sathira"
+        android:fontFamily="sans-serif-light"
+        android:textColor="#1565C0"
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/tv_row_dName_sathira"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_row_date_sathira"
-        android:textColor="@color/black"
+        android:fontFamily="sans-serif-light"
+        android:textColor="#1565C0"
         android:textSize="18dp" /> <!--This means dr.name will come after date-->
     <TextView
         android:id="@+id/tv_single_appointment_sathira"
