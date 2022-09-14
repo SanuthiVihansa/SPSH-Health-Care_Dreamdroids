@@ -7,26 +7,30 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/spsh_health_care_logo_with_background"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/spsh_health_care_logo_with_background"
         android:supportsRtl="true"
         android:theme="@style/Theme.SPSHHealthCare"
         tools:targetApi="31">
         <activity
-            android:name=".PharmasistViewPage"
+            android:name=".ViewAllReports"
+            android:windowSoftInputMode="stateHidden"
             android:exported="false" />
         <activity
-            android:name=".PharmisisitSearch"
+            android:name=".ViewReport"
             android:exported="false" />
         <activity
-            android:name=".PharmacisitUpdate"
+            android:name=".UpdateReport"
             android:exported="false" />
         <activity
-            android:name=".PharmacyAddItem"
+            android:name=".AddReport"
             android:exported="false" />
         <activity
-            android:name=".PharmisistHome"
+            android:name=".LabHome"
+            android:exported="false" />
+        <activity
+            android:name=".PatientSignup"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
