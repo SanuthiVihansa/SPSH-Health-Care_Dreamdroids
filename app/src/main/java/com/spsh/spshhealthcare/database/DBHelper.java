@@ -7,9 +7,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.spsh.spshhealthcare.R;
-import com.spsh.spshhealthcare.models.Report;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
