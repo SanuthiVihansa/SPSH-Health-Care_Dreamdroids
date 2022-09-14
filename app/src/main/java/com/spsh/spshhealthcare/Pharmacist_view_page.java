@@ -58,7 +58,7 @@ public class Pharmacist_view_page extends AppCompatActivity {
         tv_pvQuantityD.setText((String)pharmacyEquipments.get(8));
         tv_pvDescriptionD.setText((String)pharmacyEquipments.get(9));
     }
-    public void deleteUser(View view) {
+    public void pharmacistDeleteItem(View view) {
         DBHelper dbHelper = new DBHelper(this);
         dbHelper.deleteInfo(Integer.parseInt(this.pharmaEqID));
 

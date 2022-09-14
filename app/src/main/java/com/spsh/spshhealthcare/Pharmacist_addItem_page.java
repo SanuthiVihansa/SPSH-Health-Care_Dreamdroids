@@ -57,7 +57,7 @@ public class Pharmacist_addItem_page extends AppCompatActivity {
 
         DBHelper dbHelper = new DBHelper(this);
 
-        long inserted = dbHelper.addInfo(Itemcode, Itemname,ProducerName ,Usage,Strength,ManuDate,ExpDate,Price,Quantity,description);
+        long inserted = dbHelper.pharmacistAddInfo(Itemcode, Itemname,ProducerName ,Usage,Strength,ManuDate,ExpDate,Price,Quantity,description);
 
         if (inserted > 0) {
             Toast.makeText(this, "Data successfully added", Toast.LENGTH_SHORT).show();

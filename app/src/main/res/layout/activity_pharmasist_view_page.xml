@@ -211,7 +211,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="#F65656"
-        android:onClick="deleteUser"
+        android:onClick="pharmacistDeleteItem"
         android:text="@string/btn_pvDelete"
         app:layout_constraintBaseline_toBaselineOf="@+id/btn_pvUpdate"
         app:layout_constraintEnd_toEndOf="parent"

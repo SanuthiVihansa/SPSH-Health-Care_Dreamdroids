@@ -41,7 +41,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public long addInfo(String itemCode, String itemName, String producerName, String usage, Integer strength, String expirationDate, String manufactureDate, Double unitPrice,  Integer Quantity, String description) {
+    public long pharmacistAddInfo(String itemCode, String itemName, String producerName, String usage, Integer strength, String expirationDate, String manufactureDate, Double unitPrice,  Integer Quantity, String description) {
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
 
         //create a new map of values, where column names the key
