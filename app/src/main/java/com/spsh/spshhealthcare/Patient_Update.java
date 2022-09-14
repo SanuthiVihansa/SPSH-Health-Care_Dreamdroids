@@ -8,17 +8,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import database.AppointmentsMaster;
-import database.DBHelper;
+import com.spsh.spshhealthcare.database.DBHelper;
 
 public class Patient_Update extends AppCompatActivity {
     EditText et_update_name_sathira, et_update_age_sathira, et_update_gender_sathira, et_update_contactNum_sathira;
     String appointmentID, pname, age, gender, contactNo;
+    String globalNic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +34,7 @@ public class Patient_Update extends AppCompatActivity {
         DBHelper dbHelper = new DBHelper(this);
 
         appointmentID = intent.getStringExtra("appointmentID");
+        this.globalNic = intent.getStringExtra("nic");
 
         ArrayList list = dbHelper.readAppointmentByID(appointmentID);
 
@@ -89,6 +89,7 @@ public class Patient_Update extends AppCompatActivity {
     public void onClickBackBtn(View view){
         Intent intent = new Intent(this, Patient_View_Single.class);
         intent.putExtra("appointmentID", appointmentID);
+        intent.putExtra("nic", Patient_View_Single.globalNic);
         startActivity(intent);
     }
 }

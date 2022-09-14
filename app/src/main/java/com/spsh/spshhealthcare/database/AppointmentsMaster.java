@@ -1,4 +1,4 @@
-package database;
+package com.spsh.spshhealthcare.database;
 
 import android.provider.BaseColumns;
 

@@ -15,13 +15,14 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import database.DBHelper;
+import com.spsh.spshhealthcare.database.DBHelper;
 
 public class Patient_View_Single extends AppCompatActivity {
 
     TextView textView;
     TextView tv_single_appointment_sathira;
     String appointmentID;
+    public static String globalNic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,8 @@ public class Patient_View_Single extends AppCompatActivity {
         tv_single_appointment_sathira = findViewById(R.id.tv_single_appointment_sathira);
         textView = findViewById(R.id.tv_single_id2_sathira);
         appointmentID = intent.getStringExtra("appointmentID");
+
+        Patient_View_Single.globalNic = intent.getStringExtra("nic");
 
         tv_single_appointment_sathira.setText(getResources().getString(R.string.tv_single_appointment_sathira));
         textView.setText(appointmentID);
@@ -82,6 +85,7 @@ public class Patient_View_Single extends AppCompatActivity {
     public void onClickUpdateBtn(View view){ //method to navigate to update activity
         Intent intent = new Intent(this,Patient_Update.class);
         intent.putExtra("appointmentID", appointmentID);
+        intent.putExtra("nic", Patient_View_Single.globalNic);
         startActivity(intent);
     }
 
@@ -105,6 +109,7 @@ public class Patient_View_Single extends AppCompatActivity {
 
                 //intent - navigates to all appointments page
                 Intent intent = new Intent(Patient_View_Single.this, Patient_All_Appointments.class);
+                intent.putExtra("nic", Patient_View_Single.globalNic);
                 startActivity(intent);
             }
         });
@@ -122,6 +127,7 @@ public class Patient_View_Single extends AppCompatActivity {
 
     public void onClickBackBtn(View view){
         Intent intent = new Intent(this,Patient_All_Appointments.class);
+        intent.putExtra("nic", Patient_View_Single.globalNic);
         startActivity(intent);
     }
 }

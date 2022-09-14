@@ -12,6 +12,7 @@ import android.widget.Button;
 public class Patient_Home extends AppCompatActivity {
 
 //    Button button; //part of creating intent
+    private String nic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,9 @@ public class Patient_Home extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         //
         setContentView(R.layout.activity_patient_home);
+
+        Intent intent = getIntent();
+        this.nic = intent.getStringExtra("nic");
 
 //        //Method 1 to create intents
 //        button = findViewById(R.id.btn_viewAppoint_sathira);
@@ -36,11 +40,13 @@ public class Patient_Home extends AppCompatActivity {
     //Method 2 to create intents
     public void onClickViewAppointmentBtn(View view){
         Intent intent = new Intent(this,Patient_All_Appointments.class);
+        intent.putExtra("nic", this.nic);
         startActivity(intent);
     }
 
     public void onClickMakeAppointmentBtn(View view){
         Intent intent = new Intent(this,Patient_Add.class);
+        intent.putExtra("nic", this.nic);
         startActivity(intent);
     }
 }

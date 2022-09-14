@@ -12,7 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import database.DBHelper;
+import com.spsh.spshhealthcare.database.DBHelper;
+
 
 public class Patient_Add extends AppCompatActivity {
 
@@ -32,7 +33,8 @@ public class Patient_Add extends AppCompatActivity {
 
         setContentView(R.layout.activity_patient_add);
 
-        this.nic2 = "200045500065";
+        Intent intent = getIntent();
+        this.nic2 = intent.getStringExtra("nic");
 
         et_addName_sathira = findViewById(R.id.et_addName_sathira);
         et_addAge_sathira = findViewById(R.id.et_addAge_sathira);
@@ -69,10 +71,10 @@ public class Patient_Add extends AppCompatActivity {
         else if(isNumeric(specialization, et_addSpecial_sathira)){}
         else if(isNumeric(doctorName, et_addDrName_sathira)){}
 
-        else if(!onlyLetters(Pname, et_addName_sathira)){}
-        else if(!onlyLetters(gender, et_addGender_sathira)){}
-        else if(!onlyLetters(specialization, et_addSpecial_sathira)){}
-        else if(!onlyLetters(doctorName, et_addDrName_sathira)){}
+//        else if(!onlyLetters(Pname, et_addName_sathira)){}
+//        else if(!onlyLetters(gender, et_addGender_sathira)){}
+//        else if(!onlyLetters(specialization, et_addSpecial_sathira)){}
+//        else if(!onlyLetters(doctorName, et_addDrName_sathira)){}
 
         else {
                 int age2 = Integer.parseInt(age);
@@ -106,6 +108,7 @@ public class Patient_Add extends AppCompatActivity {
     //onClick method
     public void onClickBackBtn(View view) {
         Intent intent = new Intent(this, Patient_Home.class);
+        intent.putExtra("nic", this.nic2);
         startActivity(intent);
     }
 }

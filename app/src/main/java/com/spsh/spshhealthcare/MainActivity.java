@@ -3,6 +3,7 @@ package com.spsh.spshhealthcare;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             boolean isValidated = this.dbHelper.validateUser(username, password);
 
             if(isValidated == true) {
-                Intent intent = new Intent(this, LabHome.class);
+                Intent intent = new Intent(this, Patient_Home.class);
                 intent.putExtra("nic", username);
                 startActivity(intent);
             }

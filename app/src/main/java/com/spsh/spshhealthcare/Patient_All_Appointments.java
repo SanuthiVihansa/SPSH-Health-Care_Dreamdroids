@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -19,13 +18,13 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import database.AppointmentsMaster;
-import database.DBHelper;
+import com.spsh.spshhealthcare.database.DBHelper;
 
 public class Patient_All_Appointments extends AppCompatActivity {
 
     ListView listView;
     EditText editText;
+    public static String nic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +38,13 @@ public class Patient_All_Appointments extends AppCompatActivity {
 
         setContentView(R.layout.activity_patient_all_appointments);
 
+        Intent intent = getIntent();
+
         editText = findViewById(R.id.et_allAppointments_SearchHint_sathria);
 
         //display all appointments
         listView = findViewById(R.id.lv_allAppointments_sathira);
-        String nic = "200045500065";
+        Patient_All_Appointments.nic = intent.getStringExtra("nic");
         DBHelper dbHelper = new DBHelper(this);
         ArrayList<HashMap<String,String>> allAppointments = dbHelper.readAllAppointments(nic);
                                                                                                         //file that represents row
@@ -59,6 +60,7 @@ public class Patient_All_Appointments extends AppCompatActivity {
                     public void onClick(View view) {
                         Intent intent = new Intent(Patient_All_Appointments.this,Patient_View_Single.class);
                         intent.putExtra("appointmentID",appointmentID);
+                        intent.putExtra("nic", Patient_All_Appointments.nic);
                         startActivity(intent);
                     }
                 });
@@ -97,6 +99,7 @@ public class Patient_All_Appointments extends AppCompatActivity {
 
     public void onClickBackbtn(View view){
         Intent intent = new Intent(this,Patient_Home.class);
+        intent.putExtra("nic", Patient_All_Appointments.nic);
         startActivity(intent);
     }
 }
