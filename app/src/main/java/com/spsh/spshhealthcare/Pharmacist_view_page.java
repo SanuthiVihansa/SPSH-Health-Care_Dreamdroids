@@ -33,7 +33,7 @@ public class Pharmacist_view_page extends AppCompatActivity {
 
         DBHelper helper = new DBHelper(this);
 
-        ArrayList pharmacyEquipments = helper.oneSpecificInfo(Integer.parseInt(pharmaEqID));
+        ArrayList pharmacyEquipments = helper.pharmacistOneSpecificInfo(Integer.parseInt(pharmaEqID));
 
         tv_pvItemCodeD = findViewById(R.id.tv_pvItemCodeD);
         tv_pvItemNameD = findViewById(R.id.tv_pvItemNameD);
@@ -60,7 +60,7 @@ public class Pharmacist_view_page extends AppCompatActivity {
     }
     public void pharmacistDeleteItem(View view) {
         DBHelper dbHelper = new DBHelper(this);
-        dbHelper.deleteInfo(Integer.parseInt(this.pharmaEqID));
+        dbHelper.pharmacistDeleteInfo(Integer.parseInt(this.pharmaEqID));
 
         Toast.makeText(this,  "Pharmacy equipment is deleted", Toast.LENGTH_SHORT).show();
 

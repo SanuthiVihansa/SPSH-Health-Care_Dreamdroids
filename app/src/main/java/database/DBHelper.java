@@ -113,7 +113,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     //Search and display all data
     @SuppressLint("Range")
-    public ArrayList<HashMap<String,String>> readAllInfo(String PharmID) {
+    public ArrayList<HashMap<String,String>> pharmacistReadAllInfo(String PharmID) {
         SQLiteDatabase sqldb = getReadableDatabase();
         ArrayList<HashMap<String, String>> allPharmacyEquipments = new ArrayList<>();
 
@@ -138,7 +138,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     //PharmasistViewpage one specific item
     @SuppressLint("Range")
-    public ArrayList oneSpecificInfo(int pharmacyEquipID) {
+    public ArrayList pharmacistOneSpecificInfo(int pharmacyEquipID) {
         SQLiteDatabase sqldb = getReadableDatabase();
         ArrayList pharmacyEquipments = new ArrayList<>();
 
@@ -204,7 +204,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     //DELETE CRUD
-    public void deleteInfo(int pharmacyEquipID){
+    public void pharmacistDeleteInfo(int pharmacyEquipID){
 
         SQLiteDatabase db = getReadableDatabase();
         String selection = PharmacyMaster.Pharmacy._ID + " LIKE ?";

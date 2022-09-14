@@ -31,7 +31,7 @@ public class Pharmacist_update_page extends AppCompatActivity {
 
         DBHelper helper = new DBHelper(this);
 
-        ArrayList pharmacyEquipments = helper.oneSpecificInfo(Integer.parseInt(pharmaEqID));
+        ArrayList pharmacyEquipments = helper.pharmacistOneSpecificInfo(Integer.parseInt(pharmaEqID));
 
         //Initialization of variables
 

@@ -39,7 +39,7 @@ public class pharmacist_search_page extends AppCompatActivity {
 
         DBHelper helper = new DBHelper(this);
 
-        ArrayList<HashMap<String, String>> allPharmacyEquip = helper.readAllInfo(PharmID);
+        ArrayList<HashMap<String, String>> allPharmacyEquip = helper.pharmacistReadAllInfo(PharmID);
 
         ListAdapter listAdapter = new SimpleAdapter(pharmacist_search_page.this, allPharmacyEquip, R.layout.pharmacy_item_row, new String[]{PharmacyMaster.Pharmacy._ID, PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMCODE, PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMNAME, PharmacyMaster.Pharmacy.COLOUMN_NAME_USAGE}, new int[]{R.id.tv_pharmIdTextView, R.id.tv_pharmaItemCode, R.id.tv_pharmItemName, R.id.tv_pharmUsage}) {
             //returns a view
