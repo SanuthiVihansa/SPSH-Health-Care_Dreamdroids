@@ -3,7 +3,6 @@ package com.spsh.spshhealthcare;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -13,6 +12,7 @@ import android.widget.Toast;
 import com.spsh.spshhealthcare.database.DBHelper;
 
 import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity {
 
