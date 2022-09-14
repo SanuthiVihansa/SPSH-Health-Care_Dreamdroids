@@ -24,7 +24,8 @@
             android:exported="false" />
         <activity
             android:name=".Patient_All_Appointments"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="stateHidden"/><!--Gets rid of keyboard-->
         <activity
             android:name=".Patient_Home"
             android:exported="false" />
