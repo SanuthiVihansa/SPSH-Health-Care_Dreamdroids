@@ -29,6 +29,17 @@
     
     <string name="contentDescription">Back button</string>
 
+        <!--Hints-->
+    <string name="hint_Patient_Update_name">Enter name...</string>
+    <string name="hint_Patient_Update_age">Enter age...</string>
+    <string name="hint_Patient_Update_gender">Enter gender...</string>
+    <string name="hint_Patient_Update_contactNo">Enter contact number...</string>
+    <string name="hint_Patient_Update_specialization">Enter specialization...</string>
+    <string name="hint_Patient_Update_drName">Enter doctor\'s name...</string>
+    <string name="hint_Patient_Update_date">Enter date...</string>
+    <string name="hint_Patient_Update_time">Enter time...</string>
+
+
     <!--Patient View single-->
     <string name="tv_single_appointment_sathira">Appointment</string>
     <string name="tv_single_id_sathira">Appointment ID :</string>

@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="page_BG_color">#A3F4FB</color>
+    <color name="update_button_color">#F4A814</color>
+    <color name="delete_button_color">#FF5722</color>
+    <color name="text_color">#1565C0</color>
+    <color name="tv_et_color"></color>
+
 </resources>
