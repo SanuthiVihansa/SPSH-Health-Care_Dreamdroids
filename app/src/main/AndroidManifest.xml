@@ -29,7 +29,7 @@
             android:name=".PharmacyAddItem"
             android:exported="false" />
         <activity
-            android:name=".PharmisistHome"
+            android:name=".Pharmacist_home_page"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
