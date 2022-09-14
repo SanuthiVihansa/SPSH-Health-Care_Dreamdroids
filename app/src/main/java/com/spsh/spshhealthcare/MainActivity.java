@@ -49,11 +49,13 @@ public class MainActivity extends AppCompatActivity {
         }
         //Hospital login process
         else if (username.equals("hospital@spsh.lk") && password.equals("spshadmin")){
-
+            Intent intent = new Intent(this, LabHome.class);
+            startActivity(intent);
         }
         //Pharmacy login process
         else if(username.equals("pharmacy@spsh.lk") && password.equals("spshadmin")){
-
+            Intent intent = new Intent(this, LabHome.class);
+            startActivity(intent);
         }
         else{
             //patient login process
