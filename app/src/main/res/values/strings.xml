@@ -26,9 +26,11 @@
     <string name="toast_addPatient_emptyFields_sathira">Please fill all fields</string>
     <string name="toast_addPatient_success_sathira">Appointment Successfully Booked!</string>
     <string name="toast_addPatient_unsuccess_sathira">Something went wrong</string>
+    
+    <string name="contentDescription">Back button</string>
 
     <!--Patient View single-->
-    <string name="tv_single_appointment_sathira">Appointment 1</string>
+    <string name="tv_single_appointment_sathira">Appointment</string>
     <string name="tv_single_id_sathira">Appointment ID :</string>
     <string name="tv_single_name_sathira">Name :</string>
     <string name="tv_single_age_sathira">Age :</string>
@@ -43,9 +45,12 @@
     <string name="btn_single_updateBtn_sathira">Update Appointment</string>
     <string name="btn_single_deleteBtn_sathira">Delete Appointment</string>
 
+    <string name="toast_single_successDeleteMsg_sathira">Appointment deleted</string>
+    <string name="view_single_dialog_message">Are you sure you want to delete this Appointment?</string>
+
     <!--Patient Update-->
-    <string name="tv_update_appointment_sathira">Appointment 1</string>
-    <string name="tv_update_Ente">Enter New Details</string>
+    <string name="tv_update_appointment_sathira">Update Appointment</string>
+    <string name="tv_update_EnterNewDetails">Enter New Details</string>
     <string name="tv_update_name_sathira">Name :</string>
     <string name="et_update_age_sathira">Age :</string>
     <string name="et_update_gender_sathira">Gender :</string>
@@ -53,6 +58,8 @@
     <string name="tv_update_NIC_sathira">NIC :</string>
 
     <string name="btn_Patientupdate_updateBtn_sathira">Update</string>
+
+    <string name="toast_updatePatient_success_sathira">Appointment Successfully Updated!</string>
 
     <!--Patient View All-->
     <string name="btn_row_view_sathira">View</string>
