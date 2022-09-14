@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A3F4FB"
+    android:background="@drawable/patient_profile_bg"
+    android:backgroundTint="#3C3A3A"
+    android:backgroundTintMode="add"
     tools:context=".Patient_Home">
 
     <TextView
@@ -14,7 +16,7 @@
         android:layout_marginTop="72dp"
         android:fontFamily="serif-monospace"
         android:text="@string/tv_patientProfile_sathira"
-        android:textColor="#1565C0"
+        android:textColor="@color/text_color"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +31,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="16dp"
-        android:backgroundTint="#F4A814"
+        android:backgroundTint="@color/update_button_color"
         android:onClick="onClickViewAppointmentBtn"
         android:text="@string/btn_viewAppoint_sathira"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,9 +43,9 @@
         android:layout_width="205dp"
         android:layout_height="55dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        android:backgroundTint="#F4A814"
+        android:backgroundTint="@color/update_button_color"
         android:onClick="onClickMakeAppointmentBtn"
         android:text="@string/btn_makeAppoint_sathira"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,26 +53,13 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_viewLabRep_sathira" />
 
     <Button
-        android:id="@+id/btn_pharmacy_sathira"
-        android:layout_width="205dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="#F4A814"
-        android:text="Pharmacy"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_makeAppoint_sathira" />
-
-    <Button
         android:id="@+id/btn_viewLabRep_sathira"
         android:layout_width="205dp"
         android:layout_height="55dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        android:backgroundTint="#F4A814"
+        android:backgroundTint="@color/update_button_color"
         android:text="@string/btn_viewLabRep_sathira"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,10 +69,10 @@
         android:id="@+id/iv_pharma_sathira"
         android:layout_width="83dp"
         android:layout_height="51dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="104dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_pharmacy_sathira"
+        app:layout_constraintTop_toBottomOf="@+id/btn_makeAppoint_sathira"
         app:srcCompat="@drawable/btn_back" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

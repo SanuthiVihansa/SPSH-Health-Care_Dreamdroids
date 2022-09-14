@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"
-        android:textColor="#1565C0"
+        android:textColor="@color/text_color"
         android:textSize="18dp" />
 
     <TextView
@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_row_name_sathira"
         android:fontFamily="sans-serif-light"
-        android:textColor="#1565C0"
+        android:textColor="@color/text_color"
         android:textSize="18dp" />
 
     <TextView
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_row_date_sathira"
         android:fontFamily="sans-serif-light"
-        android:textColor="#1565C0"
+        android:textColor="@color/text_color"
         android:textSize="18dp" /> <!--This means dr.name will come after date-->
     <TextView
         android:id="@+id/tv_single_appointment_sathira"
@@ -45,6 +45,6 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@id/tv_row_date_sathira"
         android:layout_alignParentRight="true"
-        android:backgroundTint="#FFC107"
+        android:backgroundTint="@color/update_button_color"
         android:text="@string/btn_row_view_sathira" /> <!--Makes this not visible to user-->
 </RelativeLayout>

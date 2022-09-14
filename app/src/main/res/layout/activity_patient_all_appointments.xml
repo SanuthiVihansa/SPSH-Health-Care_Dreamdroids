@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A3F4FB"
+    android:background="@drawable/patient_profile_bg"
+    android:backgroundTint="#685757"
+    android:backgroundTintMode="add"
     tools:context=".Patient_All_Appointments">
 
     <TextView
@@ -16,7 +18,7 @@
         android:layout_marginEnd="75dp"
         android:fontFamily="serif-monospace"
         android:text="@string/tv_allAppointments_heading_sathria"
-        android:textColor="#1565C0"
+        android:textColor="@color/text_color"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,6 +31,7 @@
         android:layout_height="48dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="36dp"
+        android:background="@color/white"
         android:ems="10"
         android:fontFamily="sans-serif-light"
         android:hint="@string/et_allAppointments_SearchHint_sathria"
