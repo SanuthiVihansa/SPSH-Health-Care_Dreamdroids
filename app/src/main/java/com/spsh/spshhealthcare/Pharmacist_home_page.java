@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import database.DBHelper;
 
-public class PharmisistHome extends AppCompatActivity {
+public class Pharmacist_home_page extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +26,14 @@ public class PharmisistHome extends AppCompatActivity {
 
 
 
-    public void AddItem (View view) {
+    public void pharmacistAddItem (View view) {
 
         Intent intent = new Intent(this,PharmacyAddItem.class);
         startActivity(intent);
 
     }
 
-    public void viewAll(View view) {
+    public void pharmacistViewAll(View view) {
 
         Intent intent = new Intent(this,ViewAllPharamacyItems.class);
         startActivity(intent);

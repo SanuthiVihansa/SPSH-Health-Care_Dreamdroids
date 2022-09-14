@@ -1,6 +1,5 @@
 package com.spsh.spshhealthcare;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -60,7 +59,7 @@ public class ViewAllPharamacyItems extends AppCompatActivity {
     }
 
     public void bakwardNavigation (View view){
-        Intent intent = new Intent(this,PharmisistHome.class);
+        Intent intent = new Intent(this, Pharmacist_home_page.class);
         startActivity(intent);
     }
 
