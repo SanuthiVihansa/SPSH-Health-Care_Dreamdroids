@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 
-public class ViewAllPharamacyItems extends AppCompatActivity {
+public class Pharmacist_view_allPharmacy_items extends AppCompatActivity {
 
     ImageView imageView2,imageView3,imageView4,imageView5;
     Button back;
@@ -34,26 +34,26 @@ public class ViewAllPharamacyItems extends AppCompatActivity {
     }
     public void PharmacyEquipment(View view) {
 
-        Intent intent = new Intent (this,PharmisisitSearch.class);
+        Intent intent = new Intent (this, pharmacist_search_page.class);
         intent.putExtra("pharmacyID","P");
         startActivity(intent);
 
     }
 
     public void prescriptionMedicine(View view) {
-        Intent intent = new Intent( this,PharmisisitSearch.class);
+        Intent intent = new Intent( this, pharmacist_search_page.class);
         intent.putExtra("pharmacyID","M");
         startActivity(intent);
     }
 
     public void Suppliments(View view) {
-        Intent intent = new Intent( this,PharmisisitSearch.class);
+        Intent intent = new Intent( this, pharmacist_search_page.class);
         intent.putExtra("pharmacyID","S");
         startActivity(intent);
     }
 
     public void OverTheCounterMedicine(View view) {
-        Intent intent = new Intent( this,PharmisisitSearch.class);
+        Intent intent = new Intent( this, pharmacist_search_page.class);
         intent.putExtra("pharmacyID","C");
         startActivity(intent);
     }

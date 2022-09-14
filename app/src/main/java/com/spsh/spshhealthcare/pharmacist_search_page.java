@@ -20,7 +20,7 @@ import java.util.HashMap;
 import database.PharmacyMaster;
 import database.DBHelper;
 
-public class PharmisisitSearch extends AppCompatActivity {
+public class pharmacist_search_page extends AppCompatActivity {
 
     ListView listView;
     String PharmID;
@@ -41,7 +41,7 @@ public class PharmisisitSearch extends AppCompatActivity {
 
         ArrayList<HashMap<String, String>> allPharmacyEquip = helper.readAllInfo(PharmID);
 
-        ListAdapter listAdapter = new SimpleAdapter(PharmisisitSearch.this, allPharmacyEquip, R.layout.pharmacy_item_row, new String[]{PharmacyMaster.Pharmacy._ID, PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMCODE, PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMNAME, PharmacyMaster.Pharmacy.COLOUMN_NAME_USAGE}, new int[]{R.id.tv_pharmIdTextView, R.id.tv_pharmaItemCode, R.id.tv_pharmItemName, R.id.tv_pharmUsage}) {
+        ListAdapter listAdapter = new SimpleAdapter(pharmacist_search_page.this, allPharmacyEquip, R.layout.pharmacy_item_row, new String[]{PharmacyMaster.Pharmacy._ID, PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMCODE, PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMNAME, PharmacyMaster.Pharmacy.COLOUMN_NAME_USAGE}, new int[]{R.id.tv_pharmIdTextView, R.id.tv_pharmaItemCode, R.id.tv_pharmItemName, R.id.tv_pharmUsage}) {
             //returns a view
             public View getView(int position, View convertView, ViewGroup parent) {
                 //Pass the 3 parameters on top
@@ -56,7 +56,7 @@ public class PharmisisitSearch extends AppCompatActivity {
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(PharmisisitSearch.this, PharmasistViewPage.class);
+                        Intent intent = new Intent(pharmacist_search_page.this, Pharmacist_view_page.class);
                         intent.putExtra("PharamcyEquipID", pharmaEqID);
                         startActivity(intent);
                     }

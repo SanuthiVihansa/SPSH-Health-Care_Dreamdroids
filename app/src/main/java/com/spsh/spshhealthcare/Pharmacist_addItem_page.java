@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import database.DBHelper;
 
-public class PharmacyAddItem extends AppCompatActivity {
+public class Pharmacist_addItem_page extends AppCompatActivity {
 
     //Declaring attributes
     EditText et_ItemCode,et_pItemName,et_pProducerName,et_Usage,et_strength,et_manuDate,et_expDate,et_pprice,et_pQuantity,et_pdescription;
@@ -42,7 +42,7 @@ public class PharmacyAddItem extends AppCompatActivity {
         et_pdescription = findViewById(R.id.et_pdescription);
     }
 
-    public void AddItem (View view) {
+    public void AddItem(View view) {
 
         String Itemcode = et_ItemCode.getText().toString();
         String Itemname = et_pItemName.getText().toString();

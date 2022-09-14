@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#16A9BC"
-    tools:context=".PharmisisitSearch">
+    tools:context=".pharmacist_search_page">
 
     <RadioButton
         android:id="@+id/rb_pProduct"

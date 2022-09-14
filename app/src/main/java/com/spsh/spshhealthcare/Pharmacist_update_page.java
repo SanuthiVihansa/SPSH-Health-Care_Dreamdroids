@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 import database.DBHelper;
 
-public class PharmacisitUpdate extends AppCompatActivity {
+public class Pharmacist_update_page extends AppCompatActivity {
     EditText et_ItemCode,et_pItemName,et_pProducerName,et_Usage,et_strength,et_manuDate,et_expDate,et_pprice,et_puQuantity,et_pdescription;
     private String pharmaEqID;
     @Override
@@ -81,7 +81,7 @@ public class PharmacisitUpdate extends AppCompatActivity {
             dbHelper.pharmacistUpdate(Itemcode,Itemname,ProducerName,Usage,Strength,ManuDate,ExpDate,Price,quantity,description);
 
             Toast.makeText(this,"Successfully updated",Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this,PharmisisitSearch.class);
+            Intent intent = new Intent(this, pharmacist_search_page.class);
             startActivity(intent);
         }
 

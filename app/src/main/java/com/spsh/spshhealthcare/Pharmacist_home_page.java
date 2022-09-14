@@ -7,9 +7,6 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Toast;
-
-import database.DBHelper;
 
 public class Pharmacist_home_page extends AppCompatActivity {
 
@@ -28,14 +25,14 @@ public class Pharmacist_home_page extends AppCompatActivity {
 
     public void pharmacistAddItem (View view) {
 
-        Intent intent = new Intent(this,PharmacyAddItem.class);
+        Intent intent = new Intent(this, Pharmacist_addItem_page.class);
         startActivity(intent);
 
     }
 
     public void pharmacistViewAll(View view) {
 
-        Intent intent = new Intent(this,ViewAllPharamacyItems.class);
+        Intent intent = new Intent(this, Pharmacist_view_allPharmacy_items.class);
         startActivity(intent);
 
     }

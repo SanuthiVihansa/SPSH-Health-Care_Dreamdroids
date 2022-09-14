@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#7BA0BD"
     android:backgroundTint="#F6F8FA"
-    tools:context=".PharmacisitUpdate">
+    tools:context=".Pharmacist_update_page">
 
     <EditText
         android:id="@+id/et_puitemcode"

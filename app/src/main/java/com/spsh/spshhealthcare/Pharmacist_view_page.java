@@ -6,21 +6,15 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.ListAdapter;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import database.DBHelper;
-import database.PharmacyMaster;
 
-public class PharmasistViewPage extends AppCompatActivity {
+public class Pharmacist_view_page extends AppCompatActivity {
     TextView tv_pvItemCodeD, tv_pvItemNameD, tv_pvProducerNameD, tv_pvUsageD, tv_pvStrengthD, tv_manuDateD, tv_pvexpirationdateD, tv_pvpriceD, tv_pvQuantityD, tv_pvDescriptionD;
     private String pharmaEqID;
 
@@ -70,14 +64,14 @@ public class PharmasistViewPage extends AppCompatActivity {
 
         Toast.makeText(this,  "Pharmacy equipment is deleted", Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(PharmasistViewPage.this, PharmisisitSearch.class);
+        Intent intent = new Intent(Pharmacist_view_page.this, pharmacist_search_page.class);
         startActivity(intent);
 
         }
 
         public void updatePharmacyEquip(View view) {
 
-        Intent intent = new Intent(this, PharmacisitUpdate.class);
+        Intent intent = new Intent(this, Pharmacist_update_page.class);
         intent.putExtra("PharamcyEquipID",pharmaEqID);
         startActivity(intent);
         }

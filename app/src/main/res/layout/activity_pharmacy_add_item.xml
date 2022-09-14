@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#F4F8FB"
     android:backgroundTint="#EAEEF1"
-    tools:context=".PharmacyAddItem"
+    tools:context=".Pharmacist_addItem_page"
     tools:layout_editor_absoluteX="-6dp"
     tools:layout_editor_absoluteY="11dp">
 
