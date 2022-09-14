@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/add_report_background"
+    android:backgroundTint="@color/bg_tint_for_add_report"
+    android:backgroundTintMode="add"
+    tools:context=".AddReport">
+
+    <TextView
+        android:id="@+id/tv_titleAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/tv_titleAddReport"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_labelForPatientNameAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/tv_labelForPatientNameAddReport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_titleAddReport" />
+
+    <EditText
+        android:id="@+id/et_labelForPatientNameAddReport"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForPatientNameAddReport"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+        android:autofillHints="name" />
+
+    <TextView
+        android:id="@+id/tv_labelForPatientAgeAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/tv_labelForPatientAgeAddReport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_labelForPatientNameAddReport" />
+
+    <EditText
+        android:id="@+id/et_labelForPatientAgeAddReport"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForPatientAgeAddReport"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+        android:autofillHints="age" />
+
+    <RadioGroup
+        android:id="@+id/radioGrp_GenderAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:checkedButton="@+id/radioBtn_maleAddReport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/et_labelForPatientAgeAddReport"
+        app:layout_constraintTop_toBottomOf="@+id/et_labelForPatientNameAddReport">
+
+        <RadioButton
+            android:id="@+id/radioBtn_maleAddReport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/radioBtn_maleAddReport"
+            tools:ignore="TextContrastCheck" />
+
+        <RadioButton
+            android:id="@+id/radioBtn_femaleAddReport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/radioBtn_femaleAddReport" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tv_labelForNicAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/tv_labelForNicAddReport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_labelForPatientAgeAddReport" />
+
+    <EditText
+        android:id="@+id/et_labelForNicAddReport"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForNicAddReport"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+        android:autofillHints="nic" />
+
+    <TextView
+        android:id="@+id/tv_dateAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_labelForNicAddReport" />
+
+    <TextView
+        android:id="@+id/tv_labelForTimeAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/tv_labelForTimeAddReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_dateAddReport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.594"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/tv_unitForCostAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_unitForCost"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dateAddReport" />
+
+    <TextView
+        android:id="@+id/tv_costAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/tv_costAddReport"
+        android:textColor="@color/black"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_unitForCostAddReport"
+        app:layout_constraintStart_toEndOf="@+id/tv_unitForCostAddReport" />
+
+    <EditText
+        android:id="@+id/et_timeAddReport"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:inputType="time"
+        android:textColor="@color/black"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_costAddReport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.751"
+        app:layout_constraintStart_toEndOf="@+id/tv_costAddReport"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+        android:autofillHints="time" />
+
+    <TextView
+        android:id="@+id/tv_labelForHimoglobinAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_labelForHimoglobinAddReport"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_unitForCostAddReport" />
+
+    <TextView
+        android:id="@+id/tv_labelForWbcAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/tv_labelForWbcAddReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_labelForHimoglobinAddReport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.635"
+        app:layout_constraintStart_toEndOf="@+id/tv_labelForHimoglobinAddReport"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/et_labelForHimoglobinAddReport"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForHimoglobinAddReport"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/et_labelForPcbAddReport"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForPcbAddReport"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/et_labelForPlateletAddReport"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textColor="@color/black"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_unitForPcbAddReport"
+        app:layout_constraintStart_toEndOf="@+id/tv_unitForPcbAddReport"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/tv_labelForPlateletAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/tv_labelForPlateletAddReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_labelForPcbAddReport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.653"
+        app:layout_constraintStart_toEndOf="@+id/tv_labelForPcbAddReport"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/tv_labelForPcbAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_labelForPcbAddReport"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_labelForEosinophilsAddReport" />
+
+    <EditText
+        android:id="@+id/et_labelForEosinophilsAddReport"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForEosinophilsAddReport"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/et_labelForRbcAddReport"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textColor="@color/black"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_unitForEosinophilsAddReport"
+        app:layout_constraintStart_toEndOf="@+id/tv_unitForEosinophilsAddReport"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/tv_labelForRbcAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/tv_labelForRbcAddReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_labelForEosinophilsAddReport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toEndOf="@+id/tv_labelForEosinophilsAddReport"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/tv_labelForEosinophilsAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_labelForEosinophilsAddReport"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_labelForNeutrophilsAddReport" />
+
+    <EditText
+        android:id="@+id/et_labelForNeutrophilsAddReport"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForNeutrophilsAddReport"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/et_labelForLymphocytesAddReport"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textColor="@color/black"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_unitForNeutrophilsAddReport"
+        app:layout_constraintStart_toEndOf="@+id/tv_unitForNeutrophilsAddReport"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/tv_labelForLymphocytesAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/tv_labelForLymphocytesAddReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_labelForNeutrophilsAddReport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.569"
+        app:layout_constraintStart_toEndOf="@+id/tv_labelForNeutrophilsAddReport"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/tv_labelForNeutrophilsAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_labelForNeutrophilsAddReport"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_labelForHimoglobinAddReport" />
+
+    <EditText
+        android:id="@+id/et_labelForWbcAddReport"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textColor="@color/black"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_unitForHemoglobinAddReport"
+        app:layout_constraintStart_toEndOf="@+id/tv_unitForHemoglobinAddReport"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/tv_unitForHemoglobinAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_unitForHemoglobinAddReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_labelForHimoglobinAddReport"
+        app:layout_constraintStart_toEndOf="@+id/et_labelForHimoglobinAddReport"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/tv_unitForWbcAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/tv_unitForWbcAddReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_labelForWbcAddReport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/et_labelForWbcAddReport" />
+
+    <TextView
+        android:id="@+id/tv_unitForNeutrophilsAddReport"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:text="@string/tv_unitForNeutrophilsAddReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_labelForNeutrophilsAddReport"
+        app:layout_constraintStart_toEndOf="@+id/et_labelForNeutrophilsAddReport"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/tv_unitForLymphocytesAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/tv_unitForLymphocytesAddReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_labelForLymphocytesAddReport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toEndOf="@+id/et_labelForLymphocytesAddReport"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/tv_unitForEosinophilsAddReport"
+        android:layout_width="0dp"
+        android:layout_height="22dp"
+        android:text="@string/tv_unitForEosinophilsAddReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_labelForEosinophilsAddReport"
+        app:layout_constraintStart_toEndOf="@+id/et_labelForEosinophilsAddReport"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/tv_unitForRbcAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/tv_unitForRbcAddReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_labelForRbcAddReport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/et_labelForRbcAddReport"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/tv_unitForPcbAddReport"
+        android:layout_width="0dp"
+        android:layout_height="23dp"
+        android:text="@string/tv_unitForPcbAddReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_labelForPcbAddReport"
+        app:layout_constraintStart_toEndOf="@+id/et_labelForPcbAddReport" />
+
+    <TextView
+        android:id="@+id/tv_unitForPlateletAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/tv_unitForPlateletAddReport"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_labelForPlateletAddReport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toEndOf="@+id/et_labelForPlateletAddReport" />
+
+    <Button
+        android:id="@+id/btn_submitAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/green"
+        android:onClick="onClickBtnSubmit"
+        android:text="@string/btn_submitAddReport"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_labelForPcbAddReport"
+        tools:ignore="TextContrastCheck" />
+
+    <ImageView
+        android:id="@+id/img_backBtnAddReport"
+        android:layout_width="65dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/speakable_text_for_back_btn"
+        android:onClick="onClickBtnBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.423"
+        app:layout_constraintStart_toEndOf="@+id/btn_submitAddReport"
+        app:layout_constraintTop_toBottomOf="@+id/et_labelForPcbAddReport"
+        app:srcCompat="@drawable/btn_back"
+        tools:ignore="TouchTargetSizeCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

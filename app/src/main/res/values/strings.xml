@@ -76,4 +76,109 @@
     <string name="btn_row_view_sathira">View</string>
     <string name="tv_allAppointments_heading_sathria">All Appointments</string>
     <string name="et_allAppointments_SearchHint_sathria">Search…</string>
+
+=======
+    <string name="tv_titleLogin">Health Care</string>
+    <string name="et_usernameLogin">Username / NIC</string>
+    <string name="et_passwordLogin">Password</string>
+    <string name="btn_login">Login</string>
+
+    <string name="btn_signup">Signup</string>
+
+    <string name="tv_titleSignup">Welcome to SPSH Health Care</string>
+    <string name="tv_labelForNameSignup">Enter Your Name</string>
+    <string name="et_nameSignup">Eg:- WhiteMan</string>
+    <string name="tv_labelForNicSignup">Enter Your NIC</string>
+    <string name="et_nicSignup">Eg:- 126547898V or 125478963298</string>
+    <string name="tv_labelForContactNoSignup">Enter Contact Number</string>
+    <string name="et_contactNoSignup">Eg:- 0712345678</string>
+    <string name="tv_labelForPasswordSignup">Enter Password</string>
+    <string name="et_passwordSignup">Minimum 8 characters/digits/symbols</string>
+    <string name="chkBox_signup">Agree to our terms and conditions</string>
+
+    <string name="tv_titleLabHome">Laboratory Service</string>
+    <string name="btn_viewAllReportsLab">View All Lab Reports</string>
+    <string name="btn_makeReport">Make a Blood Report</string>
+
+    <string name="tv_titleAddReport">New Complete Blood Count</string>
+    <string name="tv_labelForPatientNameAddReport">Patient\'s Name</string>
+    <string name="tv_labelForPatientAgeAddReport">Patient\'s Age</string>
+    <string name="radioBtn_maleAddReport">Male</string>
+    <string name="radioBtn_femaleAddReport">Female</string>
+    <string name="tv_labelForNicAddReport">NIC belongs to the Account</string>
+    <string name="et_labelForNicAddReport">NIC number</string>
+    <string name="tv_unitForCost">Rs.</string>
+    <string name="tv_costAddReport">400.00</string>
+    <string name="tv_labelForTimeAddReport">Time</string>
+    <string name="tv_labelForHimoglobinAddReport">Hemoglobin</string>
+    <string name="tv_unitForHemoglobinAddReport">g</string>
+    <string name="tv_labelForWbcAddReport">Total WBC Count</string>
+    <string name="tv_unitForWbcAddReport">/cumm</string>
+    <string name="tv_labelForNeutrophilsAddReport">Neutrophils</string>
+    <string name="tv_unitForNeutrophilsAddReport">%</string>
+    <string name="tv_labelForLymphocytesAddReport">Lymphocytes</string>
+    <string name="tv_unitForLymphocytesAddReport">%</string>
+    <string name="tv_labelForEosinophilsAddReport">Eosinophils</string>
+    <string name="tv_unitForEosinophilsAddReport">%</string>
+    <string name="tv_labelForRbcAddReport">RBC Count</string>
+    <string name="tv_unitForRbcAddReport">/mcL</string>
+    <string name="tv_labelForPcbAddReport">PCB</string>
+    <string name="tv_unitForPcbAddReport">%</string>
+    <string name="tv_labelForPlateletAddReport">Platelet Count</string>
+    <string name="tv_unitForPlateletAddReport">/cumm</string>
+    <string name="btn_submitAddReport">Submit</string>
+
+    <string name="tv_titleUpdateReport">Update Complete Blood Count</string>
+    <string name="tv_labelForPatientNameUpdateReport">Patient\'s Name</string>
+    <string name="tv_labelForPatientAgeUpdateReport">Patient\'s Age</string>
+    <string name="radioBtn_maleUpdateReport">Male</string>
+    <string name="radioBtn_femaleUpdateReport">Female</string>
+    <string name="tv_labelForNicUpdateReport">NIC belongs to the Account</string>
+    <string name="et_labelForNicUpdateReport">NIC number</string>
+    <string name="tv_costUpdateReport">400.00</string>
+    <string name="tv_labelForTimeUpdateReport">Time</string>
+    <string name="tv_labelForHimoglobinUpdateReport">Hemoglobin</string>
+    <string name="tv_unitForHemoglobinUpdateReport">g</string>
+    <string name="tv_labelForWbcUpdateReport">Total WBC Count</string>
+    <string name="tv_unitForWbcUpdateReport">/cumm</string>
+    <string name="tv_labelForNeutrophilsUpdateReport">Neutrophils</string>
+    <string name="tv_unitForNeutrophilsUpdateReport">%</string>
+    <string name="tv_labelForLymphocytesUpdateReport">Lymphocytes</string>
+    <string name="tv_unitForLymphocytesUpdateReport">%</string>
+    <string name="tv_labelForEosinophilsUpdateReport">Eosinophils</string>
+    <string name="tv_unitForEosinophilsUpdateReport">%</string>
+    <string name="tv_labelForRbcUpdateReport">RBC Count</string>
+    <string name="tv_unitForRbcUpdateReport">/mcL</string>
+    <string name="tv_labelForPcbUpdateReport">PCB</string>
+    <string name="tv_unitForPcbUpdateReport">%</string>
+    <string name="tv_labelForPlateletUpdateReport">Platelet Count</string>
+    <string name="tv_unitForPlateletUpdateReport">/cumm</string>
+    <string name="btn_submitUpdateReport">Update</string>
+
+    <string name="tv_titleViewBloodReport">Blood Report</string>
+    <string name="tv_patientNameViewBloodReport">Patient\'s Name</string>
+    <string name="tv_ageViewBloodReport">Age</string>
+    <string name="tv_genderViewBloodReport">Gender</string>
+    <string name="tv_nicViewBloodReport">NIC belongs to the Account</string>
+    <string name="tv_dateViewBloodReport">Date</string>
+    <string name="tv_timeViewBloodReport">Time</string>
+    <string name="tv_hemoglobinViewBloodReport">Hemoglobin</string>
+    <string name="tv_totalWbcViewBloodReport">Total WBC Count</string>
+    <string name="tv_neutrophilsViewBloodReport">Neutrophils</string>
+    <string name="tv_lymphocytesViewBloodReport">Lymphocytes</string>
+    <string name="tv_eosinophilsViewBloodReport">Eosinophils</string>
+    <string name="tv_rbcCountViewBloodReport">RBC Count</string>
+    <string name="tv_pcbViewBloodReport">PCB</string>
+    <string name="tv_plateletCountViewBloodReport">Platelet Count</string>
+    <string name="btn_editViewBloodReport">Edit</string>
+    <string name="btn_removeViewBloodReport">Remove</string>
+
+    <string name="tv_titleViewAllReports">All Blood Reports</string>
+    <string name="et_hintForSearchViewAllReports">Type here to search</string>
+    <string name="btn_searchViewAllReports">Search</string>
+    <string name="btn_viewViewAllReports">View</string>
+
+    <string name="speakable_text_for_back_btn">Back btn image</string>
+    <string name="speakable_text_for_lab_home_img">Lab home image</string>
+    <string name="speakable_text_for_logo_img">Logo image</string>
 </resources>
