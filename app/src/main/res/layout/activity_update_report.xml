@@ -17,7 +17,8 @@
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_labelForPcbUpdateReport" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForPcbUpdateReport"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/et_labelForPlateletUpdateReport"
@@ -27,7 +28,8 @@
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_unitForPcbUpdateReport"
-        app:layout_constraintStart_toEndOf="@+id/tv_unitForPcbUpdateReport" />
+        app:layout_constraintStart_toEndOf="@+id/tv_unitForPcbUpdateReport"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/tv_labelForPlateletUpdateReport"
@@ -59,7 +61,8 @@
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_labelForEosinophilsUpdateReport" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForEosinophilsUpdateReport"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/et_labelForRbcUpdateReport"
@@ -69,7 +72,8 @@
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_unitForEosinophilsUpdateReport"
-        app:layout_constraintStart_toEndOf="@+id/tv_unitForEosinophilsUpdateReport" />
+        app:layout_constraintStart_toEndOf="@+id/tv_unitForEosinophilsUpdateReport"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/tv_labelForRbcUpdateReport"
@@ -99,9 +103,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:ems="10"
+        android:importantForAutofill="no"
         android:inputType="numberDecimal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_labelForNeutrophilsUpdateReport" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForNeutrophilsUpdateReport"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/et_labelForLymphocytesUpdateReport"
@@ -111,7 +117,8 @@
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_unitForNeutrophilsUpdateReport"
-        app:layout_constraintStart_toEndOf="@+id/tv_unitForNeutrophilsUpdateReport" />
+        app:layout_constraintStart_toEndOf="@+id/tv_unitForNeutrophilsUpdateReport"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/tv_labelForLymphocytesUpdateReport"
@@ -174,7 +181,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_labelForPatientNameUpdateReport" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForPatientNameUpdateReport"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/tv_labelForPatientAgeUpdateReport"
@@ -219,7 +227,8 @@
         android:ems="10"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_labelForPatientAgeUpdateReport" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForPatientAgeUpdateReport"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/et_labelForNicUpdateReport"
@@ -232,7 +241,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_labelForNicUpdateReport" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForNicUpdateReport"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/tv_labelForNicUpdateReport"
@@ -266,7 +276,8 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_costUpdateReport"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.871"
-        app:layout_constraintStart_toEndOf="@+id/tv_costUpdateReport" />
+        app:layout_constraintStart_toEndOf="@+id/tv_costUpdateReport"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/tv_costUpdateReport"
@@ -285,7 +296,8 @@
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_labelForHimoglobinUpdateReport" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_labelForHimoglobinUpdateReport"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/et_labelForWbcUpdateReport"
@@ -295,7 +307,8 @@
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_unitForHemoglobinUpdateReport"
-        app:layout_constraintStart_toEndOf="@+id/tv_unitForHemoglobinUpdateReport" />
+        app:layout_constraintStart_toEndOf="@+id/tv_unitForHemoglobinUpdateReport"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/tv_labelForWbcUpdateReport"
@@ -405,7 +418,8 @@
         android:onClick="onClickBtnUpdate"
         android:text="@string/btn_submitUpdateReport"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_labelForPcbUpdateReport" />
+        app:layout_constraintTop_toBottomOf="@+id/et_labelForPcbUpdateReport"
+        tools:ignore="TextContrastCheck" />
 
     <ImageView
         android:id="@+id/img_backBtnUpdateReport"
@@ -417,7 +431,8 @@
         app:layout_constraintHorizontal_bias="0.423"
         app:layout_constraintStart_toEndOf="@+id/btn_submitUpdateReport"
         app:layout_constraintTop_toBottomOf="@+id/et_labelForPcbUpdateReport"
-        app:srcCompat="@drawable/btn_back" />
+        app:srcCompat="@drawable/btn_back"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/tv_labelForTimeUpdateReport"
