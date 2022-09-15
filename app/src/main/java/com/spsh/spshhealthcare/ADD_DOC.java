@@ -52,6 +52,8 @@ public class ADD_DOC extends AppCompatActivity {
             long inserted = dbHelper.addDocInfo(doc_Name,doc_speciality,doc_workingplace,doc_experience,doc_fee,doc_maxpat);
             if(inserted>0){
                 Toast.makeText(this, "Added Doc Details successfully", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, Doc_Home.class);
+                startActivity(intent);
             }else{
                 Toast.makeText(this, "Failed to add Doc Details", Toast.LENGTH_SHORT).show();
             }

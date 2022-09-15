@@ -49,4 +49,9 @@ public class Patient_Home extends AppCompatActivity {
         intent.putExtra("nic", this.nic);
         startActivity(intent);
     }
+
+    public void onClickBackBtn(View view){
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
 }

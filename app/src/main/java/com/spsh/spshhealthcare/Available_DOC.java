@@ -87,6 +87,7 @@ public class Available_DOC extends AppCompatActivity {
 
     public void back(View view) {
         Intent intent = new Intent(Available_DOC.this, Doc_Profile.class);
+        intent.putExtra("docId",docId);
         startActivity(intent);
     }
 }

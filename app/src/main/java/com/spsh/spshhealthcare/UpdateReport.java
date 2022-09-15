@@ -119,7 +119,7 @@ public class UpdateReport extends AppCompatActivity {
         String lymphocytes = this.lymphocytes.getText().toString();
         String eosinophils = this.eosinophils.getText().toString();
         String rbc = this.rbc.getText().toString();
-        String pcb = this.rbc.getText().toString();
+        String pcb = this.pcb.getText().toString();
         String platelet = this.platelet.getText().toString();
 
         if(this.male.isChecked()){
