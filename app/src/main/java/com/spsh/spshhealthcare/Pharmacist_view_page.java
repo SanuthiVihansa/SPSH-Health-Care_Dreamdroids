@@ -64,7 +64,7 @@ public class Pharmacist_view_page extends AppCompatActivity {
 
         Toast.makeText(this,  "Pharmacy equipment is deleted", Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(Pharmacist_view_page.this, pharmacist_search_page.class);
+        Intent intent = new Intent(Pharmacist_view_page.this, Pharmacist_view_allPharmacy_items.class);
         startActivity(intent);
 
         }

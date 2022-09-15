@@ -68,4 +68,8 @@ public class pharmacist_search_page extends AppCompatActivity {
         };
         listView.setAdapter(listAdapter);
     }
+    public void backwardNavigation(View view){
+        Intent intent = new Intent(this,Pharmacist_view_allPharmacy_items.class);
+        startActivity(intent);
+    }
 }

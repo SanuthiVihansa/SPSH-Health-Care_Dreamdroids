@@ -81,11 +81,13 @@ public class Pharmacist_update_page extends AppCompatActivity {
             dbHelper.pharmacistUpdate(Itemcode,Itemname,ProducerName,Usage,Strength,ManuDate,ExpDate,Price,quantity,description);
 
             Toast.makeText(this,"Successfully updated",Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, pharmacist_search_page.class);
+            Intent intent = new Intent(this, Pharmacist_view_allPharmacy_items.class);
             startActivity(intent);
         }
 
     }
+
+
 
 }
 
