@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="Dark_Green">#006400</color>
 
     <color name="page_BG_color">#A3F4FB</color>
     <color name="update_button_color">#F4A814</color>
