@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Pharmacist_view_page">
+
+    <TextView
+        android:id="@+id/tv_pvItemCode"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/tv_pvItemCode"
+        app:layout_constraintEnd_toStartOf="@+id/tv_pvItemCodeD"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+    <TextView
+        android:id="@+id/tv_pvItemName"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tv_pvItemName"
+        app:layout_constraintEnd_toStartOf="@+id/tv_pvItemNameD"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pvItemCode" />
+
+    <TextView
+        android:id="@+id/tv_pvProducerName"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tv_pvProducerName"
+        app:layout_constraintEnd_toStartOf="@+id/tv_pvProducerNameD"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pvItemName" />
+
+    <TextView
+        android:id="@+id/tv_pvUsage"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tv_pvUsage"
+        app:layout_constraintEnd_toStartOf="@+id/tv_pvUsageD"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pvProducerName" />
+
+    <TextView
+        android:id="@+id/tv_pvStrength"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tv_pvStrength"
+        app:layout_constraintEnd_toStartOf="@+id/tv_pvStrengthD"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pvUsage" />
+
+    <TextView
+        android:id="@+id/tv_pvmanuDate"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tv_pvmanuDate"
+        app:layout_constraintEnd_toStartOf="@+id/tv_manuDateD"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pvStrength" />
+
+    <TextView
+        android:id="@+id/tv_pvexpirationdate"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tv_pvexpirationdate"
+        app:layout_constraintEnd_toStartOf="@+id/tv_pvexpirationdateD"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pvmanuDate" />
+
+    <TextView
+        android:id="@+id/tv_pvprice"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tv_pvprice"
+        app:layout_constraintEnd_toStartOf="@+id/tv_pvpriceD"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pvexpirationdate" />
+
+    <TextView
+        android:id="@+id/tv_pvItemCodeD"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="P0001"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_pvItemCode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_pvItemCode" />
+
+    <TextView
+        android:id="@+id/tv_pvItemNameD"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Paracetamol "
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_pvItemName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_pvItemName" />
+
+    <TextView
+        android:id="@+id/tv_pvProducerNameD"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Panadol"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_pvProducerName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_pvProducerName" />
+
+    <TextView
+        android:id="@+id/tv_pvUsageD"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Fever, painkiller"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_pvUsage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_pvUsage" />
+
+    <TextView
+        android:id="@+id/tv_pvStrengthD"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="500"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_pvStrength"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_pvStrength" />
+
+    <TextView
+        android:id="@+id/tv_manuDateD"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="20/02/2022"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_pvmanuDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_pvmanuDate" />
+
+    <TextView
+        android:id="@+id/tv_pvexpirationdateD"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="20/02/2025"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_pvexpirationdate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_pvexpirationdate" />
+
+    <TextView
+        android:id="@+id/tv_pvpriceD"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="4"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_pvprice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_pvprice" />
+
+    <Button
+        android:id="@+id/btn_pvUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#048393"
+        android:onClick="updatePharmacyEquip"
+        android:text="@string/btn_pvUpdate"
+        app:layout_constraintEnd_toStartOf="@+id/btn_pvDelete"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pvDescription" />
+
+    <Button
+        android:id="@+id/btn_pvDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#F65656"
+        android:onClick="pharmacistDeleteItem"
+        android:text="@string/btn_pvDelete"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_pvUpdate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_pvUpdate" />
+
+    <TextView
+        android:id="@+id/tv_pvDescription"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tv_pvDescription"
+        app:layout_constraintEnd_toStartOf="@+id/tv_pvDescriptionD"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pvQuantity" />
+
+    <TextView
+        android:id="@+id/tv_pvDescriptionD"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Analgesic and Antipyretic "
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_pvDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_pvDescription" />
+
+    <TextView
+        android:id="@+id/tv_pvQuantity"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tv_pvQuantity"
+        app:layout_constraintEnd_toStartOf="@+id/tv_pvQuantityD"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pvprice" />
+
+    <TextView
+        android:id="@+id/tv_pvQuantityD"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="1000"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_pvQuantity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_pvQuantity" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="444dp"
+        android:layout_height="177dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/viewindetails" />
+
+    <TextView
+        android:id="@+id/tv_pvItemPage"
+        android:layout_width="170dp"
+        android:layout_height="112dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/tv_pvItemPage"
+        android:textAlignment="center"
+        android:textColor="#F8F0F0"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView8"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

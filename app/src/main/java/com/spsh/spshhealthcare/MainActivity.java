@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         }
         //Pharmacy login process
         else if(username.equals("pharmacy@spsh.lk") && password.equals("spshadmin")){
-            Intent intent = new Intent(this, LabHome.class);
+            Intent intent = new Intent(this, Pharmacist_home_page.class);
             startActivity(intent);
         }
         else{

@@ -30,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/img_pharmEquip" />
 
     <Button
         android:id="@+id/btn_makeReport"
@@ -59,7 +59,7 @@
         app:srcCompat="@drawable/btn_back" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/img_pharmEquip"
         android:layout_width="227dp"
         android:layout_height="246dp"
         android:layout_marginTop="16dp"

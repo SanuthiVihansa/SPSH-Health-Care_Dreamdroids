@@ -55,7 +55,7 @@
         tools:ignore="TextContrastCheck" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/img_backBtnViewAllReports"
         android:layout_width="104dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"

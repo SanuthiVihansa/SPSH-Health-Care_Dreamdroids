@@ -124,7 +124,7 @@
         app:layout_constraintStart_toEndOf="@+id/tv_update_age_sathira" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageViewSrchPharmSearch"
         android:layout_width="83dp"
         android:layout_height="51dp"
         android:layout_marginStart="164dp"

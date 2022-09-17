@@ -8,33 +8,41 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
-public class Doc_Home extends AppCompatActivity {
+public class Pharmacist_home_page extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Full screen mode code
         getSupportActionBar().hide();
-
-        //Battery meter, signal strength ---> hidden.
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-        //Potrait mode ---> even if we choose landscape ---> doesn't rotate.(Eg :- Teams chat is portrait, regardless of it being chosen as landscape)
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        setContentView(R.layout.activity_doc_home);
+        setContentView(R.layout.activity_pharmisist_home);
+
     }
 
-    public void addDoc(View view){
-        Intent intent = new Intent(this,ADD_DOC.class);
+
+
+    public void pharmacistAddItem (View view) {
+
+        Intent intent = new Intent(this, Pharmacist_addItem_page.class);
         startActivity(intent);
+
     }
 
-    public void availableDoc(View view){
-        Intent intent = new Intent(this,Search_Doc.class);
+    public void pharmacistViewAll(View view) {
+
+        Intent intent = new Intent(this, Pharmacist_view_allPharmacy_items.class);
         startActivity(intent);
+
     }
 
     public void backBtn(View view) {
+
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+
     }
+
+
 }

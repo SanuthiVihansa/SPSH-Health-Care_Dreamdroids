@@ -69,4 +69,21 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView10"
         app:layout_constraintVertical_bias="1.0" />
 
+    <Button
+        android:id="@+id/btn_naviagteDocHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@color/red"
+        android:backgroundTint="@color/red"
+        android:onClick="backBtn"
+        android:text="@string/btn_navigate"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView10"
+        app:rippleColor="@color/red"
+        tools:ignore="TextContrastCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

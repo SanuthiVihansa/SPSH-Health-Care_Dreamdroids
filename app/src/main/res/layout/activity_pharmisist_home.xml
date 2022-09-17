@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/welcomepageheader"
+    tools:context=".Pharmacist_home_page">
+
+
+    <TextView
+        android:id="@+id/tv_Pharmacywelcome"
+        android:layout_width="228dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/tv_Pharmacywelcome"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.572"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_one"
+        android:layout_width="256dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#157E8C"
+        android:onClick="pharmacistAddItem"
+        android:text="@string/btn_Pone"
+        android:textAllCaps="false"
+        android:textColor="#F1F1F1"
+        android:textSize="16sp"
+        android:textStyle="normal|bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Pharmacywelcome" />
+
+    <Button
+        android:id="@+id/btn_two"
+        android:layout_width="256dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#157E8C"
+        android:onClick="pharmacistViewAll"
+        android:text="@string/btn_Ptwo"
+        android:textAllCaps="false"
+        android:textColor="#F1F2F3"
+        android:textSize="16sp"
+        android:textStyle="normal|bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_one" />
+
+    <Button
+        android:id="@+id/btn_naviagtePharmHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/red"
+        android:backgroundTint="@color/red"
+        android:text="@string/btn_navigate"
+        android:textColor="#FFFFFF"
+        android:onClick="backBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_two"
+        app:rippleColor="@color/red"
+        tools:ignore="TextContrastCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

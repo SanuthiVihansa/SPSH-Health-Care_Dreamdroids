@@ -1,6 +1,97 @@
 <resources>
     <string name="app_name">SPSH Health Care</string>
 
+    <!--pharmacist home page-->
+    <string name="tv_Pharmacywelcome">Welcome</string>
+    <string name="btn_Pone">Add Item</string>
+    <string name="btn_Ptwo">View Item</string>
+
+    <!--ADD CRUD-->
+
+    <string name="tv_Pheading">Add new item</string>
+    <string name="view">View</string>
+    <string name="tv_pItemCode">Item Code :</string>
+    <string name="et_pItemCode"></string>
+    <string name="tv_pItemName">Item Name :</string>
+    <string name="et_pItemName"></string>
+    <string name="tv_pProducerName">Trade Name :</string>
+    <string name="et_pProducerName"></string>
+    <string name="tv_Usage">Usage : </string>
+    <string name="et_Usage"></string>
+    <string name="tv_Strength">Strength (mg): </string>
+    <string name="et_Strength"></string>
+    <string name="tv_manuDate">Manufacturing date : </string>
+    <string name="et_manuDate"></string>
+    <string name="tv_expDate">Expiration date : </string>
+    <string name="et_expDate"></string>
+    <string name="tv_pdescription">Description : </string>
+    <string name="et_pdescription"></string>
+    <string name="tv_pprice">Unit price (Rs): </string>
+    <string name="et_pprice"></string>
+    <string name="tv_ppQuantity">Quantity : </string>
+    <string name="et_ppQuantity"></string>
+    <string name="btn_pSubmit">Add item</string>
+    <string name="tv_pAddItem">Add Item </string>
+
+    <!--    UPDATE CRUD-->
+
+    <string name="tv_puitemCode">Item Code : </string>
+    <string name="et_puitemcode"></string>
+    <string name="tv_puitemName">Item Name : </string>
+    <string name="et_puitemName"></string>
+    <string name="tv_puproducerName">Trade Name : </string>
+    <string name="et_puproducerName"></string>
+    <string name="tv_puusage">Usage : </string>
+    <string name="et_puusage"></string>
+    <string name="tv_puStrength">Strength (mg) : </string>
+    <string name="et_puStrenegth"></string>
+    <string name="tv_uexpirationDate">Expiration date : </string>
+    <string name="et_uexpirationDate"></string>
+    <string name="tv_pumanufactureDate">Manufacture Date : </string>
+    <string name="et_pumanufactureDate"></string>
+    <string name="tv_puUnintPrice">Unit price (Rs.): </string>
+    <string name="et_puUnintPrice"> </string>
+    <string name="tv_puDescription">Description : </string>
+    <string name="et_puDescription"></string>
+    <string name="tv_puQuantity">Quantity : </string>
+    <string name="et_puQuantity"></string>
+    <string name="btn_puUpdate">Update</string>
+    <string name="tv_pUpdate">Update Item</string>
+
+    <!--    SEARCH AND DISPLAY ALL PHARMACY EQUIPMENTS -->
+    <string name="tv_pSearchView">Search</string>
+    <string name="rb_PproductName">Item Name</string>
+    <string name="rb_pProduct">Trade Name</string>
+    <string name="tv_pvItemPage">Item in detail</string>
+    <string name="tv_pvItemCode">Item code</string>
+    <string name="tv_pvItemName">Item name</string>
+    <string name="tv_pvProducerName">Producer name</string>
+    <string name="tv_pvUsage">Usage</string>
+    <string name="tv_pvStrength">Strength (mg)</string>
+    <string name="tv_pvmanuDate">Manufacture date</string>
+    <string name="tv_pvexpirationdate">Expiration date</string>
+    <string name="tv_pvprice">Unit price (Rs.)</string>
+    <string name="tv_pvDescription">Description</string>
+    <string name="tv_pvQuantity">Quantity</string>
+    <string name="btn_pvUpdate">Update</string>
+    <string name="btn_pvDelete">Delete</string>
+    <!--    VIEW BUTTON IN THE VIEW ALL EQUIPMENTS -->
+    <string name="btn_pharmaView">View</string>
+    <!--    View all equipments page -->
+    <string name="tv_PharmacyViewAllHeader"> Welcome !</string>
+    <!--    navigate button-->
+    <string name="btn_navigate"> BACK </string>
+    <string name="btn_update_navigate"> BACK </string>
+    <string name="btn_Add_navigate"> BACK </string>
+    <string name="btn_view_navigate"> BACK </string>
+    <!--    view all page -->
+    <string name="tv_heading"> Welcome !</string>
+    <string name="tv_heading1">Pharmacy Equipments </string>
+    <string name="tv_heading2">prescription medicine </string>
+    <string name="tv_heading3">Supplements </string>
+    <string name="tv_heading4">Over the counter medicine </string>
+
+
     <string name="available_doc">AVAILABLE DOCTORS</string>
     <string name="tv1_AddDocPage">ADD DOCTOR</string>
     <string name="et1_doc_name_AddDocForm">Doctor Name</string>
@@ -60,30 +151,6 @@
     <string name="btn_update_back">BACK</string>
     <string name="btn_search_back">BACK</string>
     <string name="button_SEARCH">SEARCH</string>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <!--Patient Home-->
@@ -161,31 +228,6 @@
     <string name="btn_row_view_sathira">View</string>
     <string name="tv_allAppointments_heading_sathria">All Appointments</string>
     <string name="et_allAppointments_SearchHint_sathria">Search…</string>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <string name="tv_titleLogin">Health Care</string>

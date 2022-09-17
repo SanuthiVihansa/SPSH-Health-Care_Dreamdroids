@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Pharmacist_view_allPharmacy_items">
+
+    <TextView
+        android:id="@+id/tv_PharmacyViewAllHeader"
+        android:layout_width="412dp"
+        android:layout_height="84dp"
+        android:text="@string/tv_PharmacyViewAllHeader"
+        android:textAlignment="center"
+        android:textColor="#EA80FC"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:drawableTopCompat="@drawable/welcomepageheader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_presMedi"
+        android:layout_width="357dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/tv_heading2"
+        android:onClick="prescriptionMedicine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/prescription_medicine"
+        tools:srcCompat="@drawable/prescription_medicine" />
+
+    <ImageView
+        android:id="@+id/img_supplement"
+        android:layout_width="357dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/tv_heading3"
+        android:onClick="Suppliments"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_presMedi"
+        app:srcCompat="@drawable/fitness_supplements"
+        tools:srcCompat="@drawable/fitness_supplements" />
+
+    <ImageView
+        android:id="@+id/img_countMedi"
+        android:layout_width="357dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/tv_heading4"
+        android:onClick="OverTheCounterMedicine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_supplement"
+        app:srcCompat="@drawable/counter"
+        tools:srcCompat="@drawable/counter" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="355dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="PharmacyEquipment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_PharmacyViewAllHeader"
+        app:srcCompat="@drawable/pharm_equip1"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/btn_navigate"
+        android:layout_width="310dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#F10824"
+        android:onClick="bakwardNavigation"
+        android:text="@string/btn_navigate"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_countMedi"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/tv_heading1"
+        android:layout_width="239dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="PharmacyEquipment"
+        android:text="@string/tv_heading1"
+        android:textAlignment="inherit"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_PharmacyViewAllHeader"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/tv_heading2"
+        android:layout_width="115dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="32dp"
+        android:background="#FFF9F9"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="prescriptionMedicine"
+        android:text="@string/tv_heading2"
+        android:textAlignment="inherit"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/img_presMedi"
+        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/img_presMedi" />
+
+    <TextView
+        android:id="@+id/tv_heading3"
+        android:layout_width="200dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="44dp"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="Suppliments"
+        android:text="@string/tv_heading3"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_presMedi" />
+
+    <TextView
+        android:id="@+id/tv_heading4"
+        android:layout_width="95dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:onClick="OverTheCounterMedicine"
+        android:text="@string/tv_heading4"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_supplement" />
+
+    <TextView
+        android:id="@+id/tv_heading"
+        android:layout_width="199dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tv_heading"
+        android:textAlignment="center"
+        android:textColor="#EDE5E5"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tv_PharmacyViewAllHeader"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_PharmacyViewAllHeader" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

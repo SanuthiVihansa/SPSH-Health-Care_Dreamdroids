@@ -214,7 +214,7 @@
         tools:ignore="TextContrastCheck" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageViewSrchPharmSearch"
         android:layout_width="82dp"
         android:layout_height="33dp"
         android:layout_marginStart="16dp"
