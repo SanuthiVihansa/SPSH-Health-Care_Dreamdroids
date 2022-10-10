@@ -199,6 +199,7 @@ public class UpdateReport extends AppCompatActivity {
                 Toast.makeText(this, "Report Details Updated !", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this, ViewAllReports.class);
                 startActivity(intent);
+                finish();
             } else {
                 Snackbar snackbar = Snackbar.make(view, "Update Failed !", Snackbar.LENGTH_LONG);
                 snackbar.setAnimationMode(Snackbar.ANIMATION_MODE_SLIDE);
@@ -211,6 +212,7 @@ public class UpdateReport extends AppCompatActivity {
         Intent intent = new Intent(this, ViewReport.class);
         intent.putExtra("reportId", String.valueOf(this.reportId));
         startActivity(intent);
+        finish();
     }
 
     public void calculateCost(){
