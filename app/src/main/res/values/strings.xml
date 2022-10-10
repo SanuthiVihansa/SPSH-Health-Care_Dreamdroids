@@ -229,7 +229,7 @@
     <string name="tv_allAppointments_heading_sathria">All Appointments</string>
     <string name="et_allAppointments_SearchHint_sathria">Search…</string>
 
-
+    <!--Main Activity-->
     <string name="tv_titleLogin">Health Care</string>
     <string name="et_usernameLogin">Username / NIC</string>
     <string name="et_passwordLogin">Password</string>
@@ -237,6 +237,7 @@
 
     <string name="btn_signup">Signup</string>
 
+    <!--Patient Signup-->
     <string name="tv_titleSignup">Welcome to SPSH Health Care</string>
     <string name="tv_labelForNameSignup">Enter Your Name</string>
     <string name="et_nameSignup">Eg:- WhiteMan</string>
@@ -248,10 +249,12 @@
     <string name="et_passwordSignup">Minimum 8 characters/digits/symbols</string>
     <string name="chkBox_signup">Agree to our terms and conditions</string>
 
+    <!--Lab Home-->
     <string name="tv_titleLabHome">Laboratory Service</string>
     <string name="btn_viewAllReportsLab">View All Lab Reports</string>
     <string name="btn_makeReport">Make a Blood Report</string>
 
+    <!--Add Report-->
     <string name="tv_titleAddReport">New Complete Blood Count</string>
     <string name="tv_labelForPatientNameAddReport">Patient\'s Name</string>
     <string name="tv_labelForPatientAgeAddReport">Patient\'s Age</string>
@@ -280,6 +283,7 @@
     <string name="tv_unitForPlateletAddReport">/cumm</string>
     <string name="btn_submitAddReport">Submit</string>
 
+    <!--Update Report-->
     <string name="tv_titleUpdateReport">Update Complete Blood Count</string>
     <string name="tv_labelForPatientNameUpdateReport">Patient\'s Name</string>
     <string name="tv_labelForPatientAgeUpdateReport">Patient\'s Age</string>
@@ -307,6 +311,7 @@
     <string name="tv_unitForPlateletUpdateReport">/cumm</string>
     <string name="btn_submitUpdateReport">Update</string>
 
+    <!--View Report-->
     <string name="tv_titleViewBloodReport">Blood Report</string>
     <string name="tv_patientNameViewBloodReport">Patient\'s Name</string>
     <string name="tv_ageViewBloodReport">Age</string>
@@ -325,11 +330,15 @@
     <string name="btn_editViewBloodReport">Edit</string>
     <string name="btn_removeViewBloodReport">Remove</string>
 
+    <!--View All Report-->
     <string name="tv_titleViewAllReports">All Blood Reports</string>
     <string name="et_hintForSearchViewAllReports">Type here to search</string>
     <string name="btn_searchViewAllReports">Search</string>
     <string name="btn_viewViewAllReports">View</string>
 
+    <!--Patient View Reports-->
+    <string name="tv_titlePatientViewReports">Your Blood Reports</string>
+    
     <string name="speakable_text_for_back_btn">Back btn image</string>
     <string name="speakable_text_for_lab_home_img">Lab home image</string>
     <string name="speakable_text_for_logo_img">Logo image</string>
