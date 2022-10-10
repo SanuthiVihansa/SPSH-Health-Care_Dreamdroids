@@ -41,23 +41,6 @@ public class ViewAllReports extends AppCompatActivity {
 
         this.searchBox = findViewById(R.id.editTextTextPersonName);
 
-        this.searchBox.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                search();
-            }
-        });
-
         this.dbHelper = new DBHelper(this);
         this.reportList = this.dbHelper.getAllReports();
 
@@ -93,37 +76,6 @@ public class ViewAllReports extends AppCompatActivity {
     }
 
     public void onClickBtnSearch(View view){
-        this.keyword = this.searchBox.getText().toString();
-
-        if(this.keyword.isEmpty())
-            this.reportList = this.dbHelper.getAllReports();
-        else
-            this.reportList = this.dbHelper.searchReports(keyword);
-
-        ListAdapter adapter = new SimpleAdapter(ViewAllReports.this, reportList, R.layout.report_row, new String[]{"name", "age", "nic", "_id"}, new int[]{R.id.name, R.id.age, R.id.nic, R.id.tv_idViewAllReports}){
-            public View getView (int position, View convertView, ViewGroup parent){
-                View v = super.getView(position, convertView, parent);
-                Button btn_view = (Button)v.findViewById(R.id.btn_viewViewAllReports);
-                TextView tv_idViewAllReports = (TextView)v.findViewById(R.id.tv_idViewAllReports);
-                String reportId = tv_idViewAllReports.getText().toString();
-
-                btn_view.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(ViewAllReports.this, ViewReport.class);
-                        intent.putExtra("reportId", reportId);
-                        startActivity(intent);
-                        finish();
-                    }
-                });
-                return v;
-            }
-        };
-
-        lv_reportList.setAdapter(adapter);
-    }
-
-    public void search(){
         this.keyword = this.searchBox.getText().toString();
 
         if(this.keyword.isEmpty())
