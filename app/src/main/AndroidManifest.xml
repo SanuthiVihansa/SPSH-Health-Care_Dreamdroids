@@ -16,6 +16,9 @@
         android:theme="@style/Theme.SPSHHealthCare"
         tools:targetApi="31">
         <activity
+            android:name=".Patient_View_Reports"
+            android:exported="false" />
+        <activity
             android:name=".Patient_Report"
             android:exported="false" />
         <activity
