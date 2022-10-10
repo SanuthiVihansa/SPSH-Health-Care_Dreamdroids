@@ -22,15 +22,18 @@ public class LabHome extends AppCompatActivity {
     public void onClickViewAllLabReportBtn(View view){
         Intent intent = new Intent(this, ViewAllReports.class);
         startActivity(intent);
+        finish();
     }
 
     public void onClickMakeReportBtn(View view){
         Intent intent = new Intent(this, AddReport.class);
         startActivity(intent);
+        finish();
     }
 
     public void onClickBtnBack(View view){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 }
