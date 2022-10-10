@@ -74,12 +74,14 @@ public class ViewReport extends AppCompatActivity {
     public void onClickBtnBack(View view){
         Intent intent = new Intent(this, ViewAllReports.class);
         startActivity(intent);
+        finish();
     }
 
     public void onClickBtnEdit(View view) {
         Intent intent = new Intent(this, UpdateReport.class);
         intent.putExtra("reportId", String.valueOf(this.reportId));
         startActivity(intent);
+        finish();
     }
 
     public void onClickBtnRemove(View view) {
@@ -94,6 +96,7 @@ public class ViewReport extends AppCompatActivity {
                     Toast.makeText(ViewReport.this, "Report Successfully Removed !", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(ViewReport.this, ViewAllReports.class);
                     startActivity(intent);
+                    finish();
                 }
                 else {
                     Snackbar snackbar = Snackbar.make(view, "Something went wrong !", Snackbar.LENGTH_LONG);
