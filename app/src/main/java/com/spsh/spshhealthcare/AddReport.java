@@ -181,6 +181,7 @@ public class AddReport extends AppCompatActivity {
 
                 Intent intent = new Intent(this, LabHome.class);
                 startActivity(intent);
+                finish();
 
             }
             else{
@@ -192,6 +193,7 @@ public class AddReport extends AppCompatActivity {
     public void onClickBtnBack(View view){
         Intent intent = new Intent(this, LabHome.class);
         startActivity(intent);
+        finish();
     }
 
     public void calculateCost(){
