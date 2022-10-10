@@ -68,6 +68,7 @@ public class PatientSignup extends AppCompatActivity {
                             toast.show();
                             Intent intent = new Intent(this, MainActivity.class);
                             startActivity(intent);
+                            finish();
                         }
                         else{
                             Toast.makeText(this, "Sorry! There is an existing account.", Toast.LENGTH_SHORT).show();
