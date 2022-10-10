@@ -50,6 +50,12 @@ public class Patient_Home extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onClickViewLabReportsBtn(View view){
+        Intent intent = new Intent(this,Patient_View_Reports.class);
+        intent.putExtra("nic", this.nic);
+        startActivity(intent);
+    }
+
     public void onClickBackBtn(View view){
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
