@@ -75,6 +75,7 @@ public class ViewAllReports extends AppCompatActivity {
                         Intent intent = new Intent(ViewAllReports.this, ViewReport.class);
                         intent.putExtra("reportId", reportId);
                         startActivity(intent);
+                        finish();
                     }
                 });
                 return v;
@@ -88,6 +89,7 @@ public class ViewAllReports extends AppCompatActivity {
     public void onClickBtnBack(View view){
         Intent intent = new Intent(this, LabHome.class);
         startActivity(intent);
+        finish();
     }
 
     public void onClickBtnSearch(View view){
@@ -111,6 +113,7 @@ public class ViewAllReports extends AppCompatActivity {
                         Intent intent = new Intent(ViewAllReports.this, ViewReport.class);
                         intent.putExtra("reportId", reportId);
                         startActivity(intent);
+                        finish();
                     }
                 });
                 return v;
@@ -141,6 +144,7 @@ public class ViewAllReports extends AppCompatActivity {
                         Intent intent = new Intent(ViewAllReports.this, ViewReport.class);
                         intent.putExtra("reportId", reportId);
                         startActivity(intent);
+                        finish();
                     }
                 });
                 return v;
