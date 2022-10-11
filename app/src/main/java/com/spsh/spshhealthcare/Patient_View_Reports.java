@@ -57,6 +57,7 @@ public class Patient_View_Reports extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(Patient_View_Reports.this, Patient_Report.class);
                         intent.putExtra("reportId", reportId);
+                        intent.putExtra("nic", nic);
                         startActivity(intent);
                         finish();
                     }
@@ -70,6 +71,7 @@ public class Patient_View_Reports extends AppCompatActivity {
 
     public void onClickBtnBack(View view){
         Intent intent = new Intent(this, Patient_Home.class);
+        intent.putExtra("nic", this.nic);
         startActivity(intent);
         finish();
     }
@@ -94,6 +96,7 @@ public class Patient_View_Reports extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(Patient_View_Reports.this, Patient_Report.class);
                         intent.putExtra("reportId", reportId);
+                        intent.putExtra("nic", nic);
                         startActivity(intent);
                         finish();
                     }
