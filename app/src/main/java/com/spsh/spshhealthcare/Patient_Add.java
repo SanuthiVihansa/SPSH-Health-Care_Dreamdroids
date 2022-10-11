@@ -75,7 +75,7 @@ public class Patient_Add extends AppCompatActivity {
 //        else if(isNumeric(gender, et_addGender_sathira)){}
 //        else if(isNumeric(specialization, et_addSpecial_sathira)){}
 //        else if(isNumeric(doctorName, et_addDrName_sathira)){}
-        else if(!onlyLetters(Pname, et_addName_sathira)){}
+        else if(onlyLetters(Pname, et_addName_sathira) == false){}
         else if(!onlyLetters(gender, et_addGender_sathira)){}
         else if(!validateAge(age, et_addAge_sathira)){}
         else if(!onlyLetters(specialization, et_addSpecial_sathira)){}
@@ -103,7 +103,7 @@ public class Patient_Add extends AppCompatActivity {
     }
 
     public boolean onlyLetters(String string, EditText editText){ //checks for letters
-        boolean status = string.matches("[a-zA-Z]");   //NOT WORKING
+        boolean status = string.matches("[a-zA-Z]+");   //NOT WORKING "[a-zA-Z]*" , "[a-zA-Z]+"
         if(status == false){
             editText.setError("Can only include letters");
         }
