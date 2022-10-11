@@ -312,6 +312,27 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
+    @SuppressLint("Range")
+    public ArrayList<HashMap<String, String>> searchReportsForPatients(String keyword, String nic){
+        SQLiteDatabase db = getReadableDatabase();
+        ArrayList<HashMap<String, String>> reportList = new ArrayList<>();
+        String query = "SELECT " + ReportsMaster.Reports._ID + ", " + ReportsMaster.Reports.COLUMN_NAME_NAME + ", " + ReportsMaster.Reports.COLUMN_NAME_AGE + ", " + ReportsMaster.Reports.COLUMN_NAME_NIC + " FROM " + ReportsMaster.Reports.TABLE_NAME + " WHERE " + ReportsMaster.Reports.COLUMN_NAME_NAME + " LIKE '%" + keyword + "%' AND " + ReportsMaster.Reports.COLUMN_NAME_NIC + " = " + nic;
+        Cursor cursor = db.rawQuery(query, null);
+
+        while(cursor.moveToNext()){
+            HashMap<String, String> report = new HashMap<>();
+            report.put(ReportsMaster.Reports._ID, cursor.getString(cursor.getColumnIndex(ReportsMaster.Reports._ID)));
+            report.put(ReportsMaster.Reports.COLUMN_NAME_NAME, cursor.getString(cursor.getColumnIndex(ReportsMaster.Reports.COLUMN_NAME_NAME)));
+            report.put(ReportsMaster.Reports.COLUMN_NAME_AGE, cursor.getString(cursor.getColumnIndex(ReportsMaster.Reports.COLUMN_NAME_AGE)));
+            report.put(ReportsMaster.Reports.COLUMN_NAME_NIC, cursor.getString(cursor.getColumnIndex(ReportsMaster.Reports.COLUMN_NAME_NIC)));
+
+            reportList.add(report);
+        }
+
+        return reportList;
+    }
+
+
 
 
 

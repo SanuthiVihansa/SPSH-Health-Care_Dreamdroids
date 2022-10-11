@@ -55,7 +55,7 @@ public class Patient_View_Reports extends AppCompatActivity {
                 btn_view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(Patient_View_Reports.this, ViewReport.class);
+                        Intent intent = new Intent(Patient_View_Reports.this, Patient_Report.class);
                         intent.putExtra("reportId", reportId);
                         startActivity(intent);
                         finish();
@@ -80,7 +80,7 @@ public class Patient_View_Reports extends AppCompatActivity {
         if(this.keyword.isEmpty())
             this.reportList = this.dbHelper.getPatientReports(this.nic);
         else
-            this.reportList = this.dbHelper.searchReports(keyword);
+            this.reportList = this.dbHelper.searchReportsForPatients(keyword, this.nic);
 
         ListAdapter adapter = new SimpleAdapter(Patient_View_Reports.this, reportList, R.layout.report_row, new String[]{"name", "age", "nic", "_id"}, new int[]{R.id.name, R.id.age, R.id.nic, R.id.tv_idViewAllReports}){
             public View getView (int position, View convertView, ViewGroup parent){
@@ -92,7 +92,7 @@ public class Patient_View_Reports extends AppCompatActivity {
                 btn_view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(Patient_View_Reports.this, ViewReport.class);
+                        Intent intent = new Intent(Patient_View_Reports.this, Patient_Report.class);
                         intent.putExtra("reportId", reportId);
                         startActivity(intent);
                         finish();
