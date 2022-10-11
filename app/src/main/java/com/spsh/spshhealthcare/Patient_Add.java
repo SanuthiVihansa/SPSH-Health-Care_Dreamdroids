@@ -14,6 +14,9 @@ import android.widget.Toast;
 
 import com.spsh.spshhealthcare.database.DBHelper;
 
+import java.util.Calendar;
+import java.util.Date;
+
 
 public class Patient_Add extends AppCompatActivity {
 
@@ -34,7 +37,9 @@ public class Patient_Add extends AppCompatActivity {
         setContentView(R.layout.activity_patient_add);
 
         Intent intent = getIntent();
-        this.nic2 = intent.getStringExtra("nic");
+//        this.nic2 = intent.getStringExtra("nic");
+
+        this.nic2 = "200123456789";
 
         et_addName_sathira = findViewById(R.id.et_addName_sathira);
         et_addAge_sathira = findViewById(R.id.et_addAge_sathira);
@@ -66,15 +71,15 @@ public class Patient_Add extends AppCompatActivity {
         if (Pname.isEmpty() || age.isEmpty() || gender.isEmpty() || contactNo.isEmpty() || nic.isEmpty() || specialization.isEmpty() || doctorName.isEmpty() || date.isEmpty() || time.isEmpty()) {
             Toast.makeText(this, getResources().getText(R.string.toast_addPatient_emptyFields_sathira), Toast.LENGTH_SHORT).show();
         }
-        else if(isNumeric(Pname, et_addName_sathira)){}
-        else if(isNumeric(gender, et_addGender_sathira)){}
-        else if(isNumeric(specialization, et_addSpecial_sathira)){}
-        else if(isNumeric(doctorName, et_addDrName_sathira)){}
-
-//        else if(!onlyLetters(Pname, et_addName_sathira)){}
-//        else if(!onlyLetters(gender, et_addGender_sathira)){}
-//        else if(!onlyLetters(specialization, et_addSpecial_sathira)){}
-//        else if(!onlyLetters(doctorName, et_addDrName_sathira)){}
+//        else if(isNumeric(Pname, et_addName_sathira)){}
+//        else if(isNumeric(gender, et_addGender_sathira)){}
+//        else if(isNumeric(specialization, et_addSpecial_sathira)){}
+//        else if(isNumeric(doctorName, et_addDrName_sathira)){}
+        else if(!onlyLetters(Pname, et_addName_sathira)){}
+        else if(!onlyLetters(gender, et_addGender_sathira)){}
+        else if(!validateAge(age, et_addAge_sathira)){}
+        else if(!onlyLetters(specialization, et_addSpecial_sathira)){}
+        else if(!onlyLetters(doctorName, et_addDrName_sathira)){}
 
         else {
                 int age2 = Integer.parseInt(age);
@@ -89,7 +94,7 @@ public class Patient_Add extends AppCompatActivity {
         }
 
     //validation
-    public boolean isNumeric(String string, EditText editText){
+    public boolean isNumeric(String string, EditText editText){ //checks if there are numbers
         boolean status = TextUtils.isDigitsOnly(string);
         if(status == true){
             editText.setError("Can't include numbers");
@@ -97,12 +102,21 @@ public class Patient_Add extends AppCompatActivity {
         return status;
     }
 
-    public boolean onlyLetters(String string, EditText editText){
+    public boolean onlyLetters(String string, EditText editText){ //checks for letters
         boolean status = string.matches("[a-zA-Z]");   //NOT WORKING
         if(status == false){
             editText.setError("Can only include letters");
         }
         return status;
+    }
+
+    private boolean validateAge(String string, EditText editText) {
+        int isAgeValid = Integer.parseInt(string);
+        if (isAgeValid <= 0 || isAgeValid > 125) {
+            editText.setError("Invalid age");
+            return false;
+        } else
+            return true;
     }
 
     //onClick method
