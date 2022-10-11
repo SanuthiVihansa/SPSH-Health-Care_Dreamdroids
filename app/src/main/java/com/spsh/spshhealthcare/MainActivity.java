@@ -27,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
 
+        //Give the page that you want to emulate
+        Intent intent = new Intent(this, Patient_Home.class);
+        startActivity(intent);
+
         this.dbHelper = new DBHelper(this);
     }
 
