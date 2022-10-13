@@ -75,37 +75,48 @@ public class Patient_Add extends AppCompatActivity {
 //        else if(isNumeric(gender, et_addGender_sathira)){}
 //        else if(isNumeric(specialization, et_addSpecial_sathira)){}
 //        else if(isNumeric(doctorName, et_addDrName_sathira)){}
-        else if(onlyLetters(Pname, et_addName_sathira) == false){}
-        else if(!onlyLetters(gender, et_addGender_sathira)){}
-        else if(!validateAge(age, et_addAge_sathira)){}
-        else if(!onlyLetters(specialization, et_addSpecial_sathira)){}
-        else if(!onlyLetters(doctorName, et_addDrName_sathira)){}
+        else if (!onlyLetters(Pname, et_addName_sathira)) {
+        } else if (!validateAge(age, et_addAge_sathira)) {
+        } else if (!onlyLetters(gender, et_addGender_sathira)) {
+        } else if (!validateGender(gender, et_addGender_sathira)) {
+        } else if (!validateContactNo(contactNo, et_addNum_sathira)) {
+        } else if (!onlyLetters(specialization, et_addSpecial_sathira)) {
+        } else if (!validateDrName(doctorName, et_addDrName_sathira)) {
+        } else if (!validateTime(time, et_addTime_sathira)) {
+        } else if (!validateDate(date, et_addDate_sathira)) {
+        } else {
+            int age2 = Integer.parseInt(age);
+            long inserted = dbHelper.addAppointment(Pname, age2, gender, contactNo, nic, specialization, doctorName, date, time);
 
-        else {
-                int age2 = Integer.parseInt(age);
-                long inserted = dbHelper.addAppointment(Pname, age2, gender, contactNo, nic, specialization, doctorName, date, time);
-
-                if (inserted > 0) {
-                    Toast.makeText(this, getResources().getText(R.string.toast_addPatient_success_sathira), Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(this, getResources().getText(R.string.toast_addPatient_unsuccess_sathira), Toast.LENGTH_SHORT).show();
-                }
+            if (inserted > 0) {
+                Toast.makeText(this, getResources().getText(R.string.toast_addPatient_success_sathira), Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, getResources().getText(R.string.toast_addPatient_unsuccess_sathira), Toast.LENGTH_SHORT).show();
             }
         }
+    }
 
     //validation
-    public boolean isNumeric(String string, EditText editText){ //checks if there are numbers
-        boolean status = TextUtils.isDigitsOnly(string);
-        if(status == true){
-            editText.setError("Can't include numbers");
+//    public boolean isNumeric(String string, EditText editText){ //checks if there are numbers
+//        boolean status = TextUtils.isDigitsOnly(string);
+//        if(status == true){
+//            editText.setError("Can't include numbers");
+//        }
+//        return status;
+//    }
+
+    public boolean onlyLetters(String string, EditText editText) { //checks for letters
+        boolean status = string.matches("[a-z A-Z]+");   //NOT WORKING "[a-zA-Z]*" , "[a-zA-Z]+"
+        if (status == false) {
+            editText.setError("Can only include letters");
         }
         return status;
     }
 
-    public boolean onlyLetters(String string, EditText editText){ //checks for letters
-        boolean status = string.matches("[a-zA-Z]+");   //NOT WORKING "[a-zA-Z]*" , "[a-zA-Z]+"
-        if(status == false){
-            editText.setError("Can only include letters");
+    public boolean validateDrName(String string, EditText editText) { //checks for letters
+        boolean status = string.matches("[a-z. A-Z]+");
+        if (status == false) {
+            editText.setError("Invalid characters present");
         }
         return status;
     }
@@ -113,10 +124,65 @@ public class Patient_Add extends AppCompatActivity {
     private boolean validateAge(String string, EditText editText) {
         int isAgeValid = Integer.parseInt(string);
         if (isAgeValid <= 0 || isAgeValid > 125) {
-            editText.setError("Invalid age");
+            return false;
+        } else{
+            return true;
+    }
+
+    public boolean validateGender(String string, EditText editText) { //checks for letters
+        if(string == "M" || string == "F")
+            return true;
+        else
+            return false;
+    }
+
+    public boolean validateContactNo(String string, EditText editText) { //checks for letters
+        if (string.length() != 10) {
+            editText.setError("Invalid number of digits");
             return false;
         } else
             return true;
+    }
+
+    public boolean validateTime(String string, EditText editText){
+        if (string.length() == 4) {
+            if (string.charAt(1) == ':' && Integer.parseInt((Character.toString(string.charAt(0)))) > -1 && Integer.parseInt(string.substring(2)) > -1 && Integer.parseInt(string.substring(2)) < 60)
+                return true;
+            else {
+                editText.setError("Invalid time");
+                return false;
+            }
+        } else if (string.length() == 5) {
+            if (string.charAt(2) == ':' && Integer.parseInt(string.substring(0, 2)) > -1 && Integer.parseInt(string.substring(0, 2)) < 24 && Integer.parseInt(string.substring(3)) > -1 && Integer.parseInt(string.substring(3)) < 60)
+                return true;
+            else {
+                editText.setError("Invalid time");
+                return false;
+            }
+        } else {
+            editText.setError("Invalid time");
+            return false;
+        }
+    }
+
+    public boolean validateDate(String string, EditText editText) {
+        if (string.length() == 8) {
+            if ((string.charAt(2) == '-' || string.charAt(2) == '/') || (string.charAt(5) == '-' || string.charAt(5) == '/')) {
+                if (Integer.parseInt(string.substring(0, 2)) > 0 && Integer.parseInt(string.substring(0, 2)) < 32 && Integer.parseInt(string.substring(3, 5)) > 0 && Integer.parseInt(string.substring(3, 5)) < 13 && Integer.parseInt(string.substring(6, 8)) > -1 && Integer.parseInt(string.substring(6, 8)) < 100) {
+                    return true;
+                } else {
+                    editText.setError("Invalid date");
+                    return false;
+                }
+            } else {
+                editText.setError("Invalid date");
+                return false;
+            }
+        } else {
+            editText.setError("Invalid date");
+            return false;
+        }
+
     }
 
     //onClick method
