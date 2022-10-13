@@ -127,6 +127,7 @@ public class Patient_Add extends AppCompatActivity {
             return false;
         } else{
             return true;
+        }
     }
 
     public boolean validateGender(String string, EditText editText) { //checks for letters
