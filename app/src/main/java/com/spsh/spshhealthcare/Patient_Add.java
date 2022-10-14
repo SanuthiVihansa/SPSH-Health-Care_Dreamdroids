@@ -70,20 +70,15 @@ public class Patient_Add extends AppCompatActivity {
 
         if (Pname.isEmpty() || age.isEmpty() || gender.isEmpty() || contactNo.isEmpty() || nic.isEmpty() || specialization.isEmpty() || doctorName.isEmpty() || date.isEmpty() || time.isEmpty()) {
             Toast.makeText(this, getResources().getText(R.string.toast_addPatient_emptyFields_sathira), Toast.LENGTH_SHORT).show();
-        }
-//        else if(isNumeric(Pname, et_addName_sathira)){}
-//        else if(isNumeric(gender, et_addGender_sathira)){}
-//        else if(isNumeric(specialization, et_addSpecial_sathira)){}
-//        else if(isNumeric(doctorName, et_addDrName_sathira)){}
-        else if (!onlyLetters(Pname, et_addName_sathira)) {
+        } else if (!onlyLetters(Pname, et_addName_sathira)) {
         } else if (!validateAge(age, et_addAge_sathira)) {
         } else if (!onlyLetters(gender, et_addGender_sathira)) {
         } else if (!validateGender(gender, et_addGender_sathira)) {
         } else if (!validateContactNo(contactNo, et_addNum_sathira)) {
         } else if (!onlyLetters(specialization, et_addSpecial_sathira)) {
         } else if (!validateDrName(doctorName, et_addDrName_sathira)) {
-        } else if (!validateTime(time, et_addTime_sathira)) {
         } else if (!validateDate(date, et_addDate_sathira)) {
+        } else if (!validateTime(time, et_addTime_sathira)) {
         } else {
             int age2 = Integer.parseInt(age);
             long inserted = dbHelper.addAppointment(Pname, age2, gender, contactNo, nic, specialization, doctorName, date, time);
@@ -124,28 +119,37 @@ public class Patient_Add extends AppCompatActivity {
     private boolean validateAge(String string, EditText editText) {
         int isAgeValid = Integer.parseInt(string);
         if (isAgeValid <= 0 || isAgeValid > 125) {
+            editText.setError("Invalid age");
             return false;
-        } else{
+        } else {
             return true;
         }
     }
 
     public boolean validateGender(String string, EditText editText) { //checks for letters
-        if(string == "M" || string == "F")
-            return true;
-        else
+        if (string.length() == 1) {
+            if (string.charAt(0) == 'M' || string.charAt(0) == 'F')
+                return true;
+            else {
+                editText.setError("Invalid input");
+                return false;
+            }
+        } else {
+            editText.setError("Invalid input");
             return false;
+        }
     }
 
     public boolean validateContactNo(String string, EditText editText) { //checks for letters
-        if (string.length() != 10) {
+        if (string.length() == 10 && string.charAt(0) == '0') {
+            return true;
+        } else {
             editText.setError("Invalid number of digits");
             return false;
-        } else
-            return true;
+        }
     }
 
-    public boolean validateTime(String string, EditText editText){
+    public boolean validateTime(String string, EditText editText) {
         if (string.length() == 4) {
             if (string.charAt(1) == ':' && Integer.parseInt((Character.toString(string.charAt(0)))) > -1 && Integer.parseInt(string.substring(2)) > -1 && Integer.parseInt(string.substring(2)) < 60)
                 return true;
@@ -176,11 +180,11 @@ public class Patient_Add extends AppCompatActivity {
                     return false;
                 }
             } else {
-                editText.setError("Invalid date");
+                editText.setError("Invalid format");
                 return false;
             }
         } else {
-            editText.setError("Invalid date");
+            editText.setError("Invalid format");
             return false;
         }
 
