@@ -69,16 +69,14 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="116dp"
         android:layout_marginEnd="16dp"
-        android:background="@color/red"
-        android:backgroundTint="@color/red"
-        android:text="@string/btn_navigate"
-        android:textColor="#FFFFFF"
+        android:backgroundTint="#157E8C"
         android:onClick="backBtn"
+        android:text="@string/btn_navigate"
+        android:textColor="#F1F2F3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_two"
-        app:rippleColor="@color/red"
         tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
