@@ -103,7 +103,7 @@ public class Patient_Add extends AppCompatActivity {
     public boolean onlyLetters(String string, EditText editText) { //checks for letters
         boolean status = string.matches("[a-z A-Z]+");   //NOT WORKING "[a-zA-Z]*" , "[a-zA-Z]+"
         if (status == false) {
-            editText.setError("Can only include letters");
+            editText.setError(getText(R.string.onlyLetters));
         }
         return status;
     }
@@ -111,7 +111,7 @@ public class Patient_Add extends AppCompatActivity {
     public boolean validateDrName(String string, EditText editText) { //checks for letters
         boolean status = string.matches("[a-z. A-Z]+");
         if (status == false) {
-            editText.setError("Invalid characters present");
+            editText.setError(getText(R.string.validateDrName));
         }
         return status;
     }
@@ -119,7 +119,7 @@ public class Patient_Add extends AppCompatActivity {
     private boolean validateAge(String string, EditText editText) {
         int isAgeValid = Integer.parseInt(string);
         if (isAgeValid <= 0 || isAgeValid > 125) {
-            editText.setError("Invalid age");
+            editText.setError(getText(R.string.validateAge));
             return false;
         } else {
             return true;
@@ -131,11 +131,11 @@ public class Patient_Add extends AppCompatActivity {
             if (string.charAt(0) == 'M' || string.charAt(0) == 'F')
                 return true;
             else {
-                editText.setError("Invalid input");
+                editText.setError(getText(R.string.validateGender));
                 return false;
             }
         } else {
-            editText.setError("Invalid input");
+            editText.setError(getText(R.string.validateGender));
             return false;
         }
     }
@@ -144,7 +144,7 @@ public class Patient_Add extends AppCompatActivity {
         if (string.length() == 10 && string.charAt(0) == '0') {
             return true;
         } else {
-            editText.setError("Invalid number of digits");
+            editText.setError(getText(R.string.validateContactNo));
             return false;
         }
     }
@@ -154,18 +154,18 @@ public class Patient_Add extends AppCompatActivity {
             if (string.charAt(1) == ':' && Integer.parseInt((Character.toString(string.charAt(0)))) > -1 && Integer.parseInt(string.substring(2)) > -1 && Integer.parseInt(string.substring(2)) < 60)
                 return true;
             else {
-                editText.setError("Invalid time");
+                editText.setError(getText(R.string.validateTime));
                 return false;
             }
         } else if (string.length() == 5) {
             if (string.charAt(2) == ':' && Integer.parseInt(string.substring(0, 2)) > -1 && Integer.parseInt(string.substring(0, 2)) < 24 && Integer.parseInt(string.substring(3)) > -1 && Integer.parseInt(string.substring(3)) < 60)
                 return true;
             else {
-                editText.setError("Invalid time");
+                editText.setError(getText(R.string.validateTime));
                 return false;
             }
         } else {
-            editText.setError("Invalid time");
+            editText.setError(getText(R.string.validateTime));
             return false;
         }
     }
@@ -176,15 +176,15 @@ public class Patient_Add extends AppCompatActivity {
                 if (Integer.parseInt(string.substring(0, 2)) > 0 && Integer.parseInt(string.substring(0, 2)) < 32 && Integer.parseInt(string.substring(3, 5)) > 0 && Integer.parseInt(string.substring(3, 5)) < 13 && Integer.parseInt(string.substring(6, 8)) > -1 && Integer.parseInt(string.substring(6, 8)) < 100) {
                     return true;
                 } else {
-                    editText.setError("Invalid date");
+                    editText.setError(getText(R.string.validateDate));
                     return false;
                 }
             } else {
-                editText.setError("Invalid format");
+                editText.setError(getText(R.string.validateDateFormat));
                 return false;
             }
         } else {
-            editText.setError("Invalid format");
+            editText.setError(getText(R.string.validateDateFormat));
             return false;
         }
 
