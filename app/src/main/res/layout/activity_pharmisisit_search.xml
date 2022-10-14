@@ -31,12 +31,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_pSearchView" />
 
-    <TextView
+    <EditText
         android:id="@+id/tv_pSearchView"
         android:layout_width="226dp"
-        android:layout_height="39dp"
+        android:layout_height="48dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="16dp"
+        android:inputType="textPersonName"
         android:text="@string/tv_pSearchView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -65,7 +66,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rb_PproductName" />
+        app:layout_constraintTop_toBottomOf="@+id/rb_PproductName" >
+
+    </ListView>
 
     <Button
         android:id="@+id/btn_naviagtePharmHome"
