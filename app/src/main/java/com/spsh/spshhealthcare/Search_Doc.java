@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import com.spsh.spshhealthcare.database.AppointmentsMaster;
 import com.spsh.spshhealthcare.database.DBHelper;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ import java.util.HashMap;
 
 public class Search_Doc extends AppCompatActivity {
     ListView docListView;
-    String docName;
+    //String docName;
 
     EditText et_SearchDoc;
     @Override
@@ -40,8 +41,7 @@ public class Search_Doc extends AppCompatActivity {
 
         et_SearchDoc = findViewById(R.id.et_SearchDoc);
         docListView = findViewById(R.id.listView_SearchDoc);
-        //String docName = "Dr.Hilarina";
-        //String docId = "D001";
+
         DBHelper dbHelper = new DBHelper(this);
 
         //Have to catch the Array List --> so create an array list.
@@ -113,4 +113,7 @@ public class Search_Doc extends AppCompatActivity {
         Intent intent = new Intent(this,Doc_Home.class);
         startActivity(intent);
     }
+
+
+
 }
