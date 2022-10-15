@@ -166,6 +166,14 @@
     <string name="tv_addName_sathira">Name :</string>
     <string name="tv_addAge_sathira">Age :</string>
     <string name="tv_addGender_sathira">Gender :</string>
+        <string-array name="sp_genders_sathira">
+            <item>Male</item>
+            <item>Female</item>
+        </string-array>
+        <string-array name="sp_genders2_sathira">
+            <item>Female</item>
+            <item>Male</item>
+        </string-array>
     <string name="tv_addNum_sathira">Contact No :</string>
     <string name="tv_addNic_sathira">NIC :</string>
     <string name="tv_addSpecial_sathira">Specialization :</string>
