@@ -8,7 +8,10 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,11 +21,13 @@ import java.util.Calendar;
 import java.util.Date;
 
 
-public class Patient_Add extends AppCompatActivity {
+public class Patient_Add extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     EditText et_addName_sathira, et_addAge_sathira, et_addGender_sathira, et_addNum_sathira, et_addSpecial_sathira, et_addDrName_sathira, et_addDate_sathira, et_addTime_sathira;
     TextView tv_addNic_sathira;
-    String nic2;
+    Spinner spinner;
+    String nic2, spinnerGender;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +48,17 @@ public class Patient_Add extends AppCompatActivity {
 
         et_addName_sathira = findViewById(R.id.et_addName_sathira);
         et_addAge_sathira = findViewById(R.id.et_addAge_sathira);
-        et_addGender_sathira = findViewById(R.id.et_addGender_sathira);
+
+        //spinner
+        spinner = (Spinner) findViewById(R.id.sp_genders_sathira);
+        spinner.setOnItemSelectedListener(this);
+
+        //Creating the ArrayAdapter instance having the country list
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.sp_genders_sathira, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
         et_addNum_sathira = findViewById(R.id.et_addNum_sathira);
         tv_addNic_sathira = findViewById(R.id.et_addNic_sathira);
 
@@ -54,6 +69,17 @@ public class Patient_Add extends AppCompatActivity {
         et_addDate_sathira = findViewById(R.id.et_addDate_sathira);
         et_addTime_sathira = findViewById(R.id.et_addTime_sathira);
     }
+
+    //spinner overwritten methods
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        spinnerGender = (String) adapterView.getItemAtPosition(i);
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+    }
+    //spinner overwritten methods end
 
     public void saveAppointment(View view) {
         String Pname = et_addName_sathira.getText().toString();
