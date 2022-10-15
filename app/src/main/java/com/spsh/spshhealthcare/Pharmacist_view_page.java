@@ -1,5 +1,7 @@
 package com.spsh.spshhealthcare;
 
+import static java.lang.Double.parseDouble;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -15,7 +17,7 @@ import java.util.ArrayList;
 import com.spsh.spshhealthcare.database.DBHelper;
 
 public class Pharmacist_view_page extends AppCompatActivity {
-    TextView tv_pvItemCodeD, tv_pvItemNameD, tv_pvProducerNameD, tv_pvUsageD, tv_pvStrengthD, tv_manuDateD, tv_pvexpirationdateD, tv_pvpriceD, tv_pvQuantityD, tv_pvDescriptionD;
+    TextView tv_pvItemCodeD, tv_pvItemNameD, tv_pvProducerNameD, tv_pvUsageD, tv_pvStrengthD, tv_manuDateD, tv_pvexpirationdateD, tv_pvpriceD, tv_pvQuantityD, tv_pvDescriptionD,tv_TotalCost;
     private String pharmaEqID;
 
     @Override
@@ -45,6 +47,7 @@ public class Pharmacist_view_page extends AppCompatActivity {
         tv_pvpriceD = findViewById(R.id.tv_pvpriceD);
         tv_pvQuantityD = findViewById(R.id.tv_pvQuantityD);
         tv_pvDescriptionD = findViewById(R.id.tv_pvDescriptionD);
+        tv_TotalCost = findViewById(R.id.tv_TotalCost);
 
 
         tv_pvItemCodeD.setText((String)pharmacyEquipments.get(0));
@@ -57,6 +60,14 @@ public class Pharmacist_view_page extends AppCompatActivity {
         tv_pvpriceD.setText((String)pharmacyEquipments.get(7));
         tv_pvQuantityD.setText((String)pharmacyEquipments.get(8));
         tv_pvDescriptionD.setText((String)pharmacyEquipments.get(9));
+
+        int x;
+        double ans;
+        double y ;
+        x = Integer.parseInt(tv_pvQuantityD.getText().toString());
+        y = Double.parseDouble(tv_pvpriceD.getText().toString());
+        ans = x * y ;
+        tv_TotalCost.setText(String.valueOf(ans));
     }
     public void pharmacistDeleteItem(View view) {
         DBHelper dbHelper = new DBHelper(this);

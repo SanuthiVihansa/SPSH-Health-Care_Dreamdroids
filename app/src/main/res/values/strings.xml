@@ -73,6 +73,7 @@
     <string name="tv_pvprice">Unit price (Rs.)</string>
     <string name="tv_pvDescription">Description</string>
     <string name="tv_pvQuantity">Quantity</string>
+    <string name="Tv_TotalCost">Total cost</string>
     <string name="btn_pvUpdate">Update</string>
     <string name="btn_pvDelete">Delete</string>
     <!--    VIEW BUTTON IN THE VIEW ALL EQUIPMENTS -->

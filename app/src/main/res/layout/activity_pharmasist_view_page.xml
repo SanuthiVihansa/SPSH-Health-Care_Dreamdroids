@@ -106,6 +106,7 @@
         android:id="@+id/tv_pvItemCodeD"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="P0001"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_pvItemCode"
@@ -117,6 +118,7 @@
         android:id="@+id/tv_pvItemNameD"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="Paracetamol "
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_pvItemName"
@@ -128,6 +130,7 @@
         android:id="@+id/tv_pvProducerNameD"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="Panadol"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_pvProducerName"
@@ -139,6 +142,7 @@
         android:id="@+id/tv_pvUsageD"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="Fever, painkiller"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_pvUsage"
@@ -150,6 +154,7 @@
         android:id="@+id/tv_pvStrengthD"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="500"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_pvStrength"
@@ -161,6 +166,7 @@
         android:id="@+id/tv_manuDateD"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="20/02/2022"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_pvmanuDate"
@@ -172,6 +178,7 @@
         android:id="@+id/tv_pvexpirationdateD"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="20/02/2025"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_pvexpirationdate"
@@ -183,6 +190,7 @@
         android:id="@+id/tv_pvpriceD"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="4"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_pvprice"
@@ -195,7 +203,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#048393"
         android:onClick="updatePharmacyEquip"
         android:text="@string/btn_pvUpdate"
@@ -228,12 +236,13 @@
         app:layout_constraintEnd_toStartOf="@+id/tv_pvDescriptionD"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_pvQuantity" />
+        app:layout_constraintTop_toBottomOf="@+id/Tv_TotalCost" />
 
     <TextView
         android:id="@+id/tv_pvDescriptionD"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="Analgesic and Antipyretic "
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_pvDescription"
@@ -289,5 +298,28 @@
         app:layout_constraintHorizontal_bias="0.107"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Tv_TotalCost"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/Tv_TotalCost"
+        app:layout_constraintEnd_toStartOf="@+id/tv_TotalCost"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pvQuantity" />
+
+    <TextView
+        android:id="@+id/tv_TotalCost"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Tv_TotalCost"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Tv_TotalCost" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
