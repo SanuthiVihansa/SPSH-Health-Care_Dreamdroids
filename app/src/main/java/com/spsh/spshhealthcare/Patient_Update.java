@@ -7,17 +7,21 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import com.spsh.spshhealthcare.database.DBHelper;
 
-public class Patient_Update extends AppCompatActivity {
+public class Patient_Update extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     EditText et_update_name_sathira, et_update_age_sathira, et_update_gender_sathira, et_update_contactNum_sathira;
     String appointmentID, pname, age, gender, contactNo;
-    String globalNic;
+    String globalNic, spinnerGender;
+    Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,19 +52,38 @@ public class Patient_Update extends AppCompatActivity {
         et_update_age_sathira.setText(age);
 
         gender = (String) list.get(2);
-        et_update_gender_sathira = findViewById(R.id.et_update_gender_sathira);
-        et_update_gender_sathira.setText(gender);
+        //spinner
+        spinner = (Spinner)findViewById(R.id.sp_update_gender_sathira);
+        spinner.setOnItemSelectedListener(this);
+
+        //Creating the ArrayAdapter instance having the country list
+        ArrayAdapter<CharSequence> adapter;
+        adapter = ArrayAdapter.createFromResource(this,
+                R.array.sp_genders_sathira, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
         contactNo = (String) list.get(3);
         et_update_contactNum_sathira = findViewById(R.id.et_update_contactNum_sathira);
         et_update_contactNum_sathira.setText(contactNo);
     }
 
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//        Toast.makeText(getApplicationContext(), (CharSequence) adapterView.getItemAtPosition(i), Toast.LENGTH_SHORT).show();
+        spinnerGender = (String) adapterView.getItemAtPosition(i);
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
     //update onclick event
     public void editAppointment(View view){
         pname = et_update_name_sathira.getText().toString();
         age = et_update_age_sathira.getText().toString();
-        gender = et_update_gender_sathira.getText().toString();
+        gender = spinnerGender;
         contactNo = et_update_contactNum_sathira.getText().toString();
         
         DBHelper dbHelper = new DBHelper(this);
