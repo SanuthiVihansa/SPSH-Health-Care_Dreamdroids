@@ -45,7 +45,7 @@ public class ADD_DOC extends AppCompatActivity {
 
         DBHelper dbHelper = new DBHelper(this);
 
-        if (doc_Name.isEmpty()){
+        if (doc_Name.isEmpty() || !doc_Name.startsWith("Dr.")){
             this.et1_ADD_DOC_Name.setError("Enter Doctor Name!");
         }
         else if(doc_speciality.isEmpty()){
