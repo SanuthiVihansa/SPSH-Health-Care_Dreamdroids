@@ -25,8 +25,8 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
 
     EditText et_addName_sathira, et_addAge_sathira, et_addGender_sathira, et_addNum_sathira, et_addSpecial_sathira, et_addDrName_sathira, et_addDate_sathira, et_addTime_sathira;
     TextView tv_addNic_sathira;
-    Spinner spinner;
-    String nic2, spinnerGender;
+    Spinner spinner, spinnerSpeciality;
+    String nic2, spinnerGender, specialityStringSpinner;
 
 
     @Override
@@ -49,7 +49,7 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
         et_addName_sathira = findViewById(R.id.et_addName_sathira);
         et_addAge_sathira = findViewById(R.id.et_addAge_sathira);
 
-        //spinner
+        //gender spinner
         spinner = (Spinner) findViewById(R.id.sp_genders_sathira);
         spinner.setOnItemSelectedListener(this);
 
@@ -64,7 +64,17 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
 
         tv_addNic_sathira.setText(nic2);
 
-        et_addSpecial_sathira = findViewById(R.id.et_addSpecial_sathira);
+//        et_addSpecial_sathira = findViewById(R.id.et_addSpecial_sathira);
+        //gender spinner
+        spinnerSpeciality = (Spinner) findViewById(R.id.sp_speciality_sathira);
+        spinnerSpeciality.setOnItemSelectedListener(this);
+
+        //Creating the ArrayAdapter instance having the country list
+        ArrayAdapter<CharSequence> adapterSpeciality = ArrayAdapter.createFromResource(this,
+                R.array.sp_speciality_sathira, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerSpeciality.setAdapter(adapterSpeciality);
+
         et_addDrName_sathira = findViewById(R.id.et_addDrName_sathira);
         et_addDate_sathira = findViewById(R.id.et_addDate_sathira);
         et_addTime_sathira = findViewById(R.id.et_addTime_sathira);
@@ -73,7 +83,16 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
     //spinner overwritten methods
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        spinnerGender = (String) adapterView.getItemAtPosition(i);
+        switch (adapterView.getId()){
+            case R.id.sp_speciality_sathira:
+                specialityStringSpinner = (String) adapterView.getItemAtPosition(i);
+                break;
+            case R.id.sp_genders_sathira:
+                spinnerGender = (String) adapterView.getItemAtPosition(i);
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
@@ -81,13 +100,14 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
     }
     //spinner overwritten methods end
 
+
     public void saveAppointment(View view) {
         String Pname = et_addName_sathira.getText().toString();
         String age = et_addAge_sathira.getText().toString();
         String gender = spinnerGender;
         String contactNo = et_addNum_sathira.getText().toString();
         String nic = tv_addNic_sathira.getText().toString();
-        String specialization = et_addSpecial_sathira.getText().toString();
+        String specialization = specialityStringSpinner;
         String doctorName = et_addDrName_sathira.getText().toString();
         String date = et_addDate_sathira.getText().toString();
         String time = et_addTime_sathira.getText().toString();
@@ -101,7 +121,7 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
 //        } else if (!onlyLetters(gender, et_addGender_sathira)) {
 //        } else if (!validateGender(gender, et_addGender_sathira)) {
         } else if (!validateContactNo(contactNo, et_addNum_sathira)) {
-        } else if (!onlyLetters(specialization, et_addSpecial_sathira)) {
+//        } else if (!onlyLetters(specialization, et_addSpecial_sathira)) {
         } else if (!validateDrName(doctorName, et_addDrName_sathira)) {
         } else if (!validateDate(date, et_addDate_sathira)) {
         } else if (!validateTime(time, et_addTime_sathira)) {
