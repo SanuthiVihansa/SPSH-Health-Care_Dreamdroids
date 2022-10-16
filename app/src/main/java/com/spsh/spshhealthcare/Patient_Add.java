@@ -84,7 +84,7 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
     public void saveAppointment(View view) {
         String Pname = et_addName_sathira.getText().toString();
         String age = et_addAge_sathira.getText().toString();
-        String gender = et_addGender_sathira.getText().toString();
+        String gender = spinnerGender;
         String contactNo = et_addNum_sathira.getText().toString();
         String nic = tv_addNic_sathira.getText().toString();
         String specialization = et_addSpecial_sathira.getText().toString();
@@ -98,8 +98,8 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
             Toast.makeText(this, getResources().getText(R.string.toast_addPatient_emptyFields_sathira), Toast.LENGTH_SHORT).show();
         } else if (!onlyLetters(Pname, et_addName_sathira)) {
         } else if (!validateAge(age, et_addAge_sathira)) {
-        } else if (!onlyLetters(gender, et_addGender_sathira)) {
-        } else if (!validateGender(gender, et_addGender_sathira)) {
+//        } else if (!onlyLetters(gender, et_addGender_sathira)) {
+//        } else if (!validateGender(gender, et_addGender_sathira)) {
         } else if (!validateContactNo(contactNo, et_addNum_sathira)) {
         } else if (!onlyLetters(specialization, et_addSpecial_sathira)) {
         } else if (!validateDrName(doctorName, et_addDrName_sathira)) {
