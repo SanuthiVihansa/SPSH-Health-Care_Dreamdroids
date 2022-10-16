@@ -56,7 +56,7 @@ public class ADD_DOC extends AppCompatActivity {
                 Intent intent = new Intent(this, Doc_Home.class);
                 startActivity(intent);
             }else{
-                Toast.makeText(this, "Failed to add Doc Details", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Failed To Add Doctor Details", Toast.LENGTH_SHORT).show();
             }
         }
 
