@@ -55,8 +55,10 @@ public class ADD_DOC extends AppCompatActivity {
         }
         else if(doc_experience.isEmpty()){
             this.et4_ADD_DOC_Experience.setError("Enter Doctor Experience");
-        }else if(et_Fee_ADD_DOC.getText().toString().isEmpty()||numEdt_ADD_DOC_MaxPat.getText().toString().isEmpty()){
-            Toast.makeText(this, "Fill the field",Toast.LENGTH_SHORT).show();
+        }else if(et_Fee_ADD_DOC.getText().toString().isEmpty()){
+            this.et_Fee_ADD_DOC.setError("Enter Doctor Fee");
+        }else if(numEdt_ADD_DOC_MaxPat.getText().toString().isEmpty()){
+            this.numEdt_ADD_DOC_MaxPat.setError("Enter Maximum Patients");
         }else{
             double doc_fee = Double.parseDouble(et_Fee_ADD_DOC.getText().toString());
             int doc_maxpat = Integer.parseInt(numEdt_ADD_DOC_MaxPat.getText().toString());
