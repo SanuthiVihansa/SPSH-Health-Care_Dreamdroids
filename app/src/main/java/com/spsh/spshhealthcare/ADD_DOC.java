@@ -35,7 +35,7 @@ public class ADD_DOC extends AppCompatActivity {
         numEdt_ADD_DOC_MaxPat = findViewById(R.id.numEdt_ADD_DOC_MaxPat);
     }
 
-    public void saveDoctor(View view){
+    public void saveDoctor(View view) {
 
         String doc_Name = et1_ADD_DOC_Name.getText().toString();
         String doc_speciality = et2_ADD_DOC_Speciality.getText().toString();
@@ -45,7 +45,10 @@ public class ADD_DOC extends AppCompatActivity {
 
         DBHelper dbHelper = new DBHelper(this);
 
-        if(doc_Name.isEmpty()||doc_speciality.isEmpty()||doc_workingplace.isEmpty()||doc_experience.isEmpty()||et_Fee_ADD_DOC.getText().toString().isEmpty()||numEdt_ADD_DOC_MaxPat.getText().toString().isEmpty()){
+        if (doc_Name.isEmpty()){
+            this.et1_ADD_DOC_Name.setError("Enter Doctor Name!");
+        }
+    else if(doc_speciality.isEmpty()||doc_workingplace.isEmpty()||doc_experience.isEmpty()||et_Fee_ADD_DOC.getText().toString().isEmpty()||numEdt_ADD_DOC_MaxPat.getText().toString().isEmpty()){
             Toast.makeText(this, "Fill the field",Toast.LENGTH_SHORT).show();
         }else{
             double doc_fee = Double.parseDouble(et_Fee_ADD_DOC.getText().toString());
