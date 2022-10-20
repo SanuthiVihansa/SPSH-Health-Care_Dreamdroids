@@ -393,6 +393,22 @@ public class DBHelper extends SQLiteOpenHelper {
         return allAppointments;
     }
 
+    /********************************************************************************************************************************************************************************************************/
+    @SuppressLint("Range")
+    public ArrayList retrieveDocs(String speciality){
+        SQLiteDatabase db = getReadableDatabase();
+        ArrayList docNames = new ArrayList();
+
+        String query = "SELECT " + DoctorsMasters.Doctors.COLUMN_NAME_DOCTORNAME + " FROM " + DoctorsMasters.Doctors.TABLE_NAME + " WHERE " +DoctorsMasters.Doctors.COLUMN_NAME_SPECIALITY+"='"+speciality+"'";
+        Cursor cursor = db.rawQuery(query, null);
+
+        while (cursor.moveToNext()){
+            docNames.add(cursor.getString(cursor.getColumnIndex(DoctorsMasters.Doctors.COLUMN_NAME_DOCTORNAME)));
+        }
+        return docNames;
+    }
+    /********************************************************************************************************************************************************************************************************/
+
     //*************************************************************************Read Single method****************************************************************************
     @SuppressLint("Range")
     public ArrayList readAppointmentByID(String id){
