@@ -51,6 +51,10 @@ public class ADD_DOC extends AppCompatActivity {
         else if(!doc_Name.startsWith("Dr.")){
             this.et1_ADD_DOC_Name.setError("Error in Pattern Name!");
         }
+        /*
+        else if(this.checkDigit(doc_Name) == false){
+                this.et1_ADD_DOC_Name.setError("Must contain only characters!");
+        }*/
         else if(doc_speciality.isEmpty()){
             this.et2_ADD_DOC_Speciality.setError("Enter Speciality");
         }else if(doc_workingplace.isEmpty()){
@@ -76,6 +80,23 @@ public class ADD_DOC extends AppCompatActivity {
         }
 
     }
+
+    public boolean checkDigit(String name) {
+        //converts the string to an array.
+        char[] arr = name.toCharArray();
+        //length of the array taken.
+        int len = arr.length;
+        //iterate through all the characters/elements in the array.
+        for(int i =0; i < len; i++){
+            //even if a single character is an integer --> returns false.
+            if (Character.isDigit(arr[i])== true){
+                return false;
+            }
+        }
+        //after iterating through the entire array --> no numerical values at all --> return true.
+        return true;
+    }
+
     public void back(View view){
         Intent intent = new Intent(this,Doc_Home.class);
         startActivity(intent);
