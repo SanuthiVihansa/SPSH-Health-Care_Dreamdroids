@@ -49,7 +49,7 @@ public class ADD_DOC extends AppCompatActivity {
             this.et1_ADD_DOC_Name.setError("Enter Doctor Name!");
         }
         else if(!doc_Name.startsWith("Dr.")){
-            this.et1_ADD_DOC_Name.setError("Name Does Not Required Pattern!");
+            this.et1_ADD_DOC_Name.setError("Error in Pattern Name!");
         }
         else if(doc_speciality.isEmpty()){
             this.et2_ADD_DOC_Speciality.setError("Enter Speciality");
