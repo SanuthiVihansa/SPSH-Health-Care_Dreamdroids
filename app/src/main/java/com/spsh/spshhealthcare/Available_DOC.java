@@ -103,6 +103,22 @@ public class Available_DOC extends AppCompatActivity {
 
     }
 
+    public boolean checkDigit(String name) {
+        //converts the string to an array.
+        char[] arr = name.toCharArray();
+        //length of the array taken.
+        int len = arr.length;
+        //iterate through all the characters/elements in the array.
+        for(int i =0; i < len; i++){
+            //even if a single character is an integer --> returns false.
+            if (Character.isDigit(arr[i])== true){
+                return false;
+            }
+        }
+        //after iterating through the entire array --> no numerical values at all --> return true.
+        return true;
+    }
+
     public void back(View view) {
         Intent intent = new Intent(Available_DOC.this, Doc_Profile.class);
         intent.putExtra("docId",docId);
