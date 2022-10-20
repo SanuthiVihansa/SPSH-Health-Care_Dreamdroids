@@ -633,8 +633,8 @@ public class DBHelper extends SQLiteOpenHelper {
 
         while (cursor.moveToNext()) {
             //String docName = cursor.getString(cursor.getColumnIndexOrThrow(AppointmentsMaster.Appointments.COLUMN_NAME_DOCTORSNAME));
-           // appointment_count = appointment_count + 1;
-            appointment_count++;
+            appointment_count = appointment_count + 1;
+            //appointment_count++;
         }
 
         cursor.close();
