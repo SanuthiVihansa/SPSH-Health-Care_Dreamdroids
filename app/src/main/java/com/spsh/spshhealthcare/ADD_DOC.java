@@ -51,10 +51,10 @@ public class ADD_DOC extends AppCompatActivity {
         else if(!doc_Name.startsWith("Dr.")){
             this.et1_ADD_DOC_Name.setError("Error in Pattern Name!");
         }
-        /*
-        else if(this.checkDigit(doc_Name) == false){
-                this.et1_ADD_DOC_Name.setError("Must contain only characters!");
-        }*/
+
+        else if(this.checkDigit(doc_Name) == false) {
+            this.et1_ADD_DOC_Name.setError("Must contain only characters!");
+        }
         else if(doc_speciality.isEmpty()){
             this.et2_ADD_DOC_Speciality.setError("Enter Speciality");
         }else if(doc_workingplace.isEmpty()){
