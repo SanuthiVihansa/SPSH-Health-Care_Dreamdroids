@@ -82,6 +82,7 @@ public class Available_DOC extends AppCompatActivity {
         else if(numtxt_UPDATEDOC_MaxPatients.getText().toString().isEmpty()){
             this.numtxt_UPDATEDOC_MaxPatients.setError("Enter Maximum Patients!");
         }else {
+            //converted numerical values.
             double fee = Double.parseDouble(et6_UPDATEDDOC_fee.getText().toString());
             int maxPat = Integer.parseInt(numtxt_UPDATEDOC_MaxPatients.getText().toString());
             int updated = dbHelper.updateDocInfo(docId,docname,docSpeciality,workplace,experience,fee,maxPat);
