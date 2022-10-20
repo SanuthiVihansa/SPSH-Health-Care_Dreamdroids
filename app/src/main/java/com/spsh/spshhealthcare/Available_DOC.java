@@ -60,8 +60,7 @@ public class Available_DOC extends AppCompatActivity {
         String docSpeciality = et3_UPDATEDOC_Speciality.getText().toString();
         String workplace = et4_UPDATEDOC_WorkingPlace.getText().toString();
         String experience = et5_UPDATEDOC_Experience.getText().toString();
-        double fee = Double.parseDouble(et6_UPDATEDDOC_fee.getText().toString());
-        int maxPat = Integer.parseInt(numtxt_UPDATEDOC_MaxPatients.getText().toString());
+
 
 
         if(docname.isEmpty()) {
@@ -83,6 +82,8 @@ public class Available_DOC extends AppCompatActivity {
         else if(numtxt_UPDATEDOC_MaxPatients.getText().toString().isEmpty()){
             this.numtxt_UPDATEDOC_MaxPatients.setError("Enter Maximum Patients!");
         }else {
+            double fee = Double.parseDouble(et6_UPDATEDDOC_fee.getText().toString());
+            int maxPat = Integer.parseInt(numtxt_UPDATEDOC_MaxPatients.getText().toString());
             int updated = dbHelper.updateDocInfo(docId,docname,docSpeciality,workplace,experience,fee,maxPat);
             if (updated > 0) {
                 //clears all the values after inserting.
