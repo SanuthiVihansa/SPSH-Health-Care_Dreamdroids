@@ -64,7 +64,9 @@ public class Available_DOC extends AppCompatActivity {
         int maxPat = Integer.parseInt(numtxt_UPDATEDOC_MaxPatients.getText().toString());
 
 
-        if(docname.isEmpty()||docSpeciality.isEmpty()||workplace.isEmpty()||experience.isEmpty()||et6_UPDATEDDOC_fee.getText().toString().isEmpty()||numtxt_UPDATEDOC_MaxPatients.getText().toString().isEmpty()){
+        if(docname.isEmpty()){
+            this.et2_UPDATEDOC_Name.setError("Enter Doctor Name!");
+        }else if(docSpeciality.isEmpty()||workplace.isEmpty()||experience.isEmpty()||et6_UPDATEDDOC_fee.getText().toString().isEmpty()||numtxt_UPDATEDOC_MaxPatients.getText().toString().isEmpty()){
             Toast.makeText(this, "Fill all fields", Toast.LENGTH_SHORT).show();
         }else {
             int updated = dbHelper.updateDocInfo(docId,docname,docSpeciality,workplace,experience,fee,maxPat);
