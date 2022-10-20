@@ -67,9 +67,15 @@ public class Available_DOC extends AppCompatActivity {
         if(docname.isEmpty()){
             this.et2_UPDATEDOC_Name.setError("Enter Doctor Name!");
         }else if(docSpeciality.isEmpty()){
-            this.et3_UPDATEDOC_Speciality.setError("Enter Speciality");
+            this.et3_UPDATEDOC_Speciality.setError("Enter Speciality!");
         }
-        else if(workplace.isEmpty()||experience.isEmpty()||et6_UPDATEDDOC_fee.getText().toString().isEmpty()||numtxt_UPDATEDOC_MaxPatients.getText().toString().isEmpty()){
+        else if(workplace.isEmpty()){
+            this.et4_UPDATEDOC_WorkingPlace.setError("Enter Working Place!");
+        }
+        else if(experience.isEmpty()){
+            this.et5_UPDATEDOC_Experience.setError("Enter Experience!");
+        }
+        else if(et6_UPDATEDDOC_fee.getText().toString().isEmpty()||numtxt_UPDATEDOC_MaxPatients.getText().toString().isEmpty()){
             Toast.makeText(this, "Fill all fields", Toast.LENGTH_SHORT).show();
         }else {
             int updated = dbHelper.updateDocInfo(docId,docname,docSpeciality,workplace,experience,fee,maxPat);
