@@ -79,7 +79,7 @@ public class Available_DOC extends AppCompatActivity {
             this.et6_UPDATEDDOC_fee.setError("Enter Fee!");
         }
         else if(numtxt_UPDATEDOC_MaxPatients.getText().toString().isEmpty()){
-            Toast.makeText(this, "Fill all fields", Toast.LENGTH_SHORT).show();
+            this.numtxt_UPDATEDOC_MaxPatients.setError("Enter Maximum Patients!");
         }else {
             int updated = dbHelper.updateDocInfo(docId,docname,docSpeciality,workplace,experience,fee,maxPat);
             if (updated > 0) {
