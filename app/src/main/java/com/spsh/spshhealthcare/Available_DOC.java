@@ -65,11 +65,15 @@ public class Available_DOC extends AppCompatActivity {
 
         if(docname.isEmpty()) {
             this.et2_UPDATEDOC_Name.setError("Enter Doctor Name!");
+        }
+        else if(this.checkDigit(docname) == false) {
+            this.et2_UPDATEDOC_Name.setError("Must contain only characters!");
         }else if(!docname.startsWith("Dr.")){
             this.et2_UPDATEDOC_Name.setError("Error in Pattern Name!");
             }else if(docSpeciality.isEmpty()){
             this.et3_UPDATEDOC_Speciality.setError("Enter Speciality!");
         }
+
         else if(workplace.isEmpty()){
             this.et4_UPDATEDOC_WorkingPlace.setError("Enter Working Place!");
         }
