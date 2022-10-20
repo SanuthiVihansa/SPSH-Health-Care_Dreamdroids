@@ -87,6 +87,7 @@ public class Doc_Profile extends AppCompatActivity {
         startActivity(intent);
     }
 
+
     public void back(View view) {
         Intent intent = new Intent(this,Search_Doc.class);
         startActivity(intent);
