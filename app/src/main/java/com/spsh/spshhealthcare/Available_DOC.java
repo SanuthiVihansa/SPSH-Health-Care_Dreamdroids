@@ -64,9 +64,11 @@ public class Available_DOC extends AppCompatActivity {
         int maxPat = Integer.parseInt(numtxt_UPDATEDOC_MaxPatients.getText().toString());
 
 
-        if(docname.isEmpty()){
+        if(docname.isEmpty()) {
             this.et2_UPDATEDOC_Name.setError("Enter Doctor Name!");
-        }else if(docSpeciality.isEmpty()){
+        }else if(!docname.startsWith("Dr.")){
+            this.et2_UPDATEDOC_Name.setError("Error in Pattern Name!");
+            }else if(docSpeciality.isEmpty()){
             this.et3_UPDATEDOC_Speciality.setError("Enter Speciality!");
         }
         else if(workplace.isEmpty()){
