@@ -39,4 +39,17 @@ public class PatientAndAppointmentUnitTest {
         assertEquals(true, appointment.validateAge("125"));
     }
 
+    @Test
+    public void testContactNoValidation() {
+        assertEquals(true, appointment.validateContactNo("0771234567"));
+        assertEquals(true, appointment.validateContactNo("0111234567"));
+        assertEquals(true, appointment.validateContactNo("0711234567"));
+        assertEquals(true, appointment.validateContactNo("0761234567"));
+        assertEquals(true, appointment.validateContactNo("0721234567"));
+        assertEquals(false, appointment.validateContactNo("07712345678"));
+        assertEquals(false, appointment.validateContactNo("7712345678"));
+        assertEquals(false, appointment.validateContactNo("771234567"));
+    }
+
+
 }
