@@ -215,7 +215,6 @@
     <string name="validateGender">Invalid input</string>
     <string name="validateContactNo">Invalid number of digits</string>
     <string name="validateTime">Invalid time</string>
-    <string name="validateDate">Invalid date</string>
     <string name="validateDateFormat">Invalid format</string>
 
 
