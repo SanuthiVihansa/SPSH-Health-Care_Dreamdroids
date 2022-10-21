@@ -50,17 +50,16 @@ public class ADD_DOC extends AppCompatActivity {
         }
         else if(!doc_Name.startsWith("Dr.")){
             this.et1_ADD_DOC_Name.setError("Error in Pattern Name!");
-        }
-
-        else if(this.checkDigit(doc_Name) == false) {
+        }else if(this.checkDigit(doc_Name) == false) {
             this.et1_ADD_DOC_Name.setError("Must contain only characters!");
-        }
-        else if(doc_speciality.isEmpty()){
+        }else if(doc_speciality.isEmpty()){
             this.et2_ADD_DOC_Speciality.setError("Enter Speciality");
-        }else if(doc_workingplace.isEmpty()){
-            this.et3_ADD_DOC_workingplace.setError("Enter Working Place");
+        }else if(this.checkDigit(doc_speciality) == false){
+            this.et2_ADD_DOC_Speciality.setError("Must contain only Characters!");
         }
-        else if(doc_experience.isEmpty()){
+        else if(doc_workingplace.isEmpty()){
+            this.et3_ADD_DOC_workingplace.setError("Enter Working Place");
+        }else if(doc_experience.isEmpty()){
             this.et4_ADD_DOC_Experience.setError("Enter Doctor Experience");
         }else if(et_Fee_ADD_DOC.getText().toString().isEmpty()){
             this.et_Fee_ADD_DOC.setError("Enter Doctor Fee");
