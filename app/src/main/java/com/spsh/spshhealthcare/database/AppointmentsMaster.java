@@ -3,9 +3,10 @@ package com.spsh.spshhealthcare.database;
 import android.provider.BaseColumns;
 
 public final class AppointmentsMaster {
-    private AppointmentsMaster(){ }
+    private AppointmentsMaster() {
+    }
 
-    public class Appointments implements BaseColumns{
+    public class Appointments implements BaseColumns {
         public static final String TABLE_NAME = "appointments";
         public static final String COLUMN_NAME_PNAME = "Pname";
         public static final String COLUMN_NAME_AGE = "age";
