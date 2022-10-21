@@ -182,20 +182,6 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
         }
     }
 
-    public boolean validateGender(String string, EditText editText) { //checks for letters
-        if (string.length() == 1) {
-            if (string.charAt(0) == 'M' || string.charAt(0) == 'F')
-                return true;
-            else {
-                editText.setError(getText(R.string.validateGender));
-                return false;
-            }
-        } else {
-            editText.setError(getText(R.string.validateGender));
-            return false;
-        }
-    }
-
     //validation for contact number
     public boolean validateContactNo(String string, EditText editText) { //checks for letters
         if (string.length() == 10 && string.charAt(0) == '0') {
