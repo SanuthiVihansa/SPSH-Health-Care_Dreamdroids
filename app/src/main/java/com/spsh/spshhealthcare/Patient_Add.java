@@ -50,7 +50,7 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
         et_addAge_sathira = findViewById(R.id.et_addAge_sathira);
 
         //gender spinner
-        spinner = (Spinner) findViewById(R.id.sp_genders_sathira);
+        spinner = findViewById(R.id.sp_genders_sathira);
         spinner.setOnItemSelectedListener(this);
 
         //Creating the ArrayAdapter instance having the country list
@@ -132,11 +132,16 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
 
         if (Pname.isEmpty() || age.isEmpty() || gender.isEmpty() || contactNo.isEmpty() || nic.isEmpty() || specialization.isEmpty() || doctorName.isEmpty() || date.isEmpty() || time.isEmpty()) {
             Toast.makeText(this, getResources().getText(R.string.toast_addPatient_emptyFields_sathira), Toast.LENGTH_SHORT).show();
-        } else if (!onlyLetters(Pname, et_addName_sathira)) {
-        } else if (!validateAge(age, et_addAge_sathira)) {
-        } else if (!validateContactNo(contactNo, et_addNum_sathira)) {
-        } else if (!validateDate(date, et_addDate_sathira)) {
-        } else if (!validateTime(time, et_addTime_sathira)) {
+        } else if (!validateName(Pname)) {
+            et_addName_sathira.setError(getText(R.string.onlyLetters));
+        } else if (!validateAge(age)) {
+            et_addAge_sathira.setError(getText(R.string.validateAge));
+        } else if (!validateContactNo(contactNo)) {
+            et_addNum_sathira.setError(getText(R.string.validateContactNo));
+        } else if (!validateDate(date)) {
+            et_addDate_sathira.setError(getText(R.string.validateDateFormat));
+        } else if (!validateTime(time)) {
+            et_addTime_sathira.setError(getText(R.string.validateTime));
         } else {
             int age2 = Integer.parseInt(age);
             long inserted = dbHelper.addAppointment(Pname, age2, gender, contactNo, nic, specialization, doctorName, date, time);
@@ -151,19 +156,14 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
 
     //validations
     //validation to check that only letters exist
-    public boolean onlyLetters(String string, EditText editText) { //checks for letters
-        boolean status = string.matches("[a-z A-Z]+");   //NOT WORKING "[a-zA-Z]*" , "[a-zA-Z]+"
-        if (status == false) {
-            editText.setError(getText(R.string.onlyLetters));
-        }
-        return status;
+    public boolean validateName(String string) { //checks for letters
+        return string.matches("[a-z. A-Z]+");//NOT WORKING "[a-zA-Z]*" , "[a-zA-Z]+"
     }
 
     //validation for age
-    private boolean validateAge(String string, EditText editText) {
+    private boolean validateAge(String string) {
         int isAgeValid = Integer.parseInt(string);
         if (isAgeValid <= 0 || isAgeValid > 125) {
-            editText.setError(getText(R.string.validateAge));
             return false;
         } else {
             return true;
@@ -171,53 +171,46 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
     }
 
     //validation for contact number
-    public boolean validateContactNo(String string, EditText editText) { //checks for letters
+    public boolean validateContactNo(String string) { //checks for letters
         if (string.length() == 10 && string.charAt(0) == '0') {
             return true;
         } else {
-            editText.setError(getText(R.string.validateContactNo));
             return false;
         }
     }
 
     //validation for time
-    public boolean validateTime(String string, EditText editText) {
+    public boolean validateTime(String string) {
         if (string.length() == 4) {
             if (string.charAt(1) == ':' && Integer.parseInt((Character.toString(string.charAt(0)))) > -1 && Integer.parseInt(string.substring(2)) > -1 && Integer.parseInt(string.substring(2)) < 60)
                 return true;
             else {
-                editText.setError(getText(R.string.validateTime));
                 return false;
             }
         } else if (string.length() == 5) {
             if (string.charAt(2) == ':' && Integer.parseInt(string.substring(0, 2)) > -1 && Integer.parseInt(string.substring(0, 2)) < 24 && Integer.parseInt(string.substring(3)) > -1 && Integer.parseInt(string.substring(3)) < 60)
                 return true;
             else {
-                editText.setError(getText(R.string.validateTime));
                 return false;
             }
         } else {
-            editText.setError(getText(R.string.validateTime));
             return false;
         }
     }
 
     //validation for date
-    public boolean validateDate(String string, EditText editText) {
+    public boolean validateDate(String string) {
         if (string.length() == 8) {
             if ((string.charAt(2) == '-' || string.charAt(2) == '/') || (string.charAt(5) == '-' || string.charAt(5) == '/')) {
                 if (Integer.parseInt(string.substring(0, 2)) > 0 && Integer.parseInt(string.substring(0, 2)) < 32 && Integer.parseInt(string.substring(3, 5)) > 0 && Integer.parseInt(string.substring(3, 5)) < 13 && Integer.parseInt(string.substring(6, 8)) > -1 && Integer.parseInt(string.substring(6, 8)) < 100) {
                     return true;
                 } else {
-                    editText.setError(getText(R.string.validateDate));
                     return false;
                 }
             } else {
-                editText.setError(getText(R.string.validateDateFormat));
                 return false;
             }
         } else {
-            editText.setError(getText(R.string.validateDateFormat));
             return false;
         }
 
