@@ -41,9 +41,9 @@ public class AddReport extends AppCompatActivity {
 
         setContentView(R.layout.activity_add_report);
 
+        // Initialize variables
         this.initialCost = 400.00;
 
-        // Initialize variables
         this.patientName = findViewById(R.id.et_labelForPatientNameAddReport);
         this.age = findViewById(R.id.et_labelForPatientAgeAddReport);
         this.male = findViewById(R.id.radioBtn_maleAddReport);
