@@ -200,9 +200,9 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
 
     //validation for date
     public boolean validateDate(String string) {
-        if (string.length() == 8) {
+        if (string.length() == 10) {
             if ((string.charAt(2) == '-' && string.charAt(5) == '-') || (string.charAt(2) == '/' && string.charAt(5) == '/')) {
-                if (Integer.parseInt(string.substring(0, 2)) > 0 && Integer.parseInt(string.substring(0, 2)) < 32 && Integer.parseInt(string.substring(3, 5)) > 0 && Integer.parseInt(string.substring(3, 5)) < 13 && Integer.parseInt(string.substring(6, 8)) > -1 && Integer.parseInt(string.substring(6, 8)) < 100) {
+                if (Integer.parseInt(string.substring(0, 2)) > 0 && Integer.parseInt(string.substring(0, 2)) < 32 && Integer.parseInt(string.substring(3, 5)) > 0 && Integer.parseInt(string.substring(3, 5)) < 13 && Integer.parseInt(string.substring(6, 10)) > 2021 && Integer.parseInt(string.substring(6, 8)) < 10000) {
                     return true;
                 } else {
                     return false;
