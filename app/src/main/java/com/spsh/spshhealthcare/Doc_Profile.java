@@ -1,8 +1,10 @@
 package com.spsh.spshhealthcare;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.sqlite.SQLiteDatabase;
@@ -17,6 +19,7 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.spsh.spshhealthcare.database.AppointmentsMaster;
 import com.spsh.spshhealthcare.database.DBHelper;
 
@@ -25,7 +28,7 @@ import java.util.HashMap;
 
 public class Doc_Profile extends AppCompatActivity {
     TextView TV8_Remaining_Appointments_Doc_Profile,tv2_Doc_Profile_Name, TV3_DOC_PROFILE_Speciality, tv4_Doc_Profile_WorkingPlace, tv5_Doc_Profile_Experience, tv6_Doc_Profile_Fee, tv7_DOC_PROFILE_MaxPat;
-    //ListView  singledocListView;
+
     private String docId;
     private String docName;
 
@@ -77,7 +80,7 @@ public class Doc_Profile extends AppCompatActivity {
         intent.putExtra("docId",docId);
         startActivity(intent);
     }
-
+/*
     public void deleteDoc(View view) {
         DBHelper dbHelper = new DBHelper(this);
         dbHelper.deleteDoc(Integer.parseInt(this.docId));
@@ -85,6 +88,76 @@ public class Doc_Profile extends AppCompatActivity {
         Toast.makeText(this, "Doctor deleted successfully.", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, Search_Doc.class);
         startActivity(intent);
+    }
+*/
+    /*
+    public void deleteDoc(View view) {
+        DBHelper dbHelper = new DBHelper(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Delete this Doctor");
+        builder.setMessage("Are you sure you want to remove this Doctor?\n\nNOTE : This cannot be undone.");
+        builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                int response =  dbHelper.deleteDoc(Integer.parseInt(this.docId));
+                if(response > 0) {
+                    Toast.makeText(Doc_Profile.this, "Doctor Deleted Successfully !", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(Doc_Profile.this, Search_Doc.class);
+                    startActivity(intent);
+                }
+                else {
+                    Snackbar snackbar = Snackbar.make(view, "Something went wrong !", Snackbar.LENGTH_LONG);
+                    snackbar.setAnimationMode(Snackbar.ANIMATION_MODE_SLIDE);
+                    snackbar.show();
+                }
+            }
+        });
+        builder.setNegativeButton("Back", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+    */
+
+     //delete method
+    public void deleteDoc(View view){
+        DBHelper dbHelper = new DBHelper(this);
+        Intent intent = getIntent();
+        String docId = intent.getStringExtra("docId");
+
+        //building alert dialogue box
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(getString(R.string.view_single_dialog_message));
+
+        builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dbHelper.deleteAppointment(docId);
+
+                //Confirmation of deletion.
+                Toast.makeText(Doc_Profile.this, "Doctor Deleted Successfully", Toast.LENGTH_SHORT).show();
+
+               //Intent set to navigate to Search Doc page.
+                Intent intent = new Intent(Doc_Profile.this, Search_Doc.class);
+                //intent.putExtra("docId", Patient_View_Single.globalNic);
+                startActivity(intent);
+            }
+        });
+
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //Dialog box will disappear
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
 
