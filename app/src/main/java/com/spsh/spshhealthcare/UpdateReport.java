@@ -22,6 +22,7 @@ import java.util.ArrayList;
 
 public class UpdateReport extends AppCompatActivity {
 
+    // Variables declaration
     EditText name, age, nic, time, hemoglobin, wbc, neutrophils, lymphocytes, eosinophils, rbc, pcb, platelet;
     RadioButton male, female;
     TextView date, cost;
@@ -33,11 +34,15 @@ public class UpdateReport extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Set full screen
         getSupportActionBar().hide();
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         setContentView(R.layout.activity_update_report);
 
+        // Initialize variables
         this.initialCost = 400.00;
 
         Intent intent = getIntent();
@@ -122,6 +127,7 @@ public class UpdateReport extends AppCompatActivity {
         String pcb = this.pcb.getText().toString();
         String platelet = this.platelet.getText().toString();
 
+        // Validations
         if(this.male.isChecked()){
             this.gender = "Male";
         }
