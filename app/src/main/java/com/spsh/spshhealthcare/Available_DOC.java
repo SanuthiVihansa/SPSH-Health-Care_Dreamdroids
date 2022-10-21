@@ -75,6 +75,8 @@ public class Available_DOC extends AppCompatActivity {
             this.et3_UPDATEDOC_Speciality.setError("'Must contain only Characters!");
         }else if(workplace.isEmpty()){
             this.et4_UPDATEDOC_WorkingPlace.setError("Enter Working Place!");
+        }else if(this.checkDigit(workplace) == false){
+            this.et4_UPDATEDOC_WorkingPlace.setError("Must Contain Only Characters");
         }else if(experience.isEmpty()){
             this.et5_UPDATEDOC_Experience.setError("Enter Experience!");
         }else if(et6_UPDATEDDOC_fee.getText().toString().isEmpty()){
