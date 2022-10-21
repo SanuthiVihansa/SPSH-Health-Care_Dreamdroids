@@ -66,5 +66,13 @@ public class DoctorUnitTest {
             return true;
     }
 
+    //Method to check Doc_WorkingPlace.
+    public boolean Doc_WorkplaceIsCorrect(String workplace){
+        if((checkDigit(workplace)==false)||(workplace.isEmpty())){
+            return false;
+        }
+        else
+            return true;
+    }
 
 }
