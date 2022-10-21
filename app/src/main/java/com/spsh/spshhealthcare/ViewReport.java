@@ -19,6 +19,7 @@ import java.util.ArrayList;
 
 public class ViewReport extends AppCompatActivity {
 
+    // Variables declaration
     TextView tv_name, tv_age, tv_gender, tv_nic, tv_date, tv_time, tv_hemoglobin, tv_wbc, tv_neutrophils, tv_lymphocytes, tv_eosinophils, tv_rbc, tv_pcb, tv_platelet, tv_cost;
     int reportId;
     DBHelper dbHelper;
@@ -26,14 +27,18 @@ public class ViewReport extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Set full screen
         getSupportActionBar().hide();
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         setContentView(R.layout.activity_view_report);
 
         Intent intent = getIntent();
         this.reportId = Integer.parseInt(intent.getStringExtra("reportId"));
 
+        // Initialize variables
         this.tv_name = findViewById(R.id.tv_nameViewBloodReport);
         this.tv_age = findViewById(R.id.tv_ageViewBloodReport);
         this.tv_gender = findViewById(R.id.tv_genderViewBloodReport);
