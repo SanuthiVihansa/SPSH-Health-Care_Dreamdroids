@@ -21,14 +21,15 @@ public class DoctorUnitTest {
     }
 
     //Test Cases of Assert Statements for Speciality.
+    @Test
     public void Doc_speciality_check(){
         String input1 = "Dermatologist";
         String input2 = "7Cardiologist6";
         String input3 = "";
 
-        assertEquals(true, Doc_nameIsCorrect(input1));
-        assertEquals(false, Doc_nameIsCorrect(input2));
-        assertEquals(false, Doc_nameIsCorrect(input3));
+        assertEquals(true, Doc_SpecialityIsCorrect(input1));
+        assertEquals(false, Doc_SpecialityIsCorrect(input2));
+        assertEquals(false, Doc_SpecialityIsCorrect(input3));
     }
 
     //Checks Doctor NAME
