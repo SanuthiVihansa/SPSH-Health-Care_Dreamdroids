@@ -20,7 +20,16 @@ public class DoctorUnitTest {
         assertEquals(false, Doc_nameIsCorrect(input4));
     }
 
+    //Test Cases of Assert Statements for Speciality.
+    public void Doc_speciality_check(){
+        String input1 = "Dermatologist";
+        String input2 = "7Cardiologist6";
+        String input3 = "";
 
+        assertEquals(true, Doc_nameIsCorrect(input1));
+        assertEquals(false, Doc_nameIsCorrect(input2));
+        assertEquals(false, Doc_nameIsCorrect(input3));
+    }
 
     //Checks Doctor NAME
     public boolean Doc_nameIsCorrect(String docName){
