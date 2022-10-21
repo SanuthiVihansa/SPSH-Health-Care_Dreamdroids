@@ -47,6 +47,7 @@ public class DoctorUnitTest {
         return true;
     }
 
+    //Method to check Doc_Speciality.
     public boolean Doc_SpecialityIsCorrect(String speciality){
         if((checkDigit(speciality)==false)||(speciality.isEmpty())){
             return false;
