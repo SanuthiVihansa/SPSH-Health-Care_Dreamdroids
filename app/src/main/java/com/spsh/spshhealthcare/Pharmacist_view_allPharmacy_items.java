@@ -24,6 +24,7 @@ public class Pharmacist_view_allPharmacy_items extends AppCompatActivity {
         Intent intent = new Intent (this, pharmacist_search_page.class);
         intent.putExtra("pharmacyID","P");
         startActivity(intent);
+        finish();
 
     }
 
@@ -31,22 +32,26 @@ public class Pharmacist_view_allPharmacy_items extends AppCompatActivity {
         Intent intent = new Intent( this, pharmacist_search_page.class);
         intent.putExtra("pharmacyID","M");
         startActivity(intent);
+        finish();
     }
 
     public void Suppliments(View view) {
         Intent intent = new Intent( this, pharmacist_search_page.class);
         intent.putExtra("pharmacyID","S");
         startActivity(intent);
+        finish();
     }
 
     public void OverTheCounterMedicine(View view) {
         Intent intent = new Intent( this, pharmacist_search_page.class);
         intent.putExtra("pharmacyID","C");
         startActivity(intent);
+        finish();
     }
 
     public void bakwardNavigation (View view){
         Intent intent = new Intent(this, Pharmacist_home_page.class);
         startActivity(intent);
+        finish();
     }
 }

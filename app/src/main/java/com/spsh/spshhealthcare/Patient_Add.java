@@ -221,5 +221,6 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
         Intent intent = new Intent(this, Patient_Home.class);
         intent.putExtra("nic", this.nic2);
         startActivity(intent);
+        finish();
     }
 }

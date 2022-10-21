@@ -79,6 +79,7 @@ public class Pharmacist_view_page extends AppCompatActivity {
 
         Intent intent = new Intent(Pharmacist_view_page.this, Pharmacist_view_allPharmacy_items.class);
         startActivity(intent);
+        finish();
 
     }
 
@@ -87,11 +88,13 @@ public class Pharmacist_view_page extends AppCompatActivity {
         Intent intent = new Intent(this, Pharmacist_update_page.class);
         intent.putExtra("PharamcyEquipID",pharmaEqID);
         startActivity(intent);
+        finish();
         }
 
         public void backwardNavigation(View view) {
             Intent intent = new Intent(this, Pharmacist_view_allPharmacy_items.class);
             startActivity(intent);
+            finish();
         }
 
 

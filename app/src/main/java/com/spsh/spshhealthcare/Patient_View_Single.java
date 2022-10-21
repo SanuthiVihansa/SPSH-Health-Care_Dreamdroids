@@ -91,6 +91,7 @@ public class Patient_View_Single extends AppCompatActivity {
         intent.putExtra("appointmentID", appointmentID);
         intent.putExtra("nic", Patient_View_Single.globalNic);
         startActivity(intent);
+        finish();
     }
 
     //delete method
@@ -115,6 +116,7 @@ public class Patient_View_Single extends AppCompatActivity {
                 Intent intent = new Intent(Patient_View_Single.this, Patient_All_Appointments.class);
                 intent.putExtra("nic", Patient_View_Single.globalNic);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -133,5 +135,6 @@ public class Patient_View_Single extends AppCompatActivity {
         Intent intent = new Intent(this, Patient_All_Appointments.class);
         intent.putExtra("nic", Patient_View_Single.globalNic);
         startActivity(intent);
+        finish();
     }
 }

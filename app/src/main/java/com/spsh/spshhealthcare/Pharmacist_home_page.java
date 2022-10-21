@@ -27,6 +27,7 @@ public class Pharmacist_home_page extends AppCompatActivity {
 
         Intent intent = new Intent(this, Pharmacist_addItem_page.class);
         startActivity(intent);
+        finish();
 
     }
 
@@ -34,6 +35,7 @@ public class Pharmacist_home_page extends AppCompatActivity {
 
         Intent intent = new Intent(this, Pharmacist_view_allPharmacy_items.class);
         startActivity(intent);
+        finish();
 
     }
 
@@ -41,6 +43,7 @@ public class Pharmacist_home_page extends AppCompatActivity {
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
 
     }
 

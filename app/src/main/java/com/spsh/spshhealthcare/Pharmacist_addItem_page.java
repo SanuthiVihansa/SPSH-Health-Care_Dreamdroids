@@ -119,5 +119,6 @@ public class Pharmacist_addItem_page extends AppCompatActivity {
     public void backwardNavigation(View view) {
         Intent intent = new Intent(this, Pharmacist_home_page.class);
         startActivity(intent);
+        finish();
     }
 }

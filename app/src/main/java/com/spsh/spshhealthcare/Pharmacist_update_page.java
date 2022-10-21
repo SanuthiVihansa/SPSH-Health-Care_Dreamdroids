@@ -83,6 +83,7 @@ public class Pharmacist_update_page extends AppCompatActivity {
             Toast.makeText(this,"Successfully updated",Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, Pharmacist_view_allPharmacy_items.class);
             startActivity(intent);
+            finish();
         }
 
     }
@@ -90,6 +91,7 @@ public class Pharmacist_update_page extends AppCompatActivity {
     public void backwardNavigation(View view) {
         Intent intent = new Intent(this, Pharmacist_view_allPharmacy_items.class);
         startActivity(intent);
+        finish();
     }
 
 

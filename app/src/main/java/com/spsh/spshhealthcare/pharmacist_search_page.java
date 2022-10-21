@@ -87,6 +87,7 @@ public class pharmacist_search_page extends AppCompatActivity {
                         Intent intent = new Intent(pharmacist_search_page.this, Pharmacist_view_page.class);
                         intent.putExtra("PharamcyEquipID", pharmaEqID);
                         startActivity(intent);
+                        finish();
                     }
                 });
 
@@ -118,6 +119,7 @@ public class pharmacist_search_page extends AppCompatActivity {
                         Intent intent = new Intent(pharmacist_search_page.this, Pharmacist_view_page.class);
                         intent.putExtra("PharamcyEquipID", pharmaEqID);
                         startActivity(intent);
+                        finish();
                     }
                 });
                 return v;
@@ -132,5 +134,6 @@ public class pharmacist_search_page extends AppCompatActivity {
     public void backwardNavigation(View view) {
         Intent intent = new Intent(this, Pharmacist_view_allPharmacy_items.class);
         startActivity(intent);
+        finish();
     }
 }

@@ -32,22 +32,26 @@ public class Patient_Home extends AppCompatActivity {
         Intent intent = new Intent(this, Patient_All_Appointments.class);
         intent.putExtra("nic", this.nic);
         startActivity(intent);
+        finish();
     }
 
     public void onClickMakeAppointmentBtn(View view) {
         Intent intent = new Intent(this, Patient_Add.class);
         intent.putExtra("nic", this.nic);
         startActivity(intent);
+        finish();
     }
 
     public void onClickViewLabReportsBtn(View view){
         Intent intent = new Intent(this,Patient_View_Reports.class);
         intent.putExtra("nic", this.nic);
         startActivity(intent);
+        finish();
     }
 
     public void onClickBackBtn(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 }

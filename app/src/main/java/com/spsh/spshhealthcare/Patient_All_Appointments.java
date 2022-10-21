@@ -62,6 +62,7 @@ public class Patient_All_Appointments extends AppCompatActivity {
                         intent.putExtra("appointmentID",appointmentID);
                         intent.putExtra("nic", Patient_All_Appointments.nic);
                         startActivity(intent);
+                        finish();
                     }
                 });
                 return view;
@@ -89,6 +90,7 @@ public class Patient_All_Appointments extends AppCompatActivity {
                         Intent intent = new Intent(Patient_All_Appointments.this,Patient_View_Single.class);
                         intent.putExtra("appointmentID",appointmentID);
                         startActivity(intent);
+                        finish();
                     }
                 });
                 return view;
@@ -101,5 +103,6 @@ public class Patient_All_Appointments extends AppCompatActivity {
         Intent intent = new Intent(this,Patient_Home.class);
         intent.putExtra("nic", Patient_All_Appointments.nic);
         startActivity(intent);
+        finish();
     }
 }

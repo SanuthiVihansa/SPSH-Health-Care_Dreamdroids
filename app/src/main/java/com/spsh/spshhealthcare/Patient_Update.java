@@ -140,5 +140,6 @@ public class Patient_Update extends AppCompatActivity implements AdapterView.OnI
         intent.putExtra("appointmentID", appointmentID);
         intent.putExtra("nic", Patient_View_Single.globalNic);
         startActivity(intent);
+        finish();
     }
 }
