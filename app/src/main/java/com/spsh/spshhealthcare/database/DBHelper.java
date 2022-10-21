@@ -663,6 +663,26 @@ public class DBHelper extends SQLiteOpenHelper {
         return docSearchList;
     }
 
+    public int totAppointments(String docName) {
+        int appointment_count = 0;
+        SQLiteDatabase db = getReadableDatabase();
+
+        String query = "SELECT "+AppointmentsMaster.Appointments._ID +" FROM "+AppointmentsMaster.Appointments.TABLE_NAME+" WHERE "+AppointmentsMaster.Appointments.COLUMN_NAME_DOCTORSNAME+"='"+ docName + "'";
+        Cursor cursor = db.rawQuery(query,null);
+
+
+
+
+        while (cursor.moveToNext()) {
+            //String docName = cursor.getString(cursor.getColumnIndexOrThrow(AppointmentsMaster.Appointments.COLUMN_NAME_DOCTORSNAME));
+            appointment_count = appointment_count + 1;
+            //appointment_count++;
+        }
+
+        cursor.close();
+        return appointment_count;
+    }
+
 
 
 

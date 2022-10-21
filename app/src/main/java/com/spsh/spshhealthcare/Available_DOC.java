@@ -60,13 +60,33 @@ public class Available_DOC extends AppCompatActivity {
         String docSpeciality = et3_UPDATEDOC_Speciality.getText().toString();
         String workplace = et4_UPDATEDOC_WorkingPlace.getText().toString();
         String experience = et5_UPDATEDOC_Experience.getText().toString();
-        double fee = Double.parseDouble(et6_UPDATEDDOC_fee.getText().toString());
-        int maxPat = Integer.parseInt(numtxt_UPDATEDOC_MaxPatients.getText().toString());
 
 
-        if(docname.isEmpty()||docSpeciality.isEmpty()||workplace.isEmpty()||experience.isEmpty()||et6_UPDATEDDOC_fee.getText().toString().isEmpty()||numtxt_UPDATEDOC_MaxPatients.getText().toString().isEmpty()){
-            Toast.makeText(this, "Fill all fields", Toast.LENGTH_SHORT).show();
+
+        if(docname.isEmpty()) {
+            this.et2_UPDATEDOC_Name.setError("Enter Doctor Name!");
+        }else if(this.checkDigit(docname) == false) {
+            this.et2_UPDATEDOC_Name.setError("Must contain only characters!");
+        }else if(!docname.startsWith("Dr.")){
+            this.et2_UPDATEDOC_Name.setError("Error in Pattern of the Name!");
+        }else if(docSpeciality.isEmpty()) {
+            this.et3_UPDATEDOC_Speciality.setError("Enter Speciality!");
+        }else if(this.checkDigit(docSpeciality) == false){
+            this.et3_UPDATEDOC_Speciality.setError("'Must contain only Characters!");
+        }else if(workplace.isEmpty()){
+            this.et4_UPDATEDOC_WorkingPlace.setError("Enter Working Place!");
+        }else if(this.checkDigit(workplace) == false){
+            this.et4_UPDATEDOC_WorkingPlace.setError("Must Contain Only Characters");
+        }else if(experience.isEmpty()){
+            this.et5_UPDATEDOC_Experience.setError("Enter Experience!");
+        }else if(et6_UPDATEDDOC_fee.getText().toString().isEmpty()){
+            this.et6_UPDATEDDOC_fee.setError("Enter Fee!");
+        }else if(numtxt_UPDATEDOC_MaxPatients.getText().toString().isEmpty()){
+            this.numtxt_UPDATEDOC_MaxPatients.setError("Enter Maximum Patients!");
         }else {
+            //converted numerical values.
+            double fee = Double.parseDouble(et6_UPDATEDDOC_fee.getText().toString());
+            int maxPat = Integer.parseInt(numtxt_UPDATEDOC_MaxPatients.getText().toString());
             int updated = dbHelper.updateDocInfo(docId,docname,docSpeciality,workplace,experience,fee,maxPat);
             if (updated > 0) {
                 //clears all the values after inserting.
@@ -83,6 +103,22 @@ public class Available_DOC extends AppCompatActivity {
                 Toast.makeText(this,"Update failed", Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    public boolean checkDigit(String name) {
+        //converts the string to an array.
+        char[] arr = name.toCharArray();
+        //length of the array taken.
+        int len = arr.length;
+        //iterate through all the characters/elements in the array.
+        for(int i =0; i < len; i++){
+            //even if a single character is an integer --> returns false.
+            if (Character.isDigit(arr[i])== true){
+                return false;
+            }
+        }
+        //after iterating through the entire array --> no numerical values at all --> return true.
+        return true;
     }
 
     public void back(View view) {

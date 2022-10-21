@@ -14,7 +14,7 @@
         android:layout_width="286dp"
         android:layout_height="54dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:text="@string/tv1_Doc_Profile"
         android:textAlignment="center"
@@ -22,77 +22,77 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.459"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv2_Doc_Profile_Name"
-        android:layout_width="269dp"
-        android:layout_height="44dp"
+        android:layout_width="258dp"
+        android:layout_height="35dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
         android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv1_Doc_Profile" />
 
     <TextView
         android:id="@+id/TV3_DOC_PROFILE_Speciality"
-        android:layout_width="270dp"
-        android:layout_height="42dp"
+        android:layout_width="258dp"
+        android:layout_height="32dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv2_Doc_Profile_Name" />
 
     <TextView
         android:id="@+id/tv4_Doc_Profile_WorkingPlace"
-        android:layout_width="262dp"
-        android:layout_height="41dp"
+        android:layout_width="266dp"
+        android:layout_height="36dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="32dp"
         android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TV3_DOC_PROFILE_Speciality" />
 
     <TextView
         android:id="@+id/tv5_Doc_Profile_Experience"
-        android:layout_width="260dp"
-        android:layout_height="44dp"
+        android:layout_width="256dp"
+        android:layout_height="31dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
         android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv4_Doc_Profile_WorkingPlace" />
 
     <TextView
         android:id="@+id/tv6_Doc_Profile_Fee"
-        android:layout_width="257dp"
-        android:layout_height="48dp"
+        android:layout_width="267dp"
+        android:layout_height="36dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
@@ -110,7 +110,7 @@
         android:layout_width="130dp"
         android:layout_height="49dp"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="28dp"
         android:backgroundTint="#FFC107"
         android:backgroundTintMode="add"
         android:onClick="update"
@@ -119,7 +119,7 @@
         android:textStyle="bold"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv7_DOC_PROFILE_MaxPat" />
+        app:layout_constraintTop_toBottomOf="@+id/TV8_Remaining_Appointments_Doc_Profile" />
 
     <Button
         android:id="@string/BTN2_DOC_PROFILE_DELETE"
@@ -135,7 +135,7 @@
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/BTN1_DOC_PROFILE_UPDATE"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.875"
         app:layout_constraintStart_toEndOf="@+id/BTN1_DOC_PROFILE_UPDATE" />
 
     <TextView
@@ -143,14 +143,14 @@
         android:layout_width="254dp"
         android:layout_height="41dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
         android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv6_Doc_Profile_Fee" />
 
@@ -159,16 +159,31 @@
         android:layout_width="191dp"
         android:layout_height="54dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="32dp"
         android:backgroundTint="#44CDC1"
         android:onClick="back"
         android:text="@string/btn_Doc_Profile_Back"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.397"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BTN1_DOC_PROFILE_UPDATE"
         tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/TV8_Remaining_Appointments_Doc_Profile"
+        android:layout_width="255dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv7_DOC_PROFILE_MaxPat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
