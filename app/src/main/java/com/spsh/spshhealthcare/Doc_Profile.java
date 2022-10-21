@@ -80,7 +80,7 @@ public class Doc_Profile extends AppCompatActivity {
         intent.putExtra("docId",docId);
         startActivity(intent);
     }
-/*
+
     public void deleteDoc(View view) {
         DBHelper dbHelper = new DBHelper(this);
         dbHelper.deleteDoc(Integer.parseInt(this.docId));
@@ -89,42 +89,10 @@ public class Doc_Profile extends AppCompatActivity {
         Intent intent = new Intent(this, Search_Doc.class);
         startActivity(intent);
     }
-*/
+
+
     /*
-    public void deleteDoc(View view) {
-        DBHelper dbHelper = new DBHelper(this);
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Delete this Doctor");
-        builder.setMessage("Are you sure you want to remove this Doctor?\n\nNOTE : This cannot be undone.");
-        builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                int response =  dbHelper.deleteDoc(Integer.parseInt(this.docId));
-                if(response > 0) {
-                    Toast.makeText(Doc_Profile.this, "Doctor Deleted Successfully !", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(Doc_Profile.this, Search_Doc.class);
-                    startActivity(intent);
-                }
-                else {
-                    Snackbar snackbar = Snackbar.make(view, "Something went wrong !", Snackbar.LENGTH_LONG);
-                    snackbar.setAnimationMode(Snackbar.ANIMATION_MODE_SLIDE);
-                    snackbar.show();
-                }
-            }
-        });
-        builder.setNegativeButton("Back", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-            }
-        });
-        builder.create();
-        builder.show();
-    }
-
-    */
-
-     //delete method
+    //DELETE SINGLE DOCTOR.
     public void deleteDoc(View view){
         DBHelper dbHelper = new DBHelper(this);
         Intent intent = getIntent();
@@ -160,7 +128,7 @@ public class Doc_Profile extends AppCompatActivity {
         dialog.show();
     }
 
-
+*/
     public void back(View view) {
         Intent intent = new Intent(this,Search_Doc.class);
         startActivity(intent);
