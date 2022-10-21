@@ -130,9 +130,7 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
 
         DBHelper dbHelper = new DBHelper(this);
 
-        if (Pname.isEmpty() || age.isEmpty() || gender.isEmpty() || contactNo.isEmpty() || nic.isEmpty() || specialization.isEmpty() || doctorName.isEmpty() || date.isEmpty() || time.isEmpty()) {
-            Toast.makeText(this, getResources().getText(R.string.toast_addPatient_emptyFields_sathira), Toast.LENGTH_SHORT).show();
-        } else if (!validateName(Pname)) {
+        if (!validateName(Pname)) {
             et_addName_sathira.setError(getText(R.string.onlyLetters));
         } else if (!validateAge(age)) {
             et_addAge_sathira.setError(getText(R.string.validateAge));
@@ -142,7 +140,9 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
             et_addDate_sathira.setError(getText(R.string.validateDateFormat));
         } else if (!validateTime(time)) {
             et_addTime_sathira.setError(getText(R.string.validateTime));
-        } else {
+        } else if (Pname.isEmpty() || age.isEmpty() || gender.isEmpty() || contactNo.isEmpty() || nic.isEmpty() || specialization.isEmpty() || doctorName.isEmpty() || date.isEmpty() || time.isEmpty()) {
+            Toast.makeText(this, getResources().getText(R.string.toast_addPatient_emptyFields_sathira), Toast.LENGTH_SHORT).show();
+        }else {
             int age2 = Integer.parseInt(age);
             long inserted = dbHelper.addAppointment(Pname, age2, gender, contactNo, nic, specialization, doctorName, date, time);
 
@@ -161,7 +161,7 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
     }
 
     //validation for age
-    private boolean validateAge(String string) {
+    public boolean validateAge(String string) {
         int isAgeValid = Integer.parseInt(string);
         if (isAgeValid <= 0 || isAgeValid > 125) {
             return false;
@@ -201,7 +201,7 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
     //validation for date
     public boolean validateDate(String string) {
         if (string.length() == 8) {
-            if ((string.charAt(2) == '-' || string.charAt(2) == '/') || (string.charAt(5) == '-' || string.charAt(5) == '/')) {
+            if ((string.charAt(2) == '-' && string.charAt(5) == '-') || (string.charAt(2) == '/' && string.charAt(5) == '/')) {
                 if (Integer.parseInt(string.substring(0, 2)) > 0 && Integer.parseInt(string.substring(0, 2)) < 32 && Integer.parseInt(string.substring(3, 5)) > 0 && Integer.parseInt(string.substring(3, 5)) < 13 && Integer.parseInt(string.substring(6, 8)) > -1 && Integer.parseInt(string.substring(6, 8)) < 100) {
                     return true;
                 } else {
