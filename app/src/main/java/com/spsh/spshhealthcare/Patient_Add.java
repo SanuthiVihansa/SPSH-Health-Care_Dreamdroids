@@ -142,7 +142,7 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
             et_addTime_sathira.setError(getText(R.string.validateTime));
         } else if (Pname.isEmpty() || age.isEmpty() || gender.isEmpty() || contactNo.isEmpty() || nic.isEmpty() || specialization.isEmpty() || doctorName.isEmpty() || date.isEmpty() || time.isEmpty()) {
             Toast.makeText(this, getResources().getText(R.string.toast_addPatient_emptyFields_sathira), Toast.LENGTH_SHORT).show();
-        }else {
+        } else {
             int age2 = Integer.parseInt(age);
             long inserted = dbHelper.addAppointment(Pname, age2, gender, contactNo, nic, specialization, doctorName, date, time);
 
