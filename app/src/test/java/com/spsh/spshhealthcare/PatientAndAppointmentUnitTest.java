@@ -27,4 +27,16 @@ public class PatientAndAppointmentUnitTest {
         assertEquals(false, appointment.validateName("G,G,T,John"));
     }
 
+    @Test
+    public void testAgeValidation() {
+        assertEquals(false, appointment.validateAge("-50"));
+        assertEquals(false, appointment.validateAge("-1"));
+        assertEquals(false, appointment.validateAge("0"));
+        assertEquals(false, appointment.validateAge("126"));
+        assertEquals(true, appointment.validateAge("1"));
+        assertEquals(true, appointment.validateAge("50"));
+        assertEquals(true, appointment.validateAge("124"));
+        assertEquals(true, appointment.validateAge("125"));
+    }
+
 }
