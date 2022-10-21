@@ -46,13 +46,17 @@ public class Doc_Profile extends AppCompatActivity {
 
         setContentView(R.layout.activity_doc_profile);
         Intent intent = getIntent();
+        //DocId is fetched through the intent.
         this.docId = intent.getStringExtra("docId");
 
 
+        //Instance of DBHelper created.
         DBHelper dbHelper = new DBHelper(this);
 
+        //Fetches specific doctor's details via an array.
         ArrayList singleDocInfo = dbHelper.viewSingleDocInfo(Integer.parseInt(docId));
 
+        //Assigning text views with relevant ids.
         tv2_Doc_Profile_Name = findViewById(R.id.tv2_Doc_Profile_Name);
         TV3_DOC_PROFILE_Speciality = findViewById(R.id.TV3_DOC_PROFILE_Speciality);
         tv4_Doc_Profile_WorkingPlace = findViewById(R.id.tv4_Doc_Profile_WorkingPlace);
@@ -69,7 +73,9 @@ public class Doc_Profile extends AppCompatActivity {
         tv6_Doc_Profile_Fee.setText("Fee : " + (String) singleDocInfo.get(4));
         tv7_DOC_PROFILE_MaxPat.setText("Maximum Patients : " + (String) singleDocInfo.get(5));
 
+        //Set doctor name.
         docName = (String) singleDocInfo.get(0);
+        //Function called to find the remaining no.of appointments.
         TV8_Remaining_Appointments_Doc_Profile.setText("Remaining Appointments : " + (Integer.parseInt((String) singleDocInfo.get(5)) - dbHelper.totAppointments(docName)));
 
 
@@ -77,12 +83,14 @@ public class Doc_Profile extends AppCompatActivity {
 
     public void update(View view) {
         Intent intent = new Intent(Doc_Profile.this, Available_DOC.class);
+        //DocId passed as an intent to the relevant Doctor's update page.
         intent.putExtra("docId",docId);
         startActivity(intent);
     }
 
     public void deleteDoc(View view) {
         DBHelper dbHelper = new DBHelper(this);
+        //Doctor's details deleted based on the ID fetched.
         dbHelper.deleteDoc(Integer.parseInt(this.docId));
 
         Toast.makeText(this, "Doctor deleted successfully.", Toast.LENGTH_SHORT).show();
@@ -130,6 +138,7 @@ public class Doc_Profile extends AppCompatActivity {
 
 */
     public void back(View view) {
+        //Can move to the All Doctor's page via the Back button.
         Intent intent = new Intent(this,Search_Doc.class);
         startActivity(intent);
     }
