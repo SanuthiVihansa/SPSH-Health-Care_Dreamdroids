@@ -6,6 +6,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 public class DoctorUnitTest {
     @Test
+
+    //Test cases for Doc_Name
     public void Doc_name_check(){
         String input1 = "Dr.Sam";
         String input2 = "Dr.86m";
@@ -19,6 +21,8 @@ public class DoctorUnitTest {
     }
 
 
+
+    //Checks Doctor NAME
     public boolean Doc_nameIsCorrect(String docName){
         if(!docName.startsWith("Dr.")||(checkDigit(docName)==false)||(docName.isEmpty())){
             return false;
@@ -42,5 +46,14 @@ public class DoctorUnitTest {
         //after iterating through the entire array --> no numerical values at all --> return true.
         return true;
     }
+
+    public boolean Doc_SpecialityIsCorrect(String speciality){
+        if((checkDigit(speciality)==false)||(speciality.isEmpty())){
+            return false;
+        }
+        else
+            return true;
+    }
+
 
 }
