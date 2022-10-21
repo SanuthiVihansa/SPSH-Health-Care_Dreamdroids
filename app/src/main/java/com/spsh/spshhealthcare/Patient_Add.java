@@ -44,9 +44,7 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
         doclist = new ArrayList<>();
 
         Intent intent = getIntent();
-//        this.nic2 = intent.getStringExtra("nic");
-
-        this.nic2 = "200123456789";
+        this.nic2 = intent.getStringExtra("nic");
 
         et_addName_sathira = findViewById(R.id.et_addName_sathira);
         et_addAge_sathira = findViewById(R.id.et_addAge_sathira);
@@ -137,7 +135,6 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
         } else if (!onlyLetters(Pname, et_addName_sathira)) {
         } else if (!validateAge(age, et_addAge_sathira)) {
         } else if (!validateContactNo(contactNo, et_addNum_sathira)) {
-        } else if (!validateDrName(doctorName, et_addDrName_sathira)) {
         } else if (!validateDate(date, et_addDate_sathira)) {
         } else if (!validateTime(time, et_addTime_sathira)) {
         } else {
@@ -158,15 +155,6 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
         boolean status = string.matches("[a-z A-Z]+");   //NOT WORKING "[a-zA-Z]*" , "[a-zA-Z]+"
         if (status == false) {
             editText.setError(getText(R.string.onlyLetters));
-        }
-        return status;
-    }
-
-    //validation for doctor name
-    public boolean validateDrName(String string, EditText editText) { //checks for letters
-        boolean status = string.matches("[a-z. A-Z]+");
-        if (status == false) {
-            editText.setError(getText(R.string.validateDrName));
         }
         return status;
     }
