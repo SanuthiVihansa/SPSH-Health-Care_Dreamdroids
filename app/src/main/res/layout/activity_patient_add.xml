@@ -235,24 +235,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_addSpecial_sathira" />
 
-    <EditText
-        android:id="@+id/et_addDrName_sathira"
-        android:layout_width="188dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/tv_et_color"
-        android:ems="10"
-        android:fontFamily="sans-serif-light"
-        android:hint="@string/hint_Patient_Update_drName"
-        android:inputType="textPersonName"
-        android:textColor="@color/text_color"
-        android:textColorHint="#8F8F8F"
-        android:textSize="16sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv_addDrName_sathira"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.212"
-        app:layout_constraintStart_toEndOf="@+id/tv_addDrName_sathira" />
-
     <Button
         android:id="@+id/btn_addBook_sathira"
         android:layout_width="wrap_content"
@@ -347,5 +329,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv_addSpecial_sathira"
         app:layout_constraintTop_toBottomOf="@+id/et_addNic_sathira" />
+
+<!--    <Spinner-->
+<!--        android:id="@+id/sp_drname_sathira"-->
+<!--        android:layout_width="188dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:layout_marginStart="9dp"-->
+<!--        android:layout_marginTop="4dp"-->
+<!--        android:layout_marginEnd="41dp"-->
+<!--        android:entries="@array/sp_speciality_sathira"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/tv_addDrName_sathira"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/sp_speciality_sathira" />-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width = "match_parent"-->
+<!--        android:layout_height = "match_parent"-->
+<!--        android:gravity = "center"-->
+<!--        android:orientation = "vertical">-->
+
+    <Spinner
+        android:id="@+id/sp_drname_sathira"
+        android:layout_width="188dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="41dp"
+        android:prompt="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_addDrName_sathira"
+        app:layout_constraintTop_toBottomOf="@+id/sp_speciality_sathira" />
+    <!--    </LinearLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
