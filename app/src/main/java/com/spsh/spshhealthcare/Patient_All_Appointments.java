@@ -67,7 +67,7 @@ public class Patient_All_Appointments extends AppCompatActivity {
                 return view;
             }
         };
-    listView.setAdapter(listAdapter);
+        listView.setAdapter(listAdapter);
     } //display all appointments end
 
     public void searchAppointment(View view){
