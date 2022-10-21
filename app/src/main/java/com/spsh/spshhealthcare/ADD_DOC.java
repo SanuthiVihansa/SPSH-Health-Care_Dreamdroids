@@ -56,9 +56,10 @@ public class ADD_DOC extends AppCompatActivity {
             this.et2_ADD_DOC_Speciality.setError("Enter Speciality");
         }else if(this.checkDigit(doc_speciality) == false){
             this.et2_ADD_DOC_Speciality.setError("Must contain only Characters!");
-        }
-        else if(doc_workingplace.isEmpty()){
+        }else if(doc_workingplace.isEmpty()){
             this.et3_ADD_DOC_workingplace.setError("Enter Working Place");
+        }else if(this.checkDigit(doc_workingplace) == false){
+            this.et3_ADD_DOC_workingplace.setError("Must Contain Only Characters!");
         }else if(doc_experience.isEmpty()){
             this.et4_ADD_DOC_Experience.setError("Enter Doctor Experience");
         }else if(et_Fee_ADD_DOC.getText().toString().isEmpty()){
