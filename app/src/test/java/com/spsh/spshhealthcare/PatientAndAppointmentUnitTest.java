@@ -4,8 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-import android.widget.EditText;
-
 public class PatientAndAppointmentUnitTest {
 
 
