@@ -78,6 +78,31 @@ public class Patient_Update extends AppCompatActivity implements AdapterView.OnI
 
     }
 
+    //validations
+    //validation to check that only letters exist
+    public boolean validateName(String string) { //checks for letters
+        return string.matches("[a-z. A-Z]+");//NOT WORKING "[a-zA-Z]*" , "[a-zA-Z]+"
+    }
+
+    //validation for age
+    public boolean validateAge(String string) {
+        int isAgeValid = Integer.parseInt(string);
+        if (isAgeValid <= 0 || isAgeValid > 125) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    //validation for contact number
+    public boolean validateContactNo(String string) { //checks for letters
+        if (string.length() == 10 && string.charAt(0) == '0') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     //update onclick event
     public void editAppointment(View view) {
         pname = et_update_name_sathira.getText().toString();
@@ -87,7 +112,13 @@ public class Patient_Update extends AppCompatActivity implements AdapterView.OnI
 
         DBHelper dbHelper = new DBHelper(this);
 
-        if (pname.isEmpty() || age.isEmpty() || gender.isEmpty() || contactNo.isEmpty()) {
+        if (!validateName(pname)) {
+            et_update_name_sathira.setError(getText(R.string.onlyLetters));
+        } else if (!validateAge(age)) {
+            et_update_age_sathira.setError(getText(R.string.validateAge));
+        } else if (!validateContactNo(contactNo)) {
+            et_update_contactNum_sathira.setError(getText(R.string.validateContactNo));
+        }else if (pname.isEmpty() || age.isEmpty() || contactNo.isEmpty()) {
             Toast.makeText(this, getResources().getText(R.string.toast_addPatient_emptyFields_sathira), Toast.LENGTH_SHORT).show();
         } else {
             int age2 = Integer.parseInt(age);
