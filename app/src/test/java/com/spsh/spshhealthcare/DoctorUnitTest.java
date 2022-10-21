@@ -32,6 +32,18 @@ public class DoctorUnitTest {
         assertEquals(false, Doc_SpecialityIsCorrect(input3));
     }
 
+    //Test Cases of Assert Statements for Workplace.
+    @Test
+    public void Doc_workplace_check(){
+        String input1 = "Government";
+        String input2 = "3Hemas77";
+        String input3 = "";
+
+        assertEquals(true, Doc_WorkplaceIsCorrect(input1));
+        assertEquals(false, Doc_WorkplaceIsCorrect(input2));
+        assertEquals(false, Doc_WorkplaceIsCorrect(input3));
+    }
+
     //Checks Doctor NAME
     public boolean Doc_nameIsCorrect(String docName){
         if(!docName.startsWith("Dr.")||(checkDigit(docName)==false)||(docName.isEmpty())){
@@ -40,6 +52,7 @@ public class DoctorUnitTest {
         else
             return true;
     }
+
 
     public boolean checkDigit(String name) {
         //converts the string to an array.
