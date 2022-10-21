@@ -76,6 +76,7 @@ public class ADD_DOC extends AppCompatActivity {
                 Toast.makeText(this, "Added Doc Details successfully", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this, Doc_Home.class);
                 startActivity(intent);
+                finish();
             }else{
                 Toast.makeText(this, "Failed To Add Doctor Details", Toast.LENGTH_SHORT).show();
             }
@@ -103,6 +104,7 @@ public class ADD_DOC extends AppCompatActivity {
         //Can navigate to the Home page once back button is clicked.
         Intent intent = new Intent(this,Doc_Home.class);
         startActivity(intent);
+        finish();
     }
 
 }

@@ -99,6 +99,7 @@ public class Available_DOC extends AppCompatActivity {
                 Toast.makeText(this, "Updated details successfully", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this, Search_Doc.class);
                 startActivity(intent);
+                finish();
             }else
                 Toast.makeText(this,"Update failed", Toast.LENGTH_SHORT).show();
         }
@@ -125,5 +126,6 @@ public class Available_DOC extends AppCompatActivity {
         Intent intent = new Intent(Available_DOC.this, Doc_Profile.class);
         intent.putExtra("docId",docId);
         startActivity(intent);
+        finish();
     }
 }

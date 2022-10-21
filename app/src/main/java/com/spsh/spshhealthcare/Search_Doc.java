@@ -67,6 +67,7 @@ public class Search_Doc extends AppCompatActivity {
                         Intent intent = new Intent(Search_Doc.this,Doc_Profile.class);
                         intent.putExtra("docId",docId);
                         startActivity(intent);
+                        finish();
                     }
                 });
                 return view;
@@ -100,6 +101,7 @@ public class Search_Doc extends AppCompatActivity {
                         Intent intent = new Intent(Search_Doc.this, Doc_Profile.class);
                         intent.putExtra("docName", searchDoc);
                         startActivity(intent);
+                        finish();
                     }
                 });
                 return view;
@@ -112,6 +114,7 @@ public class Search_Doc extends AppCompatActivity {
     public void back(View view){
         Intent intent = new Intent(this,Doc_Home.class);
         startActivity(intent);
+        finish();
     }
 
 

@@ -86,6 +86,7 @@ public class Doc_Profile extends AppCompatActivity {
         //DocId passed as an intent to the relevant Doctor's update page.
         intent.putExtra("docId",docId);
         startActivity(intent);
+        finish();
     }
 
     public void deleteDoc(View view) {
@@ -96,6 +97,7 @@ public class Doc_Profile extends AppCompatActivity {
         Toast.makeText(this, "Doctor deleted successfully.", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, Search_Doc.class);
         startActivity(intent);
+        finish();
     }
 
 
@@ -141,6 +143,7 @@ public class Doc_Profile extends AppCompatActivity {
         //Can move to the All Doctor's page via the Back button.
         Intent intent = new Intent(this,Search_Doc.class);
         startActivity(intent);
+        finish();
     }
 
 

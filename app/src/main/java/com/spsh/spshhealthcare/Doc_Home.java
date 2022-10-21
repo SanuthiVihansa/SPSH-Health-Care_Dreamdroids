@@ -26,15 +26,18 @@ public class Doc_Home extends AppCompatActivity {
     public void addDoc(View view){
         Intent intent = new Intent(this,ADD_DOC.class);
         startActivity(intent);
+        finish();
     }
 
     public void availableDoc(View view){
         Intent intent = new Intent(this,Search_Doc.class);
         startActivity(intent);
+        finish();
     }
 
     public void backBtn(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 }
