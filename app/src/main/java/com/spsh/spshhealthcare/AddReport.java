@@ -102,6 +102,7 @@ public class AddReport extends AppCompatActivity {
         String platelet = this.platelet.getText().toString();
         String gender;
 
+        // Validations
         if(male.isChecked()){
             gender = "Male";
         }
