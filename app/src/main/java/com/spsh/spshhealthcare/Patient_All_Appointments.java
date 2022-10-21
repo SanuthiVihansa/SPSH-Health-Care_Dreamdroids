@@ -44,8 +44,7 @@ public class Patient_All_Appointments extends AppCompatActivity {
 
         //display all appointments
         listView = findViewById(R.id.lv_allAppointments_sathira);
-//        Patient_All_Appointments.nic = intent.getStringExtra("nic");
-        Patient_All_Appointments.nic = "200123456789";
+        Patient_All_Appointments.nic = intent.getStringExtra("nic");
         DBHelper dbHelper = new DBHelper(this);
         ArrayList<HashMap<String,String>> allAppointments = dbHelper.readAllAppointments(nic);
                                                                                                         //file that represents row
