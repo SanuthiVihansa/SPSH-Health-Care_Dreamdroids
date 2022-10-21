@@ -1,0 +1,46 @@
+package com.spsh.spshhealthcare;
+
+
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+public class DoctorUnitTest {
+    @Test
+    public void Doc_name_check(){
+        String input1 = "Dr.Sam";
+        String input2 = "Dr.86m";
+        String input3 = "Edward";
+        String input4 = "";
+
+        assertEquals(true, Doc_nameIsCorrect(input1));
+        assertEquals(false, Doc_nameIsCorrect(input2));
+        assertEquals(false, Doc_nameIsCorrect(input3));
+        assertEquals(false, Doc_nameIsCorrect(input4));
+    }
+
+
+    public boolean Doc_nameIsCorrect(String docName){
+        if(!docName.startsWith("Dr.")||(checkDigit(docName)==false)||(docName.isEmpty())){
+            return false;
+        }
+        else
+            return true;
+    }
+
+    public boolean checkDigit(String name) {
+        //converts the string to an array.
+        char[] arr = name.toCharArray();
+        //length of the array taken.
+        int len = arr.length;
+        //iterate through all the characters/elements in the array.
+        for(int i =0; i < len; i++){
+            //even if a single character is an integer --> returns false.
+            if (Character.isDigit(arr[i])== true){
+                return false;
+            }
+        }
+        //after iterating through the entire array --> no numerical values at all --> return true.
+        return true;
+    }
+
+}
