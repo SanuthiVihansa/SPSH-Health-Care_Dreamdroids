@@ -57,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="27dp"
         android:fontFamily="sans-serif-light"
         android:text="@string/tv_update_contactNum_sathira"
         android:textColor="@color/text_color"
@@ -70,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="27dp"
         android:fontFamily="sans-serif-light"
         android:text="@string/et_update_gender_sathira"
         android:textColor="@color/text_color"
@@ -83,7 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="27dp"
         android:fontFamily="sans-serif-light"
         android:text="@string/et_update_age_sathira"
         android:textColor="@color/text_color"
@@ -101,7 +101,8 @@
         android:ems="10"
         android:fontFamily="sans-serif-light"
         android:inputType="textPersonName"
-        android:textColor="@color/black"
+        android:minHeight="48dp"
+        android:textColor="@color/text_color"
         android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_update_name_sathira"
         app:layout_constraintEnd_toEndOf="parent"
@@ -117,7 +118,8 @@
         android:ems="10"
         android:fontFamily="sans-serif-light"
         android:inputType="number"
-        android:textColor="@color/black"
+        android:minHeight="48dp"
+        android:textColor="@color/text_color"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_update_age_sathira"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -146,7 +148,8 @@
         android:ems="10"
         android:fontFamily="sans-serif-light"
         android:inputType="phone"
-        android:textColor="@color/black"
+        android:minHeight="48dp"
+        android:textColor="@color/text_color"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_update_contactNum_sathira"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -167,21 +170,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_update_contactNum_sathira" />
 
-    <EditText
-        android:id="@+id/et_update_gender_sathira"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
-        android:background="@color/tv_et_color"
-        android:ems="10"
-        android:fontFamily="sans-serif-light"
-        android:inputType="textPersonName"
-        android:textColor="@color/black"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv_update_gender_sathira"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_update_gender_sathira" />
-
     <ImageView
         android:id="@+id/iv_patient_update_doc_pic_sathira"
         android:layout_width="190dp"
@@ -195,5 +183,18 @@
         app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/patient_profile_lady_doc" />
+
+    <Spinner
+        android:id="@+id/sp_update_gender_sathira"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="28dp"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_update_gender_sathira"
+        app:layout_constraintTop_toBottomOf="@+id/et_update_age_sathira" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

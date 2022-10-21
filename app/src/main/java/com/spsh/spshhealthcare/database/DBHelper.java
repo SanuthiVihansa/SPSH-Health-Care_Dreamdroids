@@ -435,7 +435,39 @@ public class DBHelper extends SQLiteOpenHelper {
         return allAppointments;
     }
 
-    //*************************************************************************Read Single method****************************************************************************
+    /************************************************************************** Retrieve Doc name *****************************************************************************************************************/
+    @SuppressLint("Range")
+    public ArrayList retrieveDocs(String speciality){
+        SQLiteDatabase db = getReadableDatabase();
+        ArrayList docNames = new ArrayList();
+
+        String query = "SELECT " + DoctorsMasters.Doctors.COLUMN_NAME_DOCTORNAME + " FROM " + DoctorsMasters.Doctors.TABLE_NAME + " WHERE " +DoctorsMasters.Doctors.COLUMN_NAME_SPECIALITY+"='"+speciality+"'";
+        Cursor cursor = db.rawQuery(query, null);
+
+        while (cursor.moveToNext()){
+            docNames.add(cursor.getString(cursor.getColumnIndex(DoctorsMasters.Doctors.COLUMN_NAME_DOCTORNAME)));
+        }
+        return docNames;
+    }
+
+    /************************************************************************** Retrieve Doc cost *****************************************************************************************************************/
+    @SuppressLint("Range")
+    public String retrieveCost(String drname){
+        SQLiteDatabase db = getReadableDatabase();
+        String docFee = null;
+
+        String query = "SELECT " + DoctorsMasters.Doctors.COLUMN_NAME_FEE + " FROM " + DoctorsMasters.Doctors.TABLE_NAME + " WHERE " +DoctorsMasters.Doctors.COLUMN_NAME_DOCTORNAME+"='"+drname+"'";
+        Cursor cursor = db.rawQuery(query, null);
+
+        while (cursor.moveToNext()){
+            docFee = cursor.getString(cursor.getColumnIndex(DoctorsMasters.Doctors.COLUMN_NAME_FEE));
+        }
+
+        return docFee;
+    }
+
+
+    /***********************************************************************View Single Appointment Details**************************************************************************************************/
     @SuppressLint("Range")
     public ArrayList readAppointmentByID(String id){
         SQLiteDatabase db = getReadableDatabase();

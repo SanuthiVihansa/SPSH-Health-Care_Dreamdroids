@@ -166,9 +166,26 @@
     <string name="tv_addName_sathira">Name :</string>
     <string name="tv_addAge_sathira">Age :</string>
     <string name="tv_addGender_sathira">Gender :</string>
+    <string-array name="sp_genders_sathira">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string-array name="sp_genders2_sathira">
+        <item>Female</item>
+        <item>Male</item>
+    </string-array>
     <string name="tv_addNum_sathira">Contact No :</string>
     <string name="tv_addNic_sathira">NIC :</string>
-    <string name="tv_addSpecial_sathira">Specialization :</string>
+    <string name="tv_addSpecial_sathira">Speciality :</string>
+    <string-array name="sp_speciality_sathira">
+        <item>Cardiologist</item>
+        <item>Dermatologist</item>
+        <item>Psychologist</item>
+        <item>Ophthalmologist</item>
+        <item>Obstetricians</item>
+        <item>Orthodontist</item>
+        <item>Immunologist</item>
+    </string-array>
     <string name="tv_addDrName_sathira">Doctors Name :</string>
     <string name="tv_addDate_sathira">Date :</string>
     <string name="tv_addTime_sathira">Time :</string>
@@ -184,12 +201,21 @@
     <!--Hints-->
     <string name="hint_Patient_Update_name">Enter name...</string>
     <string name="hint_Patient_Update_age">Enter age...</string>
-    <string name="hint_Patient_Update_gender">Enter gender...</string>
-    <string name="hint_Patient_Update_contactNo">Enter contact number...</string>
-    <string name="hint_Patient_Update_specialization">Enter specialization...</string>
+    <string name="hint_Patient_Update_gender">M or F</string>
+    <string name="hint_Patient_Update_contactNo">Ex - 0771234567</string>
+    <string name="hint_Patient_Update_specialization">Enter speciality...</string>
     <string name="hint_Patient_Update_drName">Enter doctor\'s name...</string>
-    <string name="hint_Patient_Update_date">Enter date...</string>
-    <string name="hint_Patient_Update_time">Enter time...</string>
+    <string name="hint_Patient_Update_date">DD-MM-YYYY</string>
+    <string name="hint_Patient_Update_time">Ex - 16:00</string>
+
+    <!--Warnings-->
+    <string name="onlyLetters">Can only include letters</string>
+    <string name="validateDrName">Invalid characters present</string>
+    <string name="validateAge">Invalid age</string>
+    <string name="validateGender">Invalid input</string>
+    <string name="validateContactNo">Invalid number of digits</string>
+    <string name="validateTime">Invalid time</string>
+    <string name="validateDateFormat">Invalid format</string>
 
 
     <!--Patient View single-->
