@@ -21,6 +21,7 @@ import com.spsh.spshhealthcare.database.DBHelper;
 public class Pharmacist_view_page extends AppCompatActivity {
     TextView tv_pvItemCodeD, tv_pvItemNameD, tv_pvProducerNameD, tv_pvUsageD, tv_pvStrengthD, tv_manuDateD, tv_pvexpirationdateD, tv_pvpriceD, tv_pvQuantityD, tv_pvDescriptionD,tv_TotalCost;
     private String pharmaEqID;
+    ArrayList pharmacyEquipments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,7 @@ public class Pharmacist_view_page extends AppCompatActivity {
 
         DBHelper helper = new DBHelper(this);
 
-        ArrayList pharmacyEquipments = helper.pharmacistOneSpecificInfo(Integer.parseInt(pharmaEqID));
+        pharmacyEquipments = helper.pharmacistOneSpecificInfo(Integer.parseInt(pharmaEqID));
 
         tv_pvItemCodeD = findViewById(R.id.tv_pvItemCodeD);
         tv_pvItemNameD = findViewById(R.id.tv_pvItemNameD);
@@ -92,7 +93,8 @@ public class Pharmacist_view_page extends AppCompatActivity {
         }
 
         public void backwardNavigation(View view) {
-            Intent intent = new Intent(this, Pharmacist_view_allPharmacy_items.class);
+            Intent intent = new Intent(this, pharmacist_search_page.class);
+            intent.putExtra("pharmacyID",((String)pharmacyEquipments.get(0)).substring(0, 1));
             startActivity(intent);
             finish();
         }
