@@ -914,4 +914,26 @@ public class DBHelper extends SQLiteOpenHelper {
         db.delete((PharmacyMaster.Pharmacy.TABLE_NAME),selection,stringArgs);
 
     }
+
+    @SuppressLint("Range")
+    public ArrayList<HashMap<String, String>> searchItems(String PharmID,String keyword){
+        SQLiteDatabase db = getReadableDatabase();
+        ArrayList<HashMap<String, String>> allPharmacyEquipments = new ArrayList<>();
+        String query = "SELECT " + PharmacyMaster.Pharmacy._ID + ", " + PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMCODE + ", " + PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMNAME + ", " + PharmacyMaster.Pharmacy.COLOUMN_NAME_USAGE + " FROM " + PharmacyMaster.Pharmacy.TABLE_NAME+" WHERE " + PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMNAME + " LIKE '%" + keyword + "%'";
+        Cursor cursor = db.rawQuery(query, null);
+
+        while (cursor.moveToNext()) {
+
+            HashMap<String,String> hmap = new HashMap<>();
+            hmap.put(PharmacyMaster.Pharmacy._ID,cursor.getString(cursor.getColumnIndex(PharmacyMaster.Pharmacy._ID)));
+            hmap.put(PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMCODE,cursor.getString(cursor.getColumnIndex(PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMCODE)));
+            hmap.put(PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMNAME,cursor.getString(cursor.getColumnIndex(PharmacyMaster.Pharmacy.COLOUMN_NAME_ITEMNAME)));
+            hmap.put(PharmacyMaster.Pharmacy.COLOUMN_NAME_USAGE,cursor.getString(cursor.getColumnIndex(PharmacyMaster.Pharmacy.COLOUMN_NAME_USAGE)));
+
+            allPharmacyEquipments.add(hmap);
+
+        }
+        return allPharmacyEquipments;
+    }
+
 }

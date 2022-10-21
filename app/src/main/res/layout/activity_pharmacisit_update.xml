@@ -27,13 +27,15 @@
         android:id="@+id/btn_puUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginEnd="16dp"
         android:backgroundTint="#0AA5B3"
         android:onClick="updataPharmacy"
         android:text="@string/btn_puUpdate"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_puDescription" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_navigateUpdate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/btn_navigateUpdate" />
 
     <TextView
         android:id="@+id/tv_puUnintPrice"
@@ -109,7 +111,7 @@
         android:text="@string/et_puUnintPrice"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_puUnintPrice"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/tv_puUnintPrice"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
@@ -297,5 +299,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView6"
         app:layout_constraintVertical_bias="0.655" />
+
+    <Button
+        android:id="@+id/btn_navigateUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/btn_navigate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_puDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
