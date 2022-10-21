@@ -86,15 +86,15 @@ public class Patient_View_Single extends AppCompatActivity {
         textView.setText("Rs. " + String.valueOf(Double.parseDouble(cost) + 899.50));
     }
 
-    public void onClickUpdateBtn(View view){ //method to navigate to update activity
-        Intent intent = new Intent(this,Patient_Update.class);
+    public void onClickUpdateBtn(View view) { //method to navigate to update activity
+        Intent intent = new Intent(this, Patient_Update.class);
         intent.putExtra("appointmentID", appointmentID);
         intent.putExtra("nic", Patient_View_Single.globalNic);
         startActivity(intent);
     }
 
     //delete method
-    public void OnClickDeleteBtn(View view){
+    public void OnClickDeleteBtn(View view) {
         DBHelper dbHelper = new DBHelper(this);
         Intent intent = getIntent();
         String appointmentID = intent.getStringExtra("appointmentID");
@@ -129,8 +129,8 @@ public class Patient_View_Single extends AppCompatActivity {
         dialog.show();
     }
 
-    public void onClickBackBtn(View view){
-        Intent intent = new Intent(this,Patient_All_Appointments.class);
+    public void onClickBackBtn(View view) {
+        Intent intent = new Intent(this, Patient_All_Appointments.class);
         intent.putExtra("nic", Patient_View_Single.globalNic);
         startActivity(intent);
     }
