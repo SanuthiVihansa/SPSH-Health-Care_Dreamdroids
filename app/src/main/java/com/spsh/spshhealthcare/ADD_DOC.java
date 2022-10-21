@@ -27,6 +27,8 @@ public class ADD_DOC extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         setContentView(R.layout.activity_add_doc);
+
+        //Edit Text variables are assigned relevant IDs.
         et1_ADD_DOC_Name = findViewById(R.id.et1_ADD_DOC_Name);
         et2_ADD_DOC_Speciality = findViewById(R.id.et2_ADD_DOC_Speciality);
         et3_ADD_DOC_workingplace = findViewById(R.id.et3_ADD_DOC_workingplace);
@@ -45,10 +47,10 @@ public class ADD_DOC extends AppCompatActivity {
 
         DBHelper dbHelper = new DBHelper(this);
 
+        //Customized error message.
         if (doc_Name.isEmpty()){
             this.et1_ADD_DOC_Name.setError("Enter Doctor Name!");
-        }
-        else if(!doc_Name.startsWith("Dr.")){
+        }else if(!doc_Name.startsWith("Dr.")){
             this.et1_ADD_DOC_Name.setError("Error in Pattern Name!");
         }else if(this.checkDigit(doc_Name) == false) {
             this.et1_ADD_DOC_Name.setError("Must contain only characters!");
@@ -98,6 +100,7 @@ public class ADD_DOC extends AppCompatActivity {
     }
 
     public void back(View view){
+        //Can navigate to the Home page once back button is clicked.
         Intent intent = new Intent(this,Doc_Home.class);
         startActivity(intent);
     }
