@@ -14,11 +14,6 @@ public class PatientAndAppointmentUnitTest {
     }
 
     @Test
-    public void testAllFieldsFilled() {
-
-    }
-
-    @Test
     public void testNameValidation() {
         assertEquals(true, appointment.validateName("Michael"));
         assertEquals(true, appointment.validateName("Michael Jackson"));
@@ -29,14 +24,14 @@ public class PatientAndAppointmentUnitTest {
 
     @Test
     public void testAgeValidation() {
-        assertEquals(false, appointment.validateAge("-50"));
-        assertEquals(false, appointment.validateAge("-1"));
-        assertEquals(false, appointment.validateAge("0"));
-        assertEquals(false, appointment.validateAge("126"));
         assertEquals(true, appointment.validateAge("1"));
         assertEquals(true, appointment.validateAge("50"));
         assertEquals(true, appointment.validateAge("124"));
         assertEquals(true, appointment.validateAge("125"));
+        assertEquals(false, appointment.validateAge("-50"));
+        assertEquals(false, appointment.validateAge("-1"));
+        assertEquals(false, appointment.validateAge("0"));
+        assertEquals(false, appointment.validateAge("126"));
     }
 
     @Test
