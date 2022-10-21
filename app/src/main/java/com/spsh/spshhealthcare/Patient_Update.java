@@ -17,8 +17,8 @@ import java.util.ArrayList;
 
 import com.spsh.spshhealthcare.database.DBHelper;
 
-public class Patient_Update extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
-    EditText et_update_name_sathira, et_update_age_sathira, et_update_gender_sathira, et_update_contactNum_sathira;
+public class Patient_Update extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    EditText et_update_name_sathira, et_update_age_sathira, et_update_contactNum_sathira;
     String appointmentID, pname, age, gender, contactNo;
     String globalNic, spinnerGender;
     Spinner spinner;
@@ -53,7 +53,7 @@ public class Patient_Update extends AppCompatActivity implements AdapterView.OnI
 
         gender = (String) list.get(2);
         //spinner
-        spinner = (Spinner)findViewById(R.id.sp_update_gender_sathira);
+        spinner = (Spinner) findViewById(R.id.sp_update_gender_sathira);
         spinner.setOnItemSelectedListener(this);
 
         //Creating the ArrayAdapter instance having the country list
@@ -70,7 +70,6 @@ public class Patient_Update extends AppCompatActivity implements AdapterView.OnI
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//        Toast.makeText(getApplicationContext(), (CharSequence) adapterView.getItemAtPosition(i), Toast.LENGTH_SHORT).show();
         spinnerGender = (String) adapterView.getItemAtPosition(i);
     }
 
@@ -80,36 +79,32 @@ public class Patient_Update extends AppCompatActivity implements AdapterView.OnI
     }
 
     //update onclick event
-    public void editAppointment(View view){
+    public void editAppointment(View view) {
         pname = et_update_name_sathira.getText().toString();
         age = et_update_age_sathira.getText().toString();
         gender = spinnerGender;
         contactNo = et_update_contactNum_sathira.getText().toString();
-        
+
         DBHelper dbHelper = new DBHelper(this);
-        
-        if(pname.isEmpty()||age.isEmpty()||gender.isEmpty()||contactNo.isEmpty()){
+
+        if (pname.isEmpty() || age.isEmpty() || gender.isEmpty() || contactNo.isEmpty()) {
             Toast.makeText(this, getResources().getText(R.string.toast_addPatient_emptyFields_sathira), Toast.LENGTH_SHORT).show();
-        }else {
+        } else {
             int age2 = Integer.parseInt(age);
             int inserted = dbHelper.updateAppointment(pname, age2, gender, contactNo, appointmentID);
 
-            if(inserted > 0){
+            if (inserted > 0) {
                 Toast.makeText(this, getResources().getText(R.string.toast_updatePatient_success_sathira), Toast.LENGTH_SHORT).show();
 
                 //intent
                 onClickBackBtn(view);
-//                Intent intent = new Intent(Patient_Update.this, Patient_View_Single.class);
-//                intent.putExtra("appointmentID", appointmentID);
-//                startActivity(intent);
-
-            }else {
+            } else {
                 Toast.makeText(this, getResources().getText(R.string.toast_addPatient_unsuccess_sathira), Toast.LENGTH_SHORT).show();
             }
         }
     }
 
-    public void onClickBackBtn(View view){
+    public void onClickBackBtn(View view) {
         Intent intent = new Intent(this, Patient_View_Single.class);
         intent.putExtra("appointmentID", appointmentID);
         intent.putExtra("nic", Patient_View_Single.globalNic);
