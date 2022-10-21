@@ -30,7 +30,8 @@
             android:exported="false" />
         <activity
             android:name=".pharmacist_search_page"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".Pharmacist_update_page"
             android:exported="false" />
