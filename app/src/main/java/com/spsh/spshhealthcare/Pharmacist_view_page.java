@@ -2,8 +2,10 @@ package com.spsh.spshhealthcare;
 
 import static java.lang.Double.parseDouble;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -78,13 +80,18 @@ public class Pharmacist_view_page extends AppCompatActivity {
         Intent intent = new Intent(Pharmacist_view_page.this, Pharmacist_view_allPharmacy_items.class);
         startActivity(intent);
 
-        }
+    }
 
         public void updatePharmacyEquip(View view) {
 
         Intent intent = new Intent(this, Pharmacist_update_page.class);
         intent.putExtra("PharamcyEquipID",pharmaEqID);
         startActivity(intent);
+        }
+
+        public void backwardNavigation(View view) {
+            Intent intent = new Intent(this, Pharmacist_view_allPharmacy_items.class);
+            startActivity(intent);
         }
 
 

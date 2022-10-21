@@ -202,21 +202,18 @@
         android:id="@+id/btn_pvUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
         android:backgroundTint="#048393"
         android:onClick="updatePharmacyEquip"
         android:text="@string/btn_pvUpdate"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_Back"
         app:layout_constraintEnd_toStartOf="@+id/btn_pvDelete"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_pvDescription" />
+        app:layout_constraintStart_toEndOf="@+id/btn_Back" />
 
     <Button
         android:id="@+id/btn_pvDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="#F65656"
         android:onClick="pharmacistDeleteItem"
@@ -321,5 +318,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/Tv_TotalCost" />
+
+    <Button
+        android:id="@+id/btn_Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:onClick="backwardNavigation"
+        android:text="@string/btn_navigate"
+        app:layout_constraintEnd_toStartOf="@+id/btn_pvUpdate"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pvDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
