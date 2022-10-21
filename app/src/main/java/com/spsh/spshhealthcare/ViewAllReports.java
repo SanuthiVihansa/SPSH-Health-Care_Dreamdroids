@@ -25,6 +25,7 @@ import java.util.HashMap;
 
 public class ViewAllReports extends AppCompatActivity {
 
+    // Variables declaration
     EditText searchBox;
     DBHelper dbHelper;
     ArrayList<HashMap<String, String>> reportList;
@@ -34,11 +35,15 @@ public class ViewAllReports extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Set full screen
         getSupportActionBar().hide();
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         setContentView(R.layout.activity_view_all_reports);
 
+        // Initialize variables
         this.searchBox = findViewById(R.id.editTextTextPersonName);
 
         this.dbHelper = new DBHelper(this);
