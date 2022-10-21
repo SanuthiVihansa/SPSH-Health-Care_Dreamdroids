@@ -33,9 +33,9 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
         super.onCreate(savedInstanceState);
 
         //Full screen and orientation code
-            getSupportActionBar().hide();
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        getSupportActionBar().hide();
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
         setContentView(R.layout.activity_patient_add);
@@ -52,14 +52,14 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
         et_addAge_sathira = findViewById(R.id.et_addAge_sathira);
 
         //gender spinner
-            spinner = (Spinner) findViewById(R.id.sp_genders_sathira);
-            spinner.setOnItemSelectedListener(this);
+        spinner = (Spinner) findViewById(R.id.sp_genders_sathira);
+        spinner.setOnItemSelectedListener(this);
 
-            //Creating the ArrayAdapter instance having the country list
-            ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                    R.array.sp_genders_sathira, android.R.layout.simple_spinner_item);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinner.setAdapter(adapter);
+        //Creating the ArrayAdapter instance having the country list
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.sp_genders_sathira, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
         et_addNum_sathira = findViewById(R.id.et_addNum_sathira);
         tv_addNic_sathira = findViewById(R.id.et_addNic_sathira);
@@ -67,54 +67,54 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
         tv_addNic_sathira.setText(nic2);
 
         //gender spinner
-            spinnerSpeciality = (Spinner) findViewById(R.id.sp_speciality_sathira);
-            spinnerSpeciality.setOnItemSelectedListener(this);
+        spinnerSpeciality = (Spinner) findViewById(R.id.sp_speciality_sathira);
+        spinnerSpeciality.setOnItemSelectedListener(this);
 
-            //Creating the ArrayAdapter instance having the country list
-            ArrayAdapter<CharSequence> adapterSpeciality = ArrayAdapter.createFromResource(this,
-                    R.array.sp_speciality_sathira, android.R.layout.simple_spinner_item);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinnerSpeciality.setAdapter(adapterSpeciality);
+        //Creating the ArrayAdapter instance having the country list
+        ArrayAdapter<CharSequence> adapterSpeciality = ArrayAdapter.createFromResource(this,
+                R.array.sp_speciality_sathira, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerSpeciality.setAdapter(adapterSpeciality);
 
         //Doctor spinner
-            spinnerDoc = findViewById(R.id.sp_drname_sathira);
-            spinnerDoc.setOnItemSelectedListener(this);
+        spinnerDoc = findViewById(R.id.sp_drname_sathira);
+        spinnerDoc.setOnItemSelectedListener(this);
 
-            ArrayAdapter<String> adapterDoc = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, doclist);
-            adapterDoc.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinnerDoc.setAdapter(adapterDoc);
+        ArrayAdapter<String> adapterDoc = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, doclist);
+        adapterDoc.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerDoc.setAdapter(adapterDoc);
 
         et_addDate_sathira = findViewById(R.id.et_addDate_sathira);
         et_addTime_sathira = findViewById(R.id.et_addTime_sathira);
     }
 
-//methods
+    //methods
     //spinner overwritten methods
-        @Override
-        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-            switch (adapterView.getId()){
-                case R.id.sp_drname_sathira:
-                    docStringSpinner = (String) adapterView.getItemAtPosition(i);
-                    break;
-                case R.id.sp_speciality_sathira:
-                    specialityStringSpinner = (String) adapterView.getItemAtPosition(i);
-                    doclist = dbHelper.retrieveDocs(specialityStringSpinner);
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        switch (adapterView.getId()) {
+            case R.id.sp_drname_sathira:
+                docStringSpinner = (String) adapterView.getItemAtPosition(i);
+                break;
+            case R.id.sp_speciality_sathira:
+                specialityStringSpinner = (String) adapterView.getItemAtPosition(i);
+                doclist = dbHelper.retrieveDocs(specialityStringSpinner);
 
-                    ArrayAdapter<String> adapterDoc = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, doclist);
-                    adapterDoc.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    spinnerDoc.setAdapter(adapterDoc);
-                    break;
-                case R.id.sp_genders_sathira:
-                    spinnerGender = (String) adapterView.getItemAtPosition(i);
-                    break;
-                default:
-                    break;
-            }
+                ArrayAdapter<String> adapterDoc = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, doclist);
+                adapterDoc.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinnerDoc.setAdapter(adapterDoc);
+                break;
+            case R.id.sp_genders_sathira:
+                spinnerGender = (String) adapterView.getItemAtPosition(i);
+                break;
+            default:
+                break;
         }
+    }
 
-        @Override
-        public void onNothingSelected(AdapterView<?> adapterView) {
-        }
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+    }
     //spinner overwritten methods end
 
 
