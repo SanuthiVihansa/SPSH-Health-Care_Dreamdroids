@@ -80,6 +80,10 @@ public class Patient_View_Single extends AppCompatActivity {
         String time = (String) list.get(7);
         textView = findViewById(R.id.tv_single_time2_sathira);
         textView.setText(time);
+
+        String cost = dbHelper.retrieveCost(drName);
+        textView = findViewById(R.id.tv_single_cost2_sathira);
+        textView.setText("Rs. " + String.valueOf(Double.parseDouble(cost) + 899.50));
     }
 
     public void onClickUpdateBtn(View view){ //method to navigate to update activity
