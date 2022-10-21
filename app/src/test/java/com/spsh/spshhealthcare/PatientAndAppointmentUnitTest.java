@@ -51,5 +51,29 @@ public class PatientAndAppointmentUnitTest {
         assertEquals(false, appointment.validateContactNo("771234567"));
     }
 
+    @Test
+    public void testTimeValidation() {
+        assertEquals(true, appointment.validateTime("0:00"));
+        assertEquals(true, appointment.validateTime("5:00"));
+        assertEquals(true, appointment.validateTime("9:00"));
+        assertEquals(true, appointment.validateTime("5:59"));
+        assertEquals(true, appointment.validateTime("00:00"));
+        assertEquals(true, appointment.validateTime("12:00"));
+        assertEquals(true, appointment.validateTime("15:00"));
+        assertEquals(true, appointment.validateTime("23:00"));
+        assertEquals(true, appointment.validateTime("23:01"));
+        assertEquals(true, appointment.validateTime("23:59"));
+        assertEquals(false, appointment.validateTime("5:60"));
+        assertEquals(false, appointment.validateTime("5:61"));
+        assertEquals(false, appointment.validateTime("23:60"));
+        assertEquals(false, appointment.validateTime("23:61"));
+        assertEquals(false, appointment.validateTime("23;00"));
+        assertEquals(false, appointment.validateTime("23.00"));
+        assertEquals(false, appointment.validateTime("23-00"));
+        assertEquals(false, appointment.validateTime("24:00"));
+        assertEquals(false, appointment.validateTime("25:00"));
+        assertEquals(false, appointment.validateTime("05:0"));
+        assertEquals(false, appointment.validateTime("12:122"));
+    }
 
 }
