@@ -76,4 +76,21 @@ public class PatientAndAppointmentUnitTest {
         assertEquals(false, appointment.validateTime("12:122"));
     }
 
+    @Test
+    public void testDateValidation() {
+        assertEquals(true, appointment.validateDate("01-01-2022"));
+        assertEquals(true, appointment.validateDate("21-10-2022"));
+        assertEquals(true, appointment.validateDate("31-12-2022"));
+        assertEquals(true, appointment.validateDate("31/12/2022"));
+        assertEquals(true, appointment.validateDate("31-12-2100"));
+        assertEquals(false, appointment.validateDate("27-10-2021"));
+        assertEquals(false, appointment.validateDate("32-10-2022"));
+        assertEquals(false, appointment.validateDate("10-27-2022"));
+        assertEquals(false, appointment.validateDate("15-13-2022"));
+        assertEquals(false, appointment.validateDate("00-13-2022"));
+        assertEquals(false, appointment.validateDate("15-11/2022"));
+        assertEquals(false, appointment.validateDate("15/11-2022"));
+        assertEquals(false, appointment.validateDate("15;11;2022"));
+        assertEquals(false, appointment.validateDate("15.11.2022"));
+    }
 }
