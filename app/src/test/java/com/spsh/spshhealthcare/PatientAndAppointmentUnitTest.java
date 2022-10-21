@@ -8,9 +8,11 @@ import android.widget.EditText;
 
 public class PatientAndAppointmentUnitTest {
     private Patient_Add appointment;
+    private Patient_Update updateAppointment;
 
     public void setup() {
         appointment = new Patient_Add();
+        updateAppointment = new Patient_Update();
     }
 
     @Test
@@ -87,5 +89,38 @@ public class PatientAndAppointmentUnitTest {
         assertEquals(false, appointment.validateDate("15/11-2022"));
         assertEquals(false, appointment.validateDate("15;11;2022"));
         assertEquals(false, appointment.validateDate("15.11.2022"));
+    }
+
+    @Test
+    public void testUpdatedNameValidation() {
+        assertEquals(true, updateAppointment.validateName("Michael"));
+        assertEquals(true, updateAppointment.validateName("Michael Jackson"));
+        assertEquals(true, updateAppointment.validateName("G.G.T.John"));
+        assertEquals(false, updateAppointment.validateName("Mich3al"));
+        assertEquals(false, updateAppointment.validateName("G,G,T,John"));
+    }
+
+    @Test
+    public void testUpdatedAgeValidation() {
+        assertEquals(true, updateAppointment.validateAge("1"));
+        assertEquals(true, updateAppointment.validateAge("50"));
+        assertEquals(true, updateAppointment.validateAge("124"));
+        assertEquals(true, updateAppointment.validateAge("125"));
+        assertEquals(false, updateAppointment.validateAge("-50"));
+        assertEquals(false, updateAppointment.validateAge("-1"));
+        assertEquals(false, updateAppointment.validateAge("0"));
+        assertEquals(false, updateAppointment.validateAge("126"));
+    }
+
+    @Test
+    public void testUpdatedContactNoValidation() {
+        assertEquals(true, updateAppointment.validateContactNo("0771234567"));
+        assertEquals(true, updateAppointment.validateContactNo("0111234567"));
+        assertEquals(true, updateAppointment.validateContactNo("0711234567"));
+        assertEquals(true, updateAppointment.validateContactNo("0761234567"));
+        assertEquals(true, updateAppointment.validateContactNo("0721234567"));
+        assertEquals(false, updateAppointment.validateContactNo("07712345678"));
+        assertEquals(false, updateAppointment.validateContactNo("7712345678"));
+        assertEquals(false, updateAppointment.validateContactNo("771234567"));
     }
 }
