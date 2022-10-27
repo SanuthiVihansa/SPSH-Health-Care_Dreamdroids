@@ -59,7 +59,7 @@
     <string name="tv_pUpdate">Update Item</string>
 
     <!--    SEARCH AND DISPLAY ALL PHARMACY EQUIPMENTS -->
-    <string name="tv_pSearchView"></string>
+    <string name="tv_pSearchView">Search</string>
     <string name="rb_PproductName">Item Name</string>
     <string name="rb_pProduct">Trade Name</string>
     <string name="tv_pvItemPage">Item in detail</string>

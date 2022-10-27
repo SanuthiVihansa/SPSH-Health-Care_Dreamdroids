@@ -42,10 +42,10 @@ public class PharmacyUnitTest {
 
     public boolean ItemCodeIsCorrect(String itemCode) {
 
-        if (!(itemCode.contains("P")||itemCode.contains("S")||itemCode.contains("M")||itemCode.contains("C"))&&itemCode.length()!=5)
-            return false;
-        else
+        if ((itemCode.contains("P")||itemCode.contains("S")||itemCode.contains("M")||itemCode.contains("C"))&&itemCode.length()==5)
             return true;
+        else
+            return false;
     }
 
     public boolean ProducerNameIsCorrect(String name) {

@@ -14,8 +14,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:hint="@string/tv_pSearchView"
         android:inputType="textPersonName"
-        android:text="@string/tv_pSearchView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -43,6 +43,8 @@
         android:layout_marginEnd="16dp"
         android:background="@color/red"
         android:backgroundTint="@color/red"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
         android:onClick="backwardNavigation"
         android:text="@string/btn_navigate"
         android:textColor="#FFFFFF"
