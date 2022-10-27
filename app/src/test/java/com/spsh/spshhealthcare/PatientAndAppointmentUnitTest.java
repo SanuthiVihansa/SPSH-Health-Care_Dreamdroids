@@ -4,6 +4,8 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+import java.text.DecimalFormat;
+
 public class PatientAndAppointmentUnitTest {
 
 
@@ -83,6 +85,21 @@ public class PatientAndAppointmentUnitTest {
         assertEquals(false, validateDate("15.11.2022"));
     }
 
+    @Test
+    public void testCost(){
+        assertEquals(false, costCalc("555.55", "16:00"));
+        assertEquals(true, costCalc("555.55", "21:00"));
+        assertEquals(false, costCalc("555.55", "20:59"));
+        assertEquals(true, costCalc("555.55", "0:59"));
+        assertEquals(true, costCalc("555.55", "0:00"));
+        assertEquals(true, costCalc("555.55", "06:59"));
+        assertEquals(false, costCalc("555.55", "07:00"));
+        assertEquals(true, costCalc("555.55", "00:59"));
+        assertEquals(true, costCalc("555.55", "6:59"));
+        assertEquals(false, costCalc("555.55", "7:00"));
+    }
+
+
     //validations
     //validation to check that only letters exist
     public boolean validateName(String string) { //checks for letters
@@ -143,5 +160,43 @@ public class PatientAndAppointmentUnitTest {
             return false;
         }
 
+    }
+
+    //cost calculation validation
+    public boolean costCalc(String DocFee, String appointmentTime){
+        DecimalFormat decimalFormat = new DecimalFormat("0.00");
+        String finalCost = null;
+        double taxRate = 0.1, taxAmount = 0.0, feeDoc = 0.0, lateNightAndEarlyMorningFee = 0, doubleCost = 0.0;
+        int time = 0;
+
+        feeDoc = Double.parseDouble(DocFee);
+        taxAmount = feeDoc * taxRate;
+
+        if (appointmentTime.length() == 4){
+            time = Integer.parseInt(appointmentTime.substring(0,1));
+            if (time == 0 || time <= 6) {
+                lateNightAndEarlyMorningFee = 0.5 * feeDoc;
+                return true;
+            }
+            else {
+                lateNightAndEarlyMorningFee = 0;
+                return false;
+            }
+        }else if(appointmentTime.length() == 5){
+            time = Integer.parseInt(appointmentTime.substring(0,2));
+            if (time >= 21 || time <= 6) {
+                lateNightAndEarlyMorningFee = 0.5 * feeDoc;
+                return true;
+            }
+            else {
+                lateNightAndEarlyMorningFee = 0;
+                return false;
+            }
+        }
+
+        doubleCost = taxAmount + lateNightAndEarlyMorningFee + feeDoc;
+        finalCost = String.valueOf(decimalFormat.format(doubleCost));
+
+        return true;
     }
 }
