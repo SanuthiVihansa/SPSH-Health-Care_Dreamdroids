@@ -148,6 +148,10 @@ public class Patient_Add extends AppCompatActivity implements AdapterView.OnItem
 
             if (inserted > 0) {
                 Toast.makeText(this, getResources().getText(R.string.toast_addPatient_success_sathira), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, Patient_Home.class);
+                intent.putExtra("nic", this.nic2);
+                startActivity(intent);
+                finish();
             } else {
                 Toast.makeText(this, getResources().getText(R.string.toast_addPatient_unsuccess_sathira), Toast.LENGTH_SHORT).show();
             }
