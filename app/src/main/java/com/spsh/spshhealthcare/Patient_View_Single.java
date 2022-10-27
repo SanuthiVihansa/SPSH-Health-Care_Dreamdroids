@@ -13,6 +13,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import com.spsh.spshhealthcare.database.DBHelper;
@@ -81,9 +82,39 @@ public class Patient_View_Single extends AppCompatActivity {
         textView = findViewById(R.id.tv_single_time2_sathira);
         textView.setText(time);
 
-        String cost = dbHelper.retrieveCost(drName);
+        String docCost = dbHelper.retrieveCost(drName);
+        String finalCost = costCalc(docCost, time);
         textView = findViewById(R.id.tv_single_cost2_sathira);
-        textView.setText("Rs. " + String.valueOf(Double.parseDouble(cost) + 899.50));
+        textView.setText("Rs. " + finalCost);
+    }
+
+    public String costCalc(String DocFee, String appointmentTime){
+        DecimalFormat decimalFormat = new DecimalFormat("0.00");
+        String finalCost = null;
+        double taxRate = 0.1, taxAmount = 0.0, feeDoc = 0.0, lateNightAndEarlyMorningFee = 0, doubleCost = 0.0;
+        int time = 0;
+
+        feeDoc = Double.parseDouble(DocFee);
+        taxAmount = feeDoc * taxRate;
+
+        if (appointmentTime.length() == 4){
+            time = Integer.parseInt(appointmentTime.substring(0,1));
+            if (time == 0 || time <= 6)
+                lateNightAndEarlyMorningFee = 0.5 * feeDoc;
+            else
+                lateNightAndEarlyMorningFee = 0;
+        }else if(appointmentTime.length() == 5){
+            time = Integer.parseInt(appointmentTime.substring(0,2));
+            if (time >= 21 || time <= 6)
+                lateNightAndEarlyMorningFee = 0.5 * feeDoc;
+            else
+                lateNightAndEarlyMorningFee = 0;
+        }
+
+        doubleCost = taxAmount + lateNightAndEarlyMorningFee + feeDoc;
+        finalCost = String.valueOf(decimalFormat.format(doubleCost));
+
+        return finalCost;
     }
 
     public void onClickUpdateBtn(View view) { //method to navigate to update activity
