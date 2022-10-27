@@ -87,16 +87,16 @@ public class PatientAndAppointmentUnitTest {
 
     @Test
     public void testCost(){
-        assertEquals(false, costCalc("555.55", "16:00"));
-        assertEquals(true, costCalc("555.55", "21:00"));
-        assertEquals(false, costCalc("555.55", "20:59"));
-        assertEquals(true, costCalc("555.55", "0:59"));
-        assertEquals(true, costCalc("555.55", "0:00"));
-        assertEquals(true, costCalc("555.55", "06:59"));
-        assertEquals(false, costCalc("555.55", "07:00"));
-        assertEquals(true, costCalc("555.55", "00:59"));
-        assertEquals(true, costCalc("555.55", "6:59"));
-        assertEquals(false, costCalc("555.55", "7:00"));
+        assertEquals(false, validateCostCalc("555.55", "16:00"));
+        assertEquals(true, validateCostCalc("555.55", "21:00"));
+        assertEquals(false, validateCostCalc("555.55", "20:59"));
+        assertEquals(true, validateCostCalc("555.55", "0:59"));
+        assertEquals(true, validateCostCalc("555.55", "0:00"));
+        assertEquals(true, validateCostCalc("555.55", "06:59"));
+        assertEquals(false, validateCostCalc("555.55", "07:00"));
+        assertEquals(true, validateCostCalc("555.55", "00:59"));
+        assertEquals(true, validateCostCalc("555.55", "6:59"));
+        assertEquals(false, validateCostCalc("555.55", "7:00"));
     }
 
 
@@ -163,7 +163,7 @@ public class PatientAndAppointmentUnitTest {
     }
 
     //cost calculation validation
-    public boolean costCalc(String DocFee, String appointmentTime){
+    public boolean validateCostCalc(String DocFee, String appointmentTime){
         DecimalFormat decimalFormat = new DecimalFormat("0.00");
         String finalCost = null;
         double taxRate = 0.1, taxAmount = 0.0, feeDoc = 0.0, lateNightAndEarlyMorningFee = 0, doubleCost = 0.0;
